@@ -1,0 +1,42 @@
+{% assign raw_themes_list = include.themes | split: "," %}
+{% assign themes_list = "" | split: "," %}
+<!-- Initialize an empty array -->
+{% for theme in raw_themes_list %}
+{% assign stripped_theme = theme | strip %}
+{% assign themes_list = themes_list | push: stripped_theme %}
+{% endfor %}
+{% assign sortedpages = site.pages | sort: "weight" %}
+{% for page in sortedpages %}
+{% if page.dir == "/themes/" %}
+{% if themes_list == empty or themes_list contains page.tag-to-show %}
+{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+<div class="row willfade py-5 {% if thecycle == 'odd' %}row-odd{% else %}row-even{% endif %}">
+    
+    {% if thecycle == 'odd' %}
+    <div class="col-12 col-md-6">   
+        {% include image-iframe.html%}
+    </div>
+    {% endif %}
+    
+    <div class="col-12 col-md-6">
+        <div class="my-4 px-2">
+            <h2>
+                <a href="{{ page.url }}">
+                    {{ page.title }}
+                </a>
+            </h2>
+            {{ page.summary | markdownify }}
+        </div>
+    </div>
+
+    {% if thecycle == 'even' %}
+    <div class="col-12 col-md-6">
+        {% include image-iframe.html%}
+    </div>
+    {% endif %}
+
+
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}

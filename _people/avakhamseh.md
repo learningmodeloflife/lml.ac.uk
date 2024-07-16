@@ -1,0 +1,10 @@
+---
+layout: person
+name: Ava Khamseh
+img: /img/people/avakhamseh.jpg
+role: ""
+email: ava@learningmodel.life
+weight: 4
+---
+
+Ava Khamseh holds the Hugh Langmuir Chancellor’s Fellowship in Biomedical AI, a position she holds jointly between the School of Informatics, and Institute of Genetics and Cancer (including MRC HGU). Her group’s research focuses on development of mathematical and (causal) machine learning methods for application to large-scale biomedical data, including high-throughput molecular as well as health data. Additionally, Ava is the Deputy Director of the UK Centre for Doctoral Training in AI for Biomedical Innovation and its Genomic Medicine theme lead.

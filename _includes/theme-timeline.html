@@ -1,0 +1,50 @@
+
+<div class="main">
+  <ul class="cbp_tmtimeline willfade">
+    {% assign sortedoutputs = site.outputs | sort: "date" %}
+    {% for output in sortedoutputs %}
+    {% if output.tags contains include.tag-to-show or include.tag-to-show == "all" %}
+    <li>
+      <time class="cbp_tmtime" datetime="{{ output.date }}"><span>{{ output.date | date: "%B" }}</span> <span>{{ output.date | date: "%Y" }}</span></time>
+      <div class="cbp_tmicon cbp_tmicon-phone"></div>
+      <div class="cbp_tmlabel willfade">
+        <div class="row">
+          <div class="col-9">
+            <h2>{{ output.title }}</h2>
+          </div>
+          <div class="col-3">
+            {% if output.altmetric %}
+              {% if output.doi %}
+                <div class="altmetric-embed text-end pb-2" data-badge-type="donut" data-doi="{{output.doi}}"></div>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            {% if output.doi %}
+              {% if output.journal %}
+                <p><a href="https://doi.org/{{output.doi}}">{{output.journal}} {{ output.date | date: "%B %Y" }}</a></p>
+              {% else %}
+                <p><a href="https://doi.org/{{output.doi}}">{{output.doi}}</a></p>
+              {% endif %}
+            {% endif %}
+            {% if output.includegraphic %}
+              <div class="py-3" style="width: 100%; height:400px; overflow: hidden;">
+                {% include iframe.html scale="0.75" path=output.includegraphic %}
+              </div>
+            {% elsif output.img %}
+              <img class="img-fluid rounded w-50 float-end m-2" src="{{output.img}}">
+            {% elsif output.paperpic %}
+              <img class="img-fluid img-thumbnail w-50 float-end m-2" src="/img/paperpics/{{output.paperpic}}">
+            {% endif %}
+            {{ output.content }}
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>

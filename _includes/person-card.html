@@ -1,0 +1,16 @@
+<div class="row card-person alumnus">
+    <div class="col-3">
+        <div class="card-person-image">
+        {% if member.img %}
+        <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}">
+        {% endif %}
+    </div>
+    </div>
+    <div class="col-9">
+        <h5>
+            {{member.name}}
+        </h5>
+        <p>{{member.role}}</p>
+        <p>{{member.content}}</p>
+    </div>
+</div>

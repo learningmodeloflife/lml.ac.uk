@@ -1,0 +1,58 @@
+title: Learning Model of LIfe
+description: >- # this means to ignore newlines. Copies to footer, meta description, and feed.xml
+  The Learning Model of Life. A foundation for disruptive innovation across healthcare, synthetic biology, livestock and crop science.
+seo:
+  meta_og_title: "Learning Model of Life"
+  meta_og_type: "website"
+  meta_og_url: "https://learningmodel.life"
+  meta_og_image: "https://learningmodel.life/img/lml/lml_logo.png"
+  meta_og_description: "Learning Model of Life"
+  meta_twitter_card: "summary"
+  meta_twitter_site: "@kennethbaillie"
+  meta_twitter_creator: "@kennethbaillie"
+
+# settings for Kenny's edit link script
+draft_urls: 
+  - https://neon-malasada-e4e047.netlify.app/
+  - localhost:4000
+edit_stem: https://gitlab.com/kennethbaillie/baillielab.net2/-/edit/main/
+
+theme: minima
+destination: _site
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+kramdown:
+  auto_ids: true
+
+navigation:
+  - text: Home
+    url: /#
+  - text: Team
+    url: people/
+
+collections:
+  outputs:
+    output: true
+    permalink: /project/:path/
+  people:
+    output: true
+    permalink: /people/:path/
+
+defaults:
+  -
+    scope:
+      path:            "assets/*"
+    values:
+      sitemap:         false
+  -
+    scope:
+      path:            "img/*"
+    values:
+      sitemap:         false
+  -
+    scope:
+      path:            "internal/*"
+    values:
+      sitemap:         false
+

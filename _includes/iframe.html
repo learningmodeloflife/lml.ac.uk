@@ -1,0 +1,25 @@
+<div id="iframeContainer" data-scale="{{include.scale}}">
+    <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src="{{include.path}}" marginwidth="0" marginheight="0" style="width:100%; height: 100%; border: none; overflow: hidden;" scrolling="yes"></iframe>
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+    let container = document.getElementById("iframeContainer");
+    
+    let scale = parseFloat(container.getAttribute("data-scale") || 1);
+    let wh_percentage = 1 / scale * 100;
+    
+    // Apply styles based on scale
+    container.style.msZoom = scale;
+    container.style.MozTransform = "scale(" + scale + ")";
+    container.style.MozTransformOrigin = "0 0";
+    container.style.OTransform = "scale(" + scale + ")";
+    container.style.OTransformOrigin = "0 0";
+    container.style.WebkitTransform = "scale(" + scale + ")";
+    container.style.WebkitTransformOrigin = "0 0";
+    container.style.transform = "scale(" + scale + ")";
+    container.style.transformOrigin = "0 0";
+    container.style.width = wh_percentage + "%";
+    container.style.height = wh_percentage + "%";
+});
+</script>
