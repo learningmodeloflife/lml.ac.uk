@@ -1,31 +1,21 @@
 <header>
-    <nav class="navbar  navbar-expand-md navbar-light bg-light">
-        <div class="container-fluid">
-            <!-- JKB:change to container to fit all on narrow screen -->
-            <a class="navbar-brand" href="{{ "/" | relative_url }}">
-                <img src="../img/lml/lml_logo.png" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="main_nav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    {% for link in site.navigation %}
-                    {% if link.submenu %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">{{ link.text }} </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            {% for sublink in link.submenu %}
-                            <li><a class="dropdown-item" href="{{ sublink.url }}">{{ sublink.text }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{{ link.url }}"> {{ link.text }} </a></li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/img/lml/lml_logo.png" alt="Learning Model of Life Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            {% for item in site.navigation %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ item.url }}">{{ item.text }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+      </div>
     </nav>
-</header>
+  </header>
