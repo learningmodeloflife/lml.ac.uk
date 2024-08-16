@@ -2,7 +2,6 @@
 layout: default
 title: Home
 ---
-
 <nav class="navbar">
     <a href="/" class="navbar-brand">
         LML
@@ -32,7 +31,7 @@ title: Home
 <section id="learn-more" class="intro">
     <h2>A biological singularity</h2>
     <p>
-     For decades, the high-throughput era of biology has generated data faster than it can be interpreted. Advances in artificial intelligence and engineering biology make it possible not only to collate this data and decode the rules of biology, but to create an AI model that designs and conducts its own experiments - a singularity for biology.
+     For decades, the high-throughput era of biology has generated data faster than it can be interpreted. Advances in artificial intelligence and engineering biology make it possible not only to collate this data and decode the rules of biology, but to create a model that designs and conducts its own experiments - a biological singularity.
     </p>
     <p>We are a mission-driven team of biologists and computer scientists dedicated to creating an autonomously-learning computational model of life.</p>
 </section>
@@ -47,8 +46,7 @@ title: Home
         <p>Description of feature 2</p>
     </div>
     <div class="feature">
-        <h3>Commitment to the public good</h3>
+        <h3>Autonomous experimentation</h3>
         <p>Description of feature 3</p>
     </div>
 </section>
-
