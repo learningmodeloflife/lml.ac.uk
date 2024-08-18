@@ -72,27 +72,26 @@ body, html {
 }
 
 /* Team styles */
-
 .team-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  padding-top: calc(4rem + 80px); /* Increased padding to move content further down */
+  padding-top: calc(4rem + 80px); 
 }
 
 .team-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-top: 2rem; /* Add space above the title */
-  margin-bottom: 5rem; /* Increase space below the title */
+  margin-top: 2rem; 
+  margin-bottom: 5rem; 
   color: var(--black);
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem; /* Increased gap between grid items */
-  margin-bottom: 5rem; /* Increase space below the grid */
+  gap: 3rem; 
+  margin-bottom: 5rem; 
 }
 
 .team-member {
@@ -125,7 +124,7 @@ body, html {
 /* Hiring info styles */
 .hiring-info {
   text-align: center;
-  margin-top: 3rem; /* Increase top margin for separation */
+  margin-top: 3rem; 
   padding: 2rem 0;
 }
 
@@ -169,35 +168,35 @@ html {
 @media (max-width: 900px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 4rem; /* Slightly reduce space on smaller screens */
+    margin-bottom: 4rem; 
   }
   
   .team-title {
-    margin-bottom: 4rem; /* Slightly reduce space on smaller screens */
+    margin-bottom: 4rem; 
   }
 
   .hiring-info {
-    margin-top: 2rem; /* Adjust top margin for smaller screens */
+    margin-top: 2rem; 
   }
 }
 
 @media (max-width: 600px) {
   .team-grid {
     grid-template-columns: 1fr;
-    margin-bottom: 3rem; /* Further reduce space on very small screens */
+    margin-bottom: 3rem; 
   }
   
   .team-content {
-    padding-top: calc(3rem + 60px); /* Adjust padding for smaller screens */
+    padding-top: calc(3rem + 60px); 
   }
   
   .team-title {
-    margin-top: 1rem; /* Reduce top margin on very small screens */
-    margin-bottom: 3rem; /* Reduce bottom margin on very small screens */
+    margin-top: 1rem; 
+    margin-bottom: 3rem; 
   }
 
   .hiring-info {
-    margin-top: 1rem; /* Reduce top margin on very small screens */
+    margin-top: 1rem; 
     padding: 1rem 0;
   }
 

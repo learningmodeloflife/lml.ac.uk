@@ -76,14 +76,13 @@ body, html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  padding-top: calc(4rem + 80px); /* Increased padding to move content further down */
-}
+  padding-top: calc(4rem + 80px); 
 
 .work-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-top: 2rem; /* Add space above the title */
-  margin-bottom: 5rem; /* Increase space below the title */
+  margin-top: 2rem; 
+  margin-bottom: 5rem; 
   color: var(--black);
 }
 
@@ -172,7 +171,7 @@ body, html {
 /* Footer styles */
 .footer {
   background-color: var(--off-white);
-  padding: 10rem 0;
+  padding: 8rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,11 +198,10 @@ html {
 @media (max-width: 768px) {
   .article-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 4rem; /* Slightly reduce space on smaller screens */
-  }
+    margin-bottom: 4rem; 
   
   .work-title {
-    margin-bottom: 4rem; /* Slightly reduce space on smaller screens */
+    margin-bottom: 4rem; 
   }
 
   .article-info p {
@@ -218,15 +216,15 @@ html {
 @media (max-width: 600px) {
   .article-grid {
     grid-template-columns: 1fr;
-    margin-bottom: 3rem; /* Further reduce space on very small screens */
+    margin-bottom: 3rem; 
   }
   
   .work-content {
-    padding-top: calc(3rem + 60px); /* Adjust padding for smaller screens */
+    padding-top: calc(3rem + 60px); 
   }
   
   .work-title {
-    margin-top: 1rem; /* Reduce top margin on very small screens */
-    margin-bottom: 3rem; /* Reduce bottom margin on very small screens */
+    margin-top: 1rem; 
+    margin-bottom: 3rem; 
   }
 }

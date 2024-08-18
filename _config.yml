@@ -31,13 +31,16 @@ navigation:
   - text: Team
     url: team/
 
-collections:
-  outputs:
-    output: true
-    permalink: /project/:path/
-  people:
-    output: true
-    permalink: /people/:path/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - private
+  - private/**
 
 defaults:
   -

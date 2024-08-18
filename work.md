@@ -88,7 +88,7 @@ title: Our Work
             </div>
         </a>
     </div>
-</div>
 <footer class="footer">
     <img src="/img/uoe_logo.png" alt="Footer Logo" class="footer-logo">
 </footer>
+</div>

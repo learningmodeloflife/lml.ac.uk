@@ -202,7 +202,7 @@ section {
   align-items: center;
   background-color: var(--off-white); 
   min-height: 100vh;
-  padding-top: calc(6rem + 60px); /* Add extra padding to account for the fixed navbar */
+  padding-top: calc(6rem + 60px); 
   padding-bottom: 0;
   margin-bottom: 0;
 }

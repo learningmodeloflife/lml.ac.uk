@@ -51,7 +51,7 @@ title: Team
         </div>
     </div>
     <div class="hiring-info">
-        <p>We're hiring. For information about open positions contact us at <a href="mailto:info@learningmodel.life">info@learningmodel.life</a>.</p>
+        <p>We're hiring. For information about open positions contact us at <a href="mailto:recruitment@learningmodel.life">recruitmento@learningmodel.life</a>.</p>
     </div>
     <footer class="footer">
     <img src="/img/uoe_logo.png" alt="Footer Logo" class="footer-logo">
