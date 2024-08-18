@@ -35,7 +35,7 @@ title: Home
     <p>
      For decades, the high-throughput era of biology has generated data faster than it can be interpreted. Advances in artificial intelligence and engineering biology make it possible not only to collate this data and decode the rules of biology, but to create a model that designs and conducts its own experiments - a biological singularity.
     </p>
-    <p>We are a mission-driven team of biologists and computer scientists dedicated to creating an autonomously-learning computational model of life.</p>
+    <p>We are a mission-driven team of biologists and computer scientists dedicated to accelerating this singularity.</p>
     <div class="chevron-container">
         <a href="#features" class="scroll-chevron" aria-label="Scroll to features">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
@@ -48,7 +48,7 @@ title: Home
 <section id="features" class="features">
     <img src="/img/edinburgh_skyline.png" alt="Edinburgh Skyline" class="edinburgh-skyline">
     <div class="centered-text">
-        <p>Drawing on world-class talent from across The University of Edinburgh, the <strong>Learning Model of Life</strong> is an inter-disciplinary iniative supported by proven infrastructure.</p>
+        <p>Drawing on world-class talent from across The University of Edinburgh, the <strong>Learning Model of Life</strong> is an inter-disciplinary iniative to develop an autonomously-learning computational model of life.</p>
     </div>
     <div class="feature-container">
         <div class="feature">

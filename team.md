@@ -1,6 +1,6 @@
 ---
 layout: team
-title: Our Team
+title: Team
 ---
 
 <div class="team-content">
@@ -9,42 +9,42 @@ title: Our Team
     <div class="team-grid">
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/placeholder.jpg" alt="John Doe">
+                <img src="/img/kennethbaillie.jpg" alt="John Doe">
             </div>
             <h3>Kenneth Baillie</h3>
             <p>Co-Director</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/placeholder.jpg" alt="Jane Smith">
+                <img src="/img/kennethbaillie.jpg" alt="Jane Smith">
             </div>
             <h3>Mirella Lapata</h3>
             <p>Co-Director</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/placeholder.jpg" alt="Bob Johnson">
+                <img src="/img/kennethbaillie.jpg" alt="Bob Johnson">
             </div>
             <h3>Jonathan Millar</h3>
             <p>Chief of Staff</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/placeholder.jpg" alt="Alice Brown">
+                <img src="/img/kennethbaillie.jpg" alt="Alice Brown">
             </div>
             <h3>Konrad Rawlik</h3>
             <p>Chief Technical Officer</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/placeholder.jpg" alt="Charlie Davis">
+                <img src="/img/kennethbaillie.jpg" alt="Charlie Davis">
             </div>
             <h3>Wilna Oosthuyzen</h3>
             <p>Chief Operations Officer</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/placeholder.jpg" alt="Eva Wilson">
+                <img src="/img/kennethbaillie.jpg" alt="Eva Wilson">
             </div>
             <h3>Marie Zechner</h3>
             <p>Head of Communications</p>
