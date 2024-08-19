@@ -165,22 +165,31 @@ html {
 }
 
 /* Responsive adjustments */
-@media (max-width: 900px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 4rem; 
-  }
-  
-  .team-title {
-    margin-bottom: 4rem; 
+
+/* Mobile */
+@media only screen and (max-width: 479px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 2%;
   }
 
-  .hiring-info {
-    margin-top: 2rem; 
+  .navbar-brand {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
-}
 
-@media (max-width: 600px) {
+  .navbar-links {
+    justify-content: center;
+    margin-right: 0;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
   .team-grid {
     grid-template-columns: 1fr;
     margin-bottom: 3rem; 
@@ -191,7 +200,7 @@ html {
   }
   
   .team-title {
-    margin-top: 1rem; 
+    margin-top: 3rem; 
     margin-bottom: 3rem; 
   }
 
@@ -202,5 +211,17 @@ html {
 
   .hiring-info p {
     font-size: 1rem;
+  }
+
+  .html {
+    scroll-padding-top: 80px; 
+  }
+
+  .footer {
+    padding: 4rem 0 1rem; 
+  }
+
+  .footer-logo {
+    max-width: 250px; 
   }
 }

@@ -27,7 +27,6 @@ body, html {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  transition: background-color 0.3s ease;
 }
 
 .navbar-brand {
@@ -135,7 +134,6 @@ body, html {
 .chevron-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
   margin-top: 2rem;
   background-color: transparent; 
 }
@@ -289,46 +287,128 @@ html {
 }
 
 /* Resizing */
-@media (max-width: 768px) {
+
+/* Mobile */
+@media only screen and (max-width: 479px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 2%;
+  }
+
+  .navbar-brand {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   .navbar-links {
-    margin-top: 1rem;
+    justify-content: center;
+    margin-right: 0;
+    gap: 1rem;
   }
 
-  .hero {
-    padding-top: 100px; 
+  .nav-link {
+    font-size: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    width: 90%;
+  }
+  
+  .hero-content p {
+    font-size: 1.6rem;
+  }
+
+  .dna-binary-animation {
+    height: 120px; 
+  }
+
+  .dna-binary-char {
+    font-size: 14px; 
+    letter-spacing: 2px; 
+    margin: 0 1px; 
+  }
+
+  .intro {
+    padding-top: 2rem;
+    padding-bottom: 0
+    justify-content: flex-start;
+  }
+
+  .intro h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .intro p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .intro p:nth-of-type(2) {
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  .chevron-container:last-of-type {
+    display: none; 
+  }
+
+  .edinburgh-skyline {
+    width: 90%;
+  }
+
+  .centered-text {
+    font-size: 1rem;
+    text-align: center;
   }
 
   .feature-container {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .feature {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; 
+    padding: 0.5rem 0; 
+  }
+
+  .features {
+    padding-top: 0; 
   }
 
   .feature:last-child {
     margin-bottom: 0;
   }
 
-  .features {
-    padding-top: calc(2rem + 60px);
+  .feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem; 
+  }
+
+  .feature p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .html {
+    scroll-padding-top: 80px; 
   }
 
   .footer {
-    padding: 3rem 0;
+    padding: 4rem 0 1rem; 
   }
 
   .footer-logo {
-    max-width: 180px;
+    max-width: 250px; 
   }
 }
+
+
 
 
