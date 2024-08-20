@@ -57,11 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
             char.style.color = 'rgba(0, 0, 0, 0.6)';
         } else if (rect.left >= transitionStart && char.dataset.type === 'dna') {
             // Transition from DNA to binary
-            if (char.dataset.threshold === null) {
-                char.dataset.threshold = Math.random();
-            }
+            threshold = Math.random();
             const progress = (rect.left - transitionStart) / (transitionEnd - transitionStart);
-            if (char.dataset.type === 'dna' && char.dataset.threshold <= progress) {
+            if (char.dataset.type === 'dna' && threshold <= progress) {
                 const newBinaryChar = binaryChars[Math.floor(Math.random() * binaryChars.length)];
                 char.dataset.originalChar = newBinaryChar;
                 char.style.color = 'rgba(0, 0, 0, 0.6)';
@@ -75,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
             char.style.opacity = 1;
         } else if (rect.left >= transitionEnd && rect.right < containerRect.right - blendDistance) {
             // Fully visible binary character
-            char.dataset.threshold = null;
             char.textContent = char.dataset.originalChar;
             char.style.opacity = 1;
             if (char.dataset.type === 'dna') {
