@@ -91,7 +91,7 @@ body, html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .article-link {
@@ -172,7 +172,7 @@ body, html {
 /* Footer styles */
 .footer {
   background-color: var(--off-white);
-  padding: 8rem 0;
+  padding: 6rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,7 +180,7 @@ body, html {
 }
 
 .footer-logo {
-  max-width: 300px;
+  max-width: 250px;
   height: auto;
 }
 
