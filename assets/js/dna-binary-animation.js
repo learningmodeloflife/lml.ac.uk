@@ -19,11 +19,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return char;
     }
 
+    function createPartialChar(index, lineIndex) {
+        const char = document.createElement('span');
+        char.className = 'dna-binary-char';
+        const initialPosition = (index * charWidth);
+        char.style.left = `${initialPosition}px`;
+        char.style.top = `${lineIndex * 25}px`; // Adjust vertical spacing
+        resetCharacter(char);
+        char.style.animation = `moveAcross 40s linear 0s forwards`; // adjust speed
+        animationContainer.appendChild(char);
+        return char;
+    }
+
     function resetCharacter(char) {
         char.textContent = dnaChars[Math.floor(Math.random() * dnaChars.length)];
         char.dataset.type = 'dna';
         char.dataset.originalChar = char.textContent;
-        char.style.color = 'rgba(0, 0, 0, 0.8)';
+        char.style.color = 'rgba(0, 0, 0, 0.6)';
+        char.style.opacity = 0;
     }
 
     function updateChar(char) {
@@ -38,29 +51,52 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        if (rect.left < transitionStart) {
-            // Keep as DNA character
+
+        const containerWidth = containerRect.width;
+        const blendDistance = containerWidth * 0.1; // 10% of container width for blending
+
+        if (rect.left < containerRect.left + blendDistance) {
+            // Blend in from left
+            const progress = (rect.left - containerRect.left) / blendDistance;
+            char.style.opacity = progress;
             char.textContent = char.dataset.originalChar;
-            char.style.color = 'rgba(0, 0, 0, 0.8)';
+            char.style.color = 'rgba(0, 0, 0, 0.6)';
+        } else if (rect.left < transitionStart) {
+            // Fully visible DNA character
+            char.style.opacity = 1;
+            char.textContent = char.dataset.originalChar;
+            char.style.color = 'rgba(0, 0, 0, 0.6)';
         } else if (rect.left >= transitionStart && rect.left < transitionEnd) {
-            if (char.dataset.type === 'dna') {
-                const progress = (rect.left - transitionStart) / (transitionEnd - transitionStart);
-                // Calculate cumulative probability with a slower initial increase
-                const cumulativeProbability = Math.pow(progress, 2); // Cubic increase for slower initial transition
-                if (Math.random() < cumulativeProbability) {
-                    const newBinaryChar = binaryChars[Math.floor(Math.random() * binaryChars.length)];
-                    char.dataset.originalChar = newBinaryChar; // Update original character
-                    char.style.color = 'rgba(0, 0, 0, 0.6)';
-                    char.dataset.type = 'binary'; // Update the type once it becomes binary
-                }
+            // Transition from DNA to binary
+            const progress = (rect.left - transitionStart) / (transitionEnd - transitionStart);
+            const cumulativeProbability = progress//Math.pow(progress, 2);
+            if (char.dataset.type === 'dna' && Math.random() < cumulativeProbability) {
+                const newBinaryChar = binaryChars[Math.floor(Math.random() * binaryChars.length)];
+                char.dataset.originalChar = newBinaryChar;
+                char.style.color = 'rgba(0, 0, 0, 0.6)';
+                char.dataset.type = 'binary';
+                char.style.fontWeight = 'bold';
+                setTimeout(() => {
+                    char.style.fontWeight = 'normal';
+                }, 300); // Change back to normal weight after 300ms
             }
-        } else if (rect.left >= transitionEnd) {
+            char.textContent = char.dataset.originalChar;
+            char.style.opacity = 1;
+        } else if (rect.left >= transitionEnd && rect.right < containerRect.right - blendDistance) {
+            // Fully visible binary character
+            char.textContent = char.dataset.originalChar;
+            char.style.opacity = 1;
             if (char.dataset.type === 'dna') {
                 const newBinaryChar = binaryChars[Math.floor(Math.random() * binaryChars.length)];
-                char.dataset.originalChar = newBinaryChar; // Update original character
+                char.dataset.originalChar = newBinaryChar;
                 char.style.color = 'rgba(0, 0, 0, 0.6)';
                 char.dataset.type = 'binary';
             }
+        } else {
+            // Blend out to right
+            const progress = (containerRect.right - rect.right) / blendDistance;
+            char.style.opacity = progress;
+            char.textContent = char.dataset.originalChar;
         }
 
         // Always show the original character (which may have been updated)
@@ -73,6 +109,13 @@ document.addEventListener('DOMContentLoaded', function() {
             createChar(i, line);
         }
     }
+    // Create initial set of characters for each line
+    for (let line = 0; line < lineCount; line++) {
+        for (let i = 0; i < charCount; i++) {
+            createPartialChar(i, line);
+        }
+    }
+
 
     // Update characters
     const updateInterval = setInterval(() => {

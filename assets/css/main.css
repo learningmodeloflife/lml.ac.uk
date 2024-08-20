@@ -126,7 +126,7 @@ body, html {
 }
 
 @keyframes moveAcross {
-  from { transform: translateX(-20px); }
+  from { transform: translateX(0px); }
   to { transform: translateX(100vw); }
 }
 
