@@ -22,6 +22,7 @@ destination: _site
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-analytics
 kramdown:
   auto_ids: true
 

@@ -1,6 +1,7 @@
 ---
 layout: team
-title: Team
+title: "Team | Learning Model of Life | Decoding the Rules of Biology"
+description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
 
 <div class="team-content">
