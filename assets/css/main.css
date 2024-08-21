@@ -111,19 +111,11 @@ body, html {
 }
 
 /* Landing page animation styles */
-.decoding-animation p {
-  font-size: 2.5rem;
-  font-weight: 400;
-  position: relative;
-  width: 95%;
-  height: 100px; 
-  overflow: hidden;
-}
-
-#decoding-animation {
+.decoding-animation {
   position: relative;
   width: 100%;
   height: 200px;
+  overflow: hidden;
 }
 
 .decoding-char {
@@ -131,6 +123,7 @@ body, html {
   position: absolute;
   font-size: 16px;
   line-height: 20px;
+  color: rgb(60%, 60%, 60%);
 }
 
 @keyframes blendOut {
@@ -143,18 +136,6 @@ body, html {
   100% { opacity: 1; }
 }
 
-@keyframes rotateAnimation {
-  0% { rotateY: 0; }
-  50% { rotateY: 180; }
-  100% { rotateY: 0; }
-}
-
-.decoding-char.animate- {
-  animation-duration: 2s;
-  animation-name: rotateAnimation;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
 
 /* Chevron styles */
 .chevron-container {
