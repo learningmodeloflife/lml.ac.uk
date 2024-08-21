@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const containerWidth = animationContainer.offsetWidth;
     const charCount = Math.floor(containerWidth / charWidth);
     const lineCount = 4;
-    const duration = 40;
+
+    const durationMean = 40;
+    const durationJitter = 15;
+    const duration = Array.from({ length: lineCount }, (_, i) => durationMean + Math.pow(-1, i) * Math.floor(Math.random() * durationJitter));
     let isAnimationPaused = false;
     
     function createChar(index, lineIndex) {
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         char.style.left = `-${charWidth}px`;
         char.style.top = `${lineIndex * 25}px`; // Adjust vertical spacing
         resetCharacter(char);
-        char.style.animation = `moveAcross ${duration}s linear ${-index * (duration / charCount)}s infinite`; // adjust speed
+        char.style.animation = `moveAcross ${duration[lineIndex]}s linear ${-index * (duration[lineIndex] / charCount)}s infinite`; // adjust speed
         animationContainer.appendChild(char);
         return char;
     }
@@ -24,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         char.textContent = dnaChars[Math.floor(Math.random() * dnaChars.length)];
         char.dataset.type = 'dna';
         char.dataset.originalChar = char.textContent;
+        char.dataset.threshold = Math.random();
         char.style.color = 'rgba(0, 0, 0, 0.6)';
         char.style.opacity = 0;
     }
@@ -31,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateChar(char) {
         const rect = char.getBoundingClientRect();
         const containerRect = animationContainer.getBoundingClientRect();
-        const transitionStart = containerRect.left + containerRect.width * (1/2);
+        const transitionStart = containerRect.left + containerRect.width * (1/3);
         const transitionEnd = containerRect.left + containerRect.width * (2/3);
 
         // Reset character if it's about to re-enter from the left
@@ -44,52 +48,36 @@ document.addEventListener('DOMContentLoaded', function() {
         const containerWidth = containerRect.width;
         const blendDistance = containerWidth * 0.1; // 10% of container width for blending
 
-        if (rect.left < containerRect.left + blendDistance) {
+        if (rect.left <= containerRect.left + blendDistance) {
             // Blend in from left
             const progress = (rect.left - containerRect.left) / blendDistance;
             char.style.opacity = progress;
-            char.textContent = char.dataset.originalChar;
-            char.style.color = 'rgba(0, 0, 0, 0.6)';
-        } else if (rect.left < transitionStart) {
+        } else if (rect.left > containerRect.left + blendDistance) {
             // Fully visible DNA character
             char.style.opacity = 1;
-            char.textContent = char.dataset.originalChar;
-            char.style.color = 'rgba(0, 0, 0, 0.6)';
-        } else if (rect.left >= transitionStart && char.dataset.type === 'dna') {
-            // Transition from DNA to binary
-            threshold = Math.random();
+        } else if (rect.right >= containerRect.right - blendDistance) {
+            // Blend out to right
+            const progress = (containerRect.right - rect.right) / blendDistance;
+            char.style.opacity = progress;
+        }
+
+        if (rect.left >= transitionStart) {
             const progress = (rect.left - transitionStart) / (transitionEnd - transitionStart);
-            if (char.dataset.type === 'dna' && threshold <= progress) {
+            if (char.dataset.type === 'dna' && char.dataset.threshold <= progress) {
                 const newBinaryChar = binaryChars[Math.floor(Math.random() * binaryChars.length)];
                 char.dataset.originalChar = newBinaryChar;
-                char.style.color = 'rgba(0, 0, 0, 0.6)';
                 char.dataset.type = 'binary';
+                
                 char.style.fontWeight = 'bold';
                 setTimeout(() => {
                     char.style.fontWeight = 'normal';
                 }, 300); // Change back to normal weight after 300ms
             }
-            char.textContent = char.dataset.originalChar;
-            char.style.opacity = 1;
-        } else if (rect.left >= transitionEnd && rect.right < containerRect.right - blendDistance) {
-            // Fully visible binary character
-            char.textContent = char.dataset.originalChar;
-            char.style.opacity = 1;
-            if (char.dataset.type === 'dna') {
-                const newBinaryChar = binaryChars[Math.floor(Math.random() * binaryChars.length)];
-                char.dataset.originalChar = newBinaryChar;
-                char.style.color = 'rgba(0, 0, 0, 0.6)';
-                char.dataset.type = 'binary';
-            }
-        } else {
-            // Blend out to right
-            const progress = (containerRect.right - rect.right) / blendDistance;
-            char.style.opacity = progress;
-            char.textContent = char.dataset.originalChar;
         }
 
         // Always show the original character (which may have been updated)
         char.textContent = char.dataset.originalChar;
+        char.style.color = 'rgba(0, 0, 0, 0.6)';
     }
 
     // Create initial set of characters for each line
