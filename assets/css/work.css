@@ -3,6 +3,12 @@
   --off-white: #FAF9F6;
   --black: #000000;
   --dark-gray: #333333;
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
+  --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
+  --font-size-mobxxl: clamp(1.6rem, 1.6rem + 1.25vw, 4rem);
+  --font-size-xxl: clamp(2rem, 2rem + 1.25vw, 4.75rem);
+  --font-size-huge: clamp(2.5rem, 2.5rem + 2.5vw, 6.5rem);
 }
 
 body, html {
@@ -199,7 +205,7 @@ html {
 }
 
 /* Mobile */
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 640px) {
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
@@ -232,6 +238,7 @@ html {
   }
   
   .work-title {
+    font-size: var(--font-size-mobxxl);
     margin-top: 3rem; 
     margin-bottom: 3rem; 
   }
@@ -248,3 +255,10 @@ html {
     max-width: 250px; 
   }
 }
+
+@media only screen and (max-width: 440px) {
+  .footer-logo {
+    max-width: 200px; 
+  }
+}
+

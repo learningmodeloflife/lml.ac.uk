@@ -3,15 +3,22 @@
   --off-white: #FAF9F6;
   --black: #000000;
   --dark-gray: #333333;
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
+  --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
+  --font-size-mobxxl: clamp(1.6rem, 1.6rem + 1.25vw, 4rem);
+  --font-size-xxl: clamp(2rem, 2rem + 1.25vw, 4.75rem);
+  --font-size-huge: clamp(2.5rem, 2.5rem + 2.5vw, 6.5rem);
 }
 
 body, html {
   margin: 0;
   padding: 0;
+  line-height: 1.6;
   font-family: 'Playfair Display', serif;
+  font-size: var(--font-size-base);
   color: var(--dark-gray);
   background-color: var(--off-white);
-  line-height: 1.6;
 }
 
 /* Navbar styles */
@@ -77,33 +84,34 @@ body, html {
 
 /* Hero styles */
 .hero {
-  height: auto;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: var(--cream);
-  padding-top: 10px;
-  padding-bottom: 60px;
+  height: auto;
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-content h1 {
-  font-size: 6.5rem;
+  font-size: var(--font-size-huge);
   font-weight: 900;
   color: var(--black);
+  margin-top: 2.5rem;
   margin-bottom: 1.5rem; 
 }
 
 .hero-content p {
-  font-size: 4.5rem;
+  font-size: var(--font-size-xxl);
   font-weight: 400;
   color: var(--black);
   margin-top: 2.5rem; 
@@ -113,15 +121,15 @@ body, html {
 /* Landing page animation styles */
 .dna-binary-animation {
   position: relative;
-  width: 95%;
-  height: 100px; 
+  width: 100%;
+  height: clamp(6rem, 6rem + 2.5vw, 14rem); 
   overflow: hidden;
 }
 
 .dna-binary-char {
   position: absolute;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1rem;
+  line-height: 1.2rem;
   transition: color 0.3s ease;
 }
 
@@ -135,6 +143,7 @@ body, html {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+  margin-bottom: 4rem;
   background-color: transparent; 
 }
 
@@ -155,8 +164,8 @@ body, html {
 
 /* Lower panel styles */
 section {
-  padding: 4rem 10%;
   position: relative;
+  padding: 2rem 0;
 }
 
 .intro {
@@ -165,33 +174,34 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 6rem 0;
   box-sizing: border-box; 
 }
 
 .intro h2 {
-  font-size: 4.5rem;
+  font-size: var(--font-size-huge);
   font-weight: 900;
   color: var(--black);
+  margin-top: 4rem;
   margin-bottom: 2.5rem; 
 }
 
 .intro p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   font-weight: 400;
   line-height: 1.6;
-  width: 70%;
+  width: 90%;
   text-align: center;
   margin-bottom: 4rem;
 }
 
 .intro p:nth-of-type(2) {
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
-  line-height: 1.8;
+  line-height: 1.6;
   width: 100%;
   text-align: center;
-  margin-bottom: 4.5rem;
+  margin-bottom: 3rem;
 }
 
 .features {
@@ -200,32 +210,30 @@ section {
   align-items: center;
   background-color: var(--off-white); 
   min-height: 100vh;
-  padding-top: calc(6rem + 60px); 
-  padding-bottom: 0;
-  margin-bottom: 0;
+  padding: 2rem 0;
 }
 
 .edinburgh-skyline {
   width: 80%;
-  max-width: 1200px;
   height: auto;
-  margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-top: 6rem;
+  margin-bottom: 3rem 0;
 }
 
 .centered-text {
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   font-weight: 400;
-  width: 100%;
-  max-width: 900px;
+  width: 80%;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 5rem 0;
 }
 
 .feature-container {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  max-width: 1200px;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -241,17 +249,12 @@ section {
 }
 
 .feature h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
   font-weight: 900;
   color: var(--black);
-  margin-bottom: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   text-align: center;
-}
-
-.feature p {
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 0;
 }
 
 /* Footer styles */
@@ -288,7 +291,7 @@ html {
 
 /* Resizing */
 
-/* Standard/small laptop */
+/* Tablet */
 @media only screen and (max-width: 1024px) {
   .hero {
     height: auto;
@@ -299,101 +302,18 @@ html {
     justify-content: center;
     text-align: center;
     background-color: var(--cream);
-    padding-top: 10px;
-    padding-bottom: 60px;
+    padding: 2rem 0;
   }
 
   .hero-content h1 {
-    font-size: 5rem;
+    font-size: var(--font-size-huge);
     font-weight: 900;
     color: var(--black);
     margin-bottom: 2rem; 
   }
 
   .hero-content p {
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--black);
-    margin-top: 2.5rem; 
-    margin-bottom: 0
-  }
-
-  .intro h2 {
-    font-size: 4rem;
-    font-weight: 900;
-    color: var(--black);
-    margin-bottom: 2.5rem; 
-  }
-  
-  .intro p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.6;
-    width: 70%;
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .intro p:nth-of-type(2) {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.8;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .centered-text {
-    font-size: 1rem;
-    font-weight: 400;
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .feature-container {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .feature h3 {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--black);
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-}
-
-/* Tablet */
-@media only screen and (max-width: 820px) {
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--cream);
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--black);
-    margin-bottom: 2rem; 
-  }
-
-  .hero-content p {
-    font-size: 2.5rem;
+    font-size: var(--font-size-xxl);
     font-weight: 400;
     color: var(--black);
     margin-top: 2.5rem; 
@@ -402,47 +322,52 @@ html {
 
   .intro {
     padding-top: 0;
-    padding-bottom: 0
+    padding-bottom: 0;
     justify-content: flex-start;
   }
 
   .intro h2 {
-    font-size: 3.5rem;
+    font-size: var(--font-size-huge);
     font-weight: 900;
     color: var(--black);
-    margin-bottom: 2.5rem; 
+    text-align: center;
+    margin-bottom: 4rem; 
   }
   
   .intro p {
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     font-weight: 400;
     line-height: 1.6;
     width: 80%;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
   }
   
   .intro p:nth-of-type(2) {
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     font-weight: 600;
     line-height: 1.8;
     width: 90%;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
   .chevron-container:last-of-type {
     display: none; 
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .edinburgh-skyline {
-    width: 100%;
+    width: 80%;
+    margin-top: 0;
   }
 
   .centered-text {
-    font-size: 1rem;
-    width: 90%;
+    font-size: var(--font-size-lg);
+    width: 80%;
     text-align: center;
+    margin-bottom: 2rem;
   }
 
   .feature-container {
@@ -454,7 +379,7 @@ html {
   .feature {
     width: 100%;
     margin-bottom: 1rem; 
-    padding: 0.5rem 0; 
+    padding: 0; 
   }
 
   .features {
@@ -466,18 +391,13 @@ html {
   }
 
   .feature h3 {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xl);
+    font-weight: 900;
     margin-bottom: 0.2rem; 
   }
 
-  .feature p {
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 0;
-  }
-
   .footer {
-    padding: 6rem 0 1rem; 
+    padding: 4rem 0 1rem; 
   }
 
   .footer-logo {
@@ -485,9 +405,8 @@ html {
     margin-bottom: 2.5rem;
   }
 
-
 /* Mobile */
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 640px) {
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
@@ -509,18 +428,31 @@ html {
   .nav-link {
     font-size: 1rem;
   }
+
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--cream);
+    padding: 1rem 0;
+  }
   
   .hero-content h1 {
-    font-size: 3rem;
-    width: 90%;
+    font-size: var(--font-size-xxl);
+    width: 100%;
   }
   
   .hero-content p {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .dna-binary-animation {
-    height: 120px; 
+    width: 90%;
+    height: clamp(6rem, 6rem + 2.5vw, 14rem);
   }
 
   .dna-binary-char {
@@ -529,24 +461,33 @@ html {
     margin: 0 1px; 
   }
 
+  section {
+    position: relative;
+    padding: 1rem 0;
+  }
+  
   .intro {
-    padding-top: 2rem;
-    padding-bottom: 0
-    justify-content: flex-start;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    box-sizing: border-box; 
   }
 
   .intro h2 {
-    font-size: 2.2rem;
+    font-size: var(--font-size-mobxxl);
     text-align: center;
   }
   
   .intro p {
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     text-align: center;
   }
 
   .intro p:nth-of-type(2) {
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     width: 80%;
   }
 
@@ -555,11 +496,11 @@ html {
   }
 
   .edinburgh-skyline {
-    width: 90%;
+    width: 80%;
   }
 
   .centered-text {
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
     text-align: center;
   }
 
@@ -571,8 +512,8 @@ html {
 
   .feature {
     width: 100%;
-    margin-bottom: 1rem; 
-    padding: 0.5rem 0; 
+    margin-bottom: 0; 
+    padding: 0; 
   }
 
   .features {
@@ -584,18 +525,13 @@ html {
   }
 
   .feature h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem; 
-  }
-
-  .feature p {
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 0;
+    font-size: var(--font-size-lg);
+    line-height: 0.8;
+    margin-bottom: 0; 
   }
 
   .html {
-    scroll-padding-top: 80px; 
+    scroll-padding-top: 60px; 
   }
 
   .footer {
@@ -605,6 +541,37 @@ html {
   .footer-logo {
     max-width: 250px; 
     margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .hero-content h1 {
+    font-size: var(--font-size-xxl);
+    width: 80%;
+  }
+  
+  .hero-content p {
+    font-size: var(--font-size-xl);
+  }
+
+  .intro h2 {
+    font-size: var(--font-size-xl);
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: var(--font-size-base);
+    text-align: center;
+  }
+
+  .intro p:nth-of-type(2) {
+    font-size: var(--font-size-base);
+    width: 80%;
+  }
+
+  .centered-text {
+    font-size: var(--font-size-base);
+    text-align: center;
   }
 }
 

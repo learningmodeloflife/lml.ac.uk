@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Blend in from left
             const progress = (rect.left - containerRect.left) / blendDistance;
             char.style.opacity = progress;
-        } else if (rect.left > containerRect.left + blendDistance) {
-            // Fully visible DNA character
-            char.style.opacity = 1;
         } else if (rect.right >= containerRect.right - blendDistance) {
             // Blend out to right
             const progress = (containerRect.right - rect.right) / blendDistance;
             char.style.opacity = progress;
+        } else {
+            // Fully visible character
+            char.style.opacity = 1;
         }
 
         if (rect.left >= transitionStart) {

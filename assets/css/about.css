@@ -3,6 +3,12 @@
   --off-white: #FAF9F6;
   --black: #000000;
   --dark-gray: #333333;
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
+  --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
+  --font-size-mobxxl: clamp(1.6rem, 1.6rem + 1.25vw, 4rem);
+  --font-size-xxl: clamp(2rem, 2rem + 1.25vw, 4.75rem);
+  --font-size-huge: clamp(2.5rem, 2.5rem + 2.5vw, 6.5rem);
 }
 
 body, html {
@@ -73,7 +79,7 @@ body, html {
 
 /* About styles */
 .about-content {
-  max-width: 1200px;
+  max-width: 70vw;
   margin: 0 auto;
   padding: 2rem;
   padding-top: calc(4rem + 80px); 
@@ -117,10 +123,18 @@ body, html {
 }
 
 .about-text p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 6rem;
+}
+
+.about-text p:nth-of-type(2) {
+  text-align: left;
+}
+
+.about-text p:nth-of-type(3) {
+  text-align: left;
 }
 
 .about-text a {
@@ -152,11 +166,11 @@ body, html {
 /* Responsive adjustments */
 
 /* Tablet */
-@media only screen and (max-width: 820 px) {
+@media only screen and (max-width: 1024px) {
   .about-content {
-    max-width: 500px;
+    max-width: 70vw;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
     padding-top: calc(4rem + 80px); 
   }
 
@@ -168,8 +182,8 @@ body, html {
   .lml-logo {
     width: 100%;
     height: auto;
-    padding: 1rem;
-    max-width: 100px;
+    padding: 0;
+    max-width: 250px;
     opacity: 0.1; 
     transition: opacity 0.3s ease; 
   }
@@ -186,10 +200,11 @@ body, html {
     line-height: 1.6;
     margin-bottom: 2rem;
   }
+}
 
 
 /* Mobile */
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 640px) {
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
@@ -213,6 +228,7 @@ body, html {
   }
 
   .about-title {
+    font-size: var(--font-size-mobxxl);
     margin-top: 3rem; 
     margin-bottom: 3rem; 
   }
@@ -240,9 +256,17 @@ body, html {
   }
 
   .about-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     width: 80%;
+  }
+
+  .about-text p:nth-of-type(2) {
+    text-align: center;
+  }
+  
+  .about-text p:nth-of-type(3) {
+    text-align: center;
   }
 
   .html {
@@ -257,4 +281,10 @@ body, html {
     max-width: 250px; 
   }
 } 
+
+@media only screen and (max-width: 440px) {
+  .footer-logo {
+    max-width: 200px; 
+  }
+}
   
