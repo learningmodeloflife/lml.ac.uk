@@ -167,6 +167,13 @@ html {
 
 /* Responsive adjustments */
 
+/* Tablet */
+@media only screen and (max-width: 820px) {
+  .hiring-info p {
+    font-size: 1rem;
+  }
+
+
 /* Mobile */
 @media only screen and (max-width: 479px) {
   .navbar {
