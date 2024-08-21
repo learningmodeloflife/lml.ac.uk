@@ -111,23 +111,49 @@ body, html {
 }
 
 /* Landing page animation styles */
-.dna-binary-animation {
+.decoding-animation p {
+  font-size: 2.5rem;
+  font-weight: 400;
   position: relative;
   width: 95%;
   height: 100px; 
   overflow: hidden;
 }
 
-.dna-binary-char {
+#decoding-animation {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.decoding-char {
+  font-family: 'Consolas', monospace;
   position: absolute;
   font-size: 16px;
   line-height: 20px;
-  transition: color 0.3s ease;
 }
 
-@keyframes moveAcross {
-  from { transform: translateX(0px); }
-  to { transform: translateX(100vw); }
+@keyframes blendOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes blendIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes rotateAnimation {
+  0% { rotateY: 0; }
+  50% { rotateY: 180; }
+  100% { rotateY: 0; }
+}
+
+.decoding-char.animate- {
+  animation-duration: 2s;
+  animation-name: rotateAnimation;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 /* Chevron styles */
@@ -415,7 +441,7 @@ html {
 
   .intro {
     padding-top: 2rem;
-    padding-bottom: 0
+    padding-bottom: 0;
     justify-content: flex-start;
   }
 
@@ -490,7 +516,6 @@ html {
     max-width: 250px; 
   }
 }
-
 
 
 
