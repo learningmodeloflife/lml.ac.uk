@@ -85,7 +85,7 @@ body, html {
   justify-content: center;
   text-align: center;
   background-color: var(--cream);
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 60px;
 }
 
@@ -244,7 +244,7 @@ section {
   font-size: 1.5rem;
   font-weight: 900;
   color: var(--black);
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -261,11 +261,11 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0;
+  margin-top: 2rem;
 }
 
 .footer-logo {
-  max-width: 350px;
+  max-width: 300px;
   height: auto;
 }
 
@@ -287,6 +287,88 @@ html {
 }
 
 /* Resizing */
+
+/* Standard/small laptop */
+@media only screen and (max-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--cream);
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: 2rem; 
+  }
+
+  .hero-content p {
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--black);
+    margin-top: 2.5rem; 
+    margin-bottom: 0
+  }
+
+  .intro h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: 2.5rem; 
+  }
+  
+  .intro p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .intro p:nth-of-type(2) {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.8;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .centered-text {
+    font-size: 1rem;
+    font-weight: 400;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .feature-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
 
 /* Mobile */
 @media only screen and (max-width: 479px) {
@@ -338,7 +420,7 @@ html {
   }
 
   .intro h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: center;
   }
   
