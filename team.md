@@ -48,7 +48,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
                 <img src="/img/kennethbaillie.jpg" alt="Eva Wilson">
             </div>
             <h3>Marie Zechner</h3>
-            <p>Head of Communications</p>
+            <p>Head of Design</p>
         </div>
     </div>
     <div class="hiring-info">
