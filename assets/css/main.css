@@ -8,7 +8,7 @@
   --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
   --font-size-mobxxl: clamp(1.6rem, 1.6rem + 1.25vw, 4rem);
   --font-size-xxl: clamp(2rem, 2rem + 1.25vw, 4.75rem);
-  --font-size-huge: clamp(2.5rem, 2.5rem + 2.5vw, 6.5rem);
+  --font-size-huge: clamp(4rem, 3.5rem + 2.5vw, 8rem);
 }
 
 body, html {
@@ -123,20 +123,20 @@ body, html {
   position: relative;
   width: 100%;
   /* overflow: hidden; */
-  width: 100%;
   height: clamp(6rem, 6rem + 2.5vw, 14rem); 
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .decoding-char {
-  font-family: 'Consolas', monospace;
   position: absolute;
-  /* font-size: 16px; */
-  line-height: 20px;
-  color: rgb(60%, 60%, 60%);
-  font-size: 1rem;
-  line-height: 1.2rem;
-  transition: color 0.3s ease;
+  line-height: 1;
+  color: var(--dark-gray);
+  font-size: clamp(2rem, 4vw, 6rem);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  vertical-align: top;
+  transform-origin: center;
 }
 
 @keyframes blendOut {
@@ -153,7 +153,7 @@ body, html {
 .chevron-container {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 6rem;
   margin-bottom: 4rem;
   background-color: transparent; 
 }
@@ -334,6 +334,26 @@ html {
     color: var(--black);
     margin-top: 2.5rem; 
     margin-bottom: 0
+  }
+
+  .decoding-animation {
+    position: relative;
+    width: 100%;
+    /* overflow: hidden; */
+    height: clamp(6rem, 6rem + 2.5vw, 14rem); 
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  
+  .decoding-char {
+    position: absolute;
+    line-height: 1;
+    color: var(--dark-gray);
+    font-size: clamp(2rem, 4vw, 6rem);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    vertical-align: top;
+    transform-origin: center;
   }
 
   .intro {
