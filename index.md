@@ -18,15 +18,10 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
 
 <header class="hero">
     <div class="hero-content">
+        <div class="hero-content">
         <h1>Learning Model of Life</h1>
-        <div id="dna-binary-animation" class="dna-binary-animation"></div>
-        <!--
-        <p id="typewriter" class="typewriter">
-        <span class="typewriter-text" aria-hidden="true">Decoding the rules of biology.</span>
-        <span class="typewriter-cursor"></span>
-        </p>
-        -->
-        <p>Decoding the rules of biology.</p>
+        <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
+    </div>
     </div>
     <div class="chevron-container">
         <a href="#learn-more" class="scroll-chevron" aria-label="Scroll to learn more">

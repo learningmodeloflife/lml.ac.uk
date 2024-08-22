@@ -119,23 +119,34 @@ body, html {
 }
 
 /* Landing page animation styles */
-.dna-binary-animation {
+.decoding-animation {
   position: relative;
+  width: 100%;
+  /* overflow: hidden; */
   width: 100%;
   height: clamp(6rem, 6rem + 2.5vw, 14rem); 
   overflow: hidden;
 }
 
-.dna-binary-char {
+.decoding-char {
+  font-family: 'Consolas', monospace;
   position: absolute;
+  /* font-size: 16px; */
+  line-height: 20px;
+  color: rgb(60%, 60%, 60%);
   font-size: 1rem;
   line-height: 1.2rem;
   transition: color 0.3s ease;
 }
 
-@keyframes moveAcross {
-  from { transform: translateX(0px); }
-  to { transform: translateX(100vw); }
+@keyframes blendOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes blendIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Chevron styles */
