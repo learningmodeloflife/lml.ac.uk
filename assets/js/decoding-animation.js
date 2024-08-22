@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const srctext = dnaMatrix.textContent;
   dnaMatrix.textContent = null;
   const rect = dnaMatrix.getBoundingClientRect();
-  const charWidth = 16;
-  const rows = 3;
+  const charHeight = 30;  
+  const charWidth = charHeight * 0.8;
+  const rows = 1;
   const cols = Math.floor(rect.width / charWidth);
   const nucleotides = ['A', 'C', 'T', 'G'];
   const binaryDigits = ['0', '1'];
@@ -15,13 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const animationRadius = 100; // Radius in pixels
   const animationChance = 1; // Chance of animation on mouseover
 
-  function startDecodingSequence(char) {
+  dnaMatrix.style.height = `${charHeight * rows}px`;
+  
+  function startDecodingSequence(char, delayInitial) {
     if (!char.classList.contains('decoding')) {
       char.classList.add('decoding');
       const randomNucleotide = nucleotides[Math.floor(Math.random() * nucleotides.length)];
       char.textContent = randomNucleotide;
       char.style.color = 'rgb(60%, 60%, 60%)';
-      const delay = delayOffset + Math.random() * delayWindow;
+      const delay = delayInitial + Math.random() * delayWindow;
       char.style.animation = `blendOut ${blendDuration}s linear ${delay}s 1 forwards`;
 
       char.addEventListener('animationend', function animationSequence() {
@@ -54,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const char = document.createElement('span');
         char.classList.add('decoding-char');
         char.textContent = randomNucleotide;
-        
+        char.style.fontSize = `${charHeight*0.9}px`;
         char.style.left = `${j * charWidth}px`;
-        char.style.top = `${i * 20}px`;
+        char.style.top = `${i * charHeight}px`;
         char.style.width = `${charWidth}px`;
-        char.style.height = '20px';
+        char.style.height = `${charHeight}px`;
         char.style.display = 'inline-block';
                
         // Set final_char based on the centered position
@@ -68,8 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
           char.dataset.final_char = ' ';
         }
 
-        char.addEventListener('mouseenter', () => startDecodingSequence(char));
-        startDecodingSequence(char);  // Start initial animation
+        startDecodingSequence(char, delayOffset);  // Start initial animation
         
         dnaMatrix.appendChild(char);
         chars.push(char);
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (distance <= animationRadius) {
         if (animationChance * (distance/animationRadius) > Math.random()) {
-          startDecodingSequence(char);
+          startDecodingSequence(char, 0);
         }
       }
     });
