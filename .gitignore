@@ -3,7 +3,6 @@
 .DS_Store
 
 # Jekyll specific
-_site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
