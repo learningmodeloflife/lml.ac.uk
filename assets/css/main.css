@@ -129,14 +129,23 @@ body, html {
 }
 
 .decoding-char {
+  font-family: 'Consolas', monospace;
   position: absolute;
   line-height: 1;
-  color: var(--dark-gray);
+  /* color: var(--dark-gray); */
   font-size: clamp(2rem, 4vw, 6rem);
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
   vertical-align: top;
   transform-origin: center;
+}
+
+.decoding-char.encoded-text {
+  color: rgb(60%, 60%, 60%);
+}
+
+.decoding-char.decoded-text {
+  color: var(--dark-gray);
 }
 
 @keyframes blendOut {
