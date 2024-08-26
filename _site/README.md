@@ -3,7 +3,7 @@
 **Johnny**
 
 * [X] Update 404.html
-* [ ] Check mobile and tablet styling for js change
+* [X] Check mobile and tablet styling for js change
 * [ ] Add text to about
 * [ ] ?copyright LML/Learning Model of Life and include in footer
 * [ ] Explore Gulp for build
