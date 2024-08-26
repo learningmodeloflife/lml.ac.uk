@@ -174,7 +174,7 @@ html {
 /* Responsive adjustments */
 
 /* Mobile */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 750px) {
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
@@ -207,6 +207,7 @@ html {
   }
   
   .team-title {
+    text-align: center;
     font-size: var(--font-size-mobxxl);
     margin-top: 3rem; 
     margin-bottom: 3rem; 

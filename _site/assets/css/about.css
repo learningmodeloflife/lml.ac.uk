@@ -107,7 +107,6 @@ body, html {
 .lml-logo {
   width: 100%;
   height: auto;
-  padding: 2rem;
   max-width: 275px;
   opacity: 0.1; 
   transition: opacity 0.3s ease; 
@@ -182,7 +181,6 @@ body, html {
   .lml-logo {
     width: 100%;
     height: auto;
-    padding: 0;
     max-width: 250px;
     opacity: 0.1; 
     transition: opacity 0.3s ease; 
@@ -204,7 +202,7 @@ body, html {
 
 
 /* Mobile */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 740px) {
   .navbar {
     flex-wrap: wrap;
     justify-content: center;
@@ -250,6 +248,8 @@ body, html {
   }
 
   .lml-logo {
+    width: 100%;
+    height: auto;
     max-width: 200px;
     margin: 0 auto;
     display: block;

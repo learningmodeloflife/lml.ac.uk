@@ -14,13 +14,61 @@ document.addEventListener('DOMContentLoaded', function() {
   const delayWindow = 1.3;
   const blendDuration = 0.5;
   
-  const resetRadius = 100; // Radius in pixels
-  const resetChance = 1.0; // Chance of animation on mouseover
+  const resetRadius = 100;
+  const resetChance = 1.0;
 
-  container.style.height = `${charHeight}px`;
-  
-  function sampleLetter(letters) {
-    return letters[Math.floor(Math.random() * letters.length)];
+  function isMobile() {
+    return window.innerWidth <= 590;
+  }
+
+  function createLayout() {
+    container.innerHTML = '';
+    chars.length = 0;
+    
+    if (isMobile()) {
+      createMobileLayout();
+    } else {
+      createDesktopLayout();
+    }
+  }
+
+  function createMobileLayout() {
+    const words = content.split(' ');
+    words.forEach(word => {
+      const wordContainer = document.createElement('div');
+      wordContainer.className = 'decoding-word';
+      word.split('').forEach((letter, index) => {
+        const char = createChar(letter, chars.length);
+        wordContainer.appendChild(char);
+        chars.push(char);
+      });
+      container.appendChild(wordContainer);
+    });
+  }
+
+  function createDesktopLayout() {
+    const containerWidth = container.offsetWidth;
+    const textWidth = content.length * charWidth;
+    const startX = Math.max(0, (containerWidth - textWidth) / 2);
+
+    for (let i = 0; i < content.length; i++) {
+      const char = createChar(content[i], i);
+      char.style.left = `${startX + i * charWidth}px`;
+      container.appendChild(char);
+      chars.push(char);
+    }
+  }
+
+  function createChar(letter, index) {
+    const char = document.createElement('span');
+    char.classList.add('decoding-char', 'decoded-text');
+    char.style.width = `${charWidth}px`;
+    char.style.height = `${charHeight}px`;
+    char.style.fontSize = `${charHeight * 0.9}px`;
+    char.dataset.final_char = letter;
+    char.dataset.index = index;
+    runDecoding(char, delayOffset);
+    return char;
   }
 
   async function runDecoding(char, delayInitial) {
@@ -29,21 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
       char.classList.replace('decoded-text', 'encoded-text');
       char.textContent = sampleLetter(nucleotides);
       
-      const blendOut = {
-        opacity: [1, 0]
-      };
-      const blendIn = {
-        opacity: [0, 1]
-      };
+      const blendOut = { opacity: [1, 0] };
+      const blendIn = { opacity: [0, 1] };
       
       const durationNucleotide = delayInitial + Math.random() * delayWindow;
       const durationBinary = delayOffset + Math.random() * delayWindow;
-      //Nucleotide to Binary transition
+
       await char.animate(blendOut, { duration: durationNucleotide*1000, delay: 0, iterations: 1, fill: 'forwards' }).finished;
       char.textContent = sampleLetter(binaryDigits);
       await char.animate(blendIn, { duration: durationBinary*1000, delay: 0, iterations: 1, fill: 'forwards' }).finished;
       
-      //Binary to Final Character transition
       await char.animate(blendOut, { duration: blendDuration*1000, delay: durationBinary*1000, iterations: 1, fill: 'forwards' }).finished;
       char.textContent = char.dataset.final_char;
       char.classList.replace('encoded-text', 'decoded-text');
@@ -52,48 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function createText() {
-    const containerWidth = container.offsetWidth;
-    const textWidth = content.length * charWidth;
-    const startX = Math.max(0, (containerWidth - textWidth) / 2);
-
-    for (let i = 0; i < content.length; i++) {
-      const char = document.createElement('span');
-      char.classList.add('decoding-char', 'decoded-text');
-      
-      char.style.left = `${startX + i * charWidth}px`;
-      char.style.width = `${charWidth}px`;
-      char.style.height = `${charHeight}px`;
-      char.style.fontSize = `${charHeight * 0.9}px`;
-      
-      char.dataset.final_char = content[i];
-      char.dataset.index = i;
-      
-      runDecoding(char, delayOffset);
-      
-      container.appendChild(char);
-      chars.push(char);
-    }
-  }
-
-  function updateCharPositions() {
-    const containerWidth = container.offsetWidth;
-    const textWidth = content.length * charWidth;
-    const startX = Math.max(0, (containerWidth - textWidth) / 2);
-
-    // Batch DOM reads
-    const updates = chars.map((char, index) => ({
-      char,
-      left: startX + index * charWidth
-    }));
-
-    // Use requestAnimationFrame for smoother updates
-    requestAnimationFrame(() => {
-      // Batch DOM writes
-      updates.forEach(update => {
-        update.char.style.left = `${update.left}px`;
-      });
-    });
+  function sampleLetter(letters) {
+    return letters[Math.floor(Math.random() * letters.length)];
   }
 
   function resetNearbyChars(event) {
@@ -111,27 +114,19 @@ document.addEventListener('DOMContentLoaded', function() {
       );
 
       if (distance <= resetRadius) {
-        if (resetChance * (distance/resetRadius) > Math.random()) {
+        if (resetChance * (1 - distance/resetRadius) > Math.random()) {
           runDecoding(char, 0);
         }
       }
     });
   }
 
-  createText();
+  createLayout();
   container.addEventListener('mousemove', resetNearbyChars);
 
-  let isResizing = false;
-
-  function handleResize() {
-    if (!isResizing) {
-      isResizing = true;
-      requestAnimationFrame(() => {
-        updateCharPositions();
-        isResizing = false;
-      });
-    }
-  }
-
-  window.addEventListener('resize', handleResize);
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(createLayout, 250);
+  });
 });
