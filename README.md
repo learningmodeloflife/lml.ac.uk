@@ -2,7 +2,7 @@
 
 **Johnny**
 
-* [ ] Update 404.html
+* [X] Update 404.html
 * [ ] Check mobile and tablet styling for js change
 * [ ] Add text to about
 * [ ] ?copyright LML/Learning Model of Life and include in footer
