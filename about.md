@@ -15,11 +15,11 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
                 Founded in 2024, the Learning Model of Life is a cross-college initiative of The University of Edinburgh.  We are a constituent of the University's Generative AI Lab (GAIL) and are supported by <a href="https://www.epcc.ed.ac.uk"> EPCC</a>, the UK's leading centre of Supercomputing and Data Science. We are actively seeking partners to join our mission, commercial or philanthropic. 
             </p>
             <p>
-                For inquiries about our research and and opprtunities to collaborate with us please contact us at <a href="mailto:info@learningmodel.life">info@learningmodel.life </a>.
+                For inquiries about our research and and opprtunities to collaborate with us please contact us at <a href="mailto:info@lml.ac.uk">info@lml.ac.uk</a>.
             </p>
 
-    <p>
-                For inquiries about open positions at LML please contact us at <a href="mailto:recruitment@learningmodel.life">recruitment@learningmodel.life</a>.
+            <p>
+                For inquiries about open positions at LML please contact us at <a href="mailto:recruitment@lml.ac.uk">recruitment@lml.ac.uk</a>.
             </p>
         </div>
     </div>
