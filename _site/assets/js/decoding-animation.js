@@ -1,19 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('decoding-animation');
-  const content = container.textContent;
+  const content = container.textContent.trim();
   container.textContent = null;
-  
-  const charHeight = 30;  
-  const charWidth = charHeight * 0.8;
-  
+
+  function calculateCharSize() {
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const totalWidth = vw * (2 / 3); // Desired total width: 2/3 of viewport width
+    const charWidth = totalWidth / content.length;
+    const charWidthClamped = Math.min(Math.max(10, charWidth), 100); // Set min and max char widths
+    const charHeight = charWidthClamped * 1.2; // Adjust height based on width
+    return {
+      width: charWidthClamped,
+      height: charHeight
+    };
+  }
+
+  let { height: charHeight, width: charWidth } = calculateCharSize();
+
   const nucleotides = ['A', 'C', 'T', 'G'];
   const binaryDigits = ['0', '1'];
-  
+
   const chars = [];
   const delayOffset = 0.8;
   const delayWindow = 1.3;
   const blendDuration = 0.5;
-  
+
   const resetRadius = 100;
   const resetChance = 1.0;
 
@@ -24,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function createLayout() {
     container.innerHTML = '';
     chars.length = 0;
-    
+
     if (isMobile()) {
       createMobileLayout();
     } else {
@@ -53,7 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < content.length; i++) {
       const char = createChar(content[i], i);
+      char.style.position = 'absolute';
       char.style.left = `${startX + i * charWidth}px`;
+      char.style.top = '0';
       container.appendChild(char);
       chars.push(char);
     }
@@ -76,21 +89,21 @@ document.addEventListener('DOMContentLoaded', function() {
       char.classList.add('decoding');
       char.classList.replace('decoded-text', 'encoded-text');
       char.textContent = sampleLetter(nucleotides);
-      
+
       const blendOut = { opacity: [1, 0] };
       const blendIn = { opacity: [0, 1] };
-      
+
       const durationNucleotide = delayInitial + Math.random() * delayWindow;
       const durationBinary = delayOffset + Math.random() * delayWindow;
 
-      await char.animate(blendOut, { duration: durationNucleotide*1000, delay: 0, iterations: 1, fill: 'forwards' }).finished;
+      await char.animate(blendOut, { duration: durationNucleotide * 1000, iterations: 1, fill: 'forwards' }).finished;
       char.textContent = sampleLetter(binaryDigits);
-      await char.animate(blendIn, { duration: durationBinary*1000, delay: 0, iterations: 1, fill: 'forwards' }).finished;
-      
-      await char.animate(blendOut, { duration: blendDuration*1000, delay: durationBinary*1000, iterations: 1, fill: 'forwards' }).finished;
+      await char.animate(blendIn, { duration: durationBinary * 1000, iterations: 1, fill: 'forwards' }).finished;
+
+      await char.animate(blendOut, { duration: blendDuration * 1000, delay: durationBinary * 1000, iterations: 1, fill: 'forwards' }).finished;
       char.textContent = char.dataset.final_char;
       char.classList.replace('encoded-text', 'decoded-text');
-      await char.animate(blendIn, { duration: blendDuration*1000, delay: 0, iterations: 1, fill: 'forwards' }).finished;
+      await char.animate(blendIn, { duration: blendDuration * 1000, iterations: 1, fill: 'forwards' }).finished;
       char.classList.remove('decoding');
     }
   }
@@ -114,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
       );
 
       if (distance <= resetRadius) {
-        if (resetChance * (1 - distance/resetRadius) > Math.random()) {
+        if (resetChance * (1 - distance / resetRadius) > Math.random()) {
           runDecoding(char, 0);
         }
       }
@@ -127,6 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(createLayout, 250);
+    resizeTimeout = setTimeout(() => {
+      ({ height: charHeight, width: charWidth } = calculateCharSize());
+      createLayout();
+    }, 250);
   });
 });

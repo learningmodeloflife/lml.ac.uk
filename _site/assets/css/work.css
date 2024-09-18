@@ -14,7 +14,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair', serif;
   color: var(--dark-gray);
   background-color: var(--off-white);
   line-height: 1.6;
@@ -34,21 +34,22 @@ body, html {
   align-items: center;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
+  border-bottom: 0.75px solid var(--black);
 }
 
 .navbar-brand {
   font-family: 'Lato', sans-serif;
-  font-weight: 900;
-  font-size: 1.75rem;
+  font-weight: 500;
+  font-size: 1.25rem;
   color: var(--black);
   text-decoration: none;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.01em;
 }
 
 .navbar-logo {
-  height: 1em; 
+  height: 1.75em; 
   width: auto; 
-  margin-left: 0.25em;
+  margin-right: 0.5em;
   vertical-align: middle;
   position: relative;
   top: -0.1em; 
