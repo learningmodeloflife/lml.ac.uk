@@ -82,13 +82,13 @@ body, html {
 .work-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  padding-top: calc(4rem + 80px); 
+  padding: 1.5rem;
+  padding-top: calc(3rem + 80px); 
 }
 
 .work-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-top: 2rem; 
   margin-bottom: 5rem; 
   color: var(--black);
@@ -98,7 +98,7 @@ body, html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
 }
 
 .article-link {
@@ -157,6 +157,7 @@ body, html {
 
 .article-info p {
   margin: 0.3rem 0;
+  font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
@@ -179,7 +180,7 @@ body, html {
 /* Footer styles */
 .footer {
   background-color: var(--off-white);
-  padding: 6rem 0;
+  padding: 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,6 +190,13 @@ body, html {
 .footer-logo {
   max-width: 250px;
   height: auto;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 0.75px solid var(--border-color);
+  margin: 0;
+  padding: 0;
 }
 
 /* Smooth scrolling for anchor links */
