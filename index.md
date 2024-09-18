@@ -9,6 +9,11 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
     <img src="/img/logo_black.png" alt="LML Logo" class="navbar-logo">
     Learning Model of Life
   </a>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <div class="navbar-links">
     <a href="/team" class="nav-link">Team</a>
     <a href="/work" class="nav-link">Our Work</a>

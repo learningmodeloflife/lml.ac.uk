@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('decoding-animation');
+  if (!container || window.innerWidth <= 768) return; // Exit if on mobile or container not found
   const content = container.textContent.trim();
   container.textContent = null;
 
