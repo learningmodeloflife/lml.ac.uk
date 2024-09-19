@@ -7,6 +7,10 @@
     <main role="main">
         {{ content }}
     </main>
-    <script src="/assets/js/dna-binary-animation.js"></script>
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>
