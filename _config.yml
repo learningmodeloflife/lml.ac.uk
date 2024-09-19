@@ -1,4 +1,4 @@
-title: Learning Model of LIfe
+title: Learning Model of Life
 description: >- # this means to ignore newlines. Copies to footer, meta description, and feed.xml
   The Learning Model of Life. Decoding the rules of biology.
 seo:
@@ -48,19 +48,16 @@ exclude:
   - private/**
 
 defaults:
-  -
-    scope:
-      path:            "assets/*"
+  - scope:
+      path: "assets/*"
     values:
-      sitemap:         false
-  -
-    scope:
-      path:            "img/*"
+      sitemap: false
+  - scope:
+      path: "img/*"
     values:
-      sitemap:         false
-  -
-    scope:
-      path:            "internal/*"
+      sitemap: false
+  - scope:
+      path: "internal/*"
     values:
-      sitemap:         false
+      sitemap: false
 
