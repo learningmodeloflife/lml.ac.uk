@@ -1,82 +1,3 @@
-:root {
-  --cream: #F5E6D3;
-  --off-white: #FAF9F6;
-  --black: #000000;
-  --dark-gray: #333333;
-  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
-  --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
-  --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
-  --font-size-mobxxl: clamp(1.6rem, 1.6rem + 1.25vw, 4rem);
-  --font-size-xxl: clamp(2rem, 2rem + 1.25vw, 4.75rem);
-  --font-size-huge: clamp(2.5rem, 2.5rem + 2.5vw, 6.5rem);
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Playfair', serif;
-  color: var(--dark-gray);
-  background-color: var(--off-white);
-  line-height: 1.6;
-}
-
-/* Navbar styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 2rem 5%;
-  background-color: var(--cream);
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
-  border-bottom: 0.75px solid var(--black);
-}
-
-.navbar-brand {
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: var(--black);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-
-.navbar-logo {
-  height: 1.75em; 
-  width: auto; 
-  margin-right: 0.5em;
-  vertical-align: middle;
-  position: relative;
-  top: -0.1em; 
-}
-
-.navbar-links {
-  display: flex;
-  gap: 2rem;
-  margin-right: 2.5%;
-}
-
-.nav-link {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 1.25rem;
-  color: var(--black);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--dark-gray);
-}
-
-.navbar-scrolled {
-  background-color: var(--off-white)
-}
 
 /* Team styles */
 .team-content {
@@ -89,11 +10,11 @@ body, html {
 .team-title {
   text-align: center;
   font-size: 3.5rem;
-  margin-top: 2rem; 
-  margin-bottom: 5rem; 
+  margin: 2rem 0 5rem; 
   color: var(--black);
 }
 
+/* Team grid layout */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,6 +22,7 @@ body, html {
   margin-bottom: 5rem; 
 }
 
+/* Team member styles */
 .team-member {
   text-align: center;
 }
@@ -125,21 +47,20 @@ body, html {
 }
 
 .team-member p {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-family-sans-serif);
   font-size: 1rem;
-  color: #666;
+  color: var(--dark-gray);
 }
 
 /* Hiring info styles */
 .hiring-info {
   text-align: center;
-  margin-bottom: 4rem;
-  margin-top: 3rem; 
+  margin: 3rem 0 4rem; 
   padding: 2rem 0;
 }
 
 .hiring-info p {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-family-sans-serif);
   font-size: 1.2rem;
   color: var(--dark-gray);
 }
@@ -153,101 +74,4 @@ body, html {
 
 .hiring-info a:hover {
   border-bottom-color: transparent;
-}
-
-/* Footer styles */
-.footer {
-  background-color: var(--off-white);
-  padding: 4rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0;
-}
-
-.footer-logo {
-  max-width: 250px;
-  height: auto;
-}
-
-.footer-divider {
-  border: none;
-  border-top: 0.75px solid var(--border-color);
-  margin: 0;
-  padding: 0;
-}
-
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Responsive adjustments */
-
-/* Mobile */
-@media only screen and (max-width: 750px) {
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem 2%;
-  }
-
-  .navbar-brand {
-    flex-basis: 100%;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .navbar-links {
-    justify-content: center;
-    margin-right: 0;
-    gap: 1rem;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 3rem; 
-  }
-  
-  .team-content {
-    padding-top: calc(3rem + 60px); 
-  }
-  
-  .team-title {
-    text-align: center;
-    font-size: var(--font-size-mobxxl);
-    margin-top: 3rem; 
-    margin-bottom: 3rem; 
-  }
-
-  .hiring-info {
-    margin-top: 1rem; 
-    padding: 1rem 0;
-  }
-
-  .hiring-info p {
-    font-size: 1rem;
-  }
-
-  .html {
-    scroll-padding-top: 80px; 
-  }
-
-  .footer {
-    padding: 4rem 0 1rem; 
-  }
-
-  .footer-logo {
-    max-width: 250px; 
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .footer-logo {
-    max-width: 200px; 
-  }
 }

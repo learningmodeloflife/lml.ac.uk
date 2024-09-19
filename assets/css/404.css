@@ -1,182 +1,51 @@
-:root {
-    --cream: #F5E6D3;
-    --off-white: #FAF9F6;
-    --black: #000000;
-    --dark-gray: #333333;
-    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
-    --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
-    --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
-    --font-size-mobxxl: clamp(1.6rem, 1.6rem + 1.25vw, 4rem);
-    --font-size-xxl: clamp(2rem, 2rem + 1.25vw, 4.75rem);
-    --font-size-huge: clamp(2.5rem, 2.5rem + 2.5vw, 6.5rem);
-  }
-  
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Playfair', serif;
-    color: var(--dark-gray);
-    background-color: var(--off-white);
-    line-height: 1.6;
-  }
-  
-  /* Navbar styles */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 5%;
-    background-color: var(--cream);
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
-    border-bottom: 0.75px solid var(--black);
-  }
-  
-  .navbar-brand {
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    font-size: 1.25rem;
-    color: var(--black);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-  
-  .navbar-logo {
-    height: 1.75em; 
-    width: auto; 
-    margin-right: 0.5em;
-    vertical-align: middle;
-    position: relative;
-    top: -0.1em; 
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 2rem;
-    margin-right: 2.5%;
-  }
-  
-  .nav-link {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
-    color: var(--black);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: var(--dark-gray);
-  }
-  
-  .navbar-scrolled {
-    background-color: var(--off-white)
-  }
 
-  .error-page {
+.error-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 100px); /* Adjust 100px based on your navbar height */
-    padding-top: 100px; /* Adjust this value to match your navbar height */
+    min-height: calc(100vh - 100px); 
+    padding-top: 100px; 
     text-align: center;
-  }
-  
-  .error-page h1 {
+}
+
+.error-page h1 {
     font-size: var(--font-size-huge);
     color: var(--dark-gray);
     margin-bottom: 0;
-  }
-  
-  .error-page h2 {
+}
+
+.error-page h2 {
     font-size: var(--font-size-xxl);
     color: var(--black);
     margin-top: 0;
-  }
-  
-  .error-page p {
+}
+
+.error-page p {
+    font-family: var(--font-family-sans-serif);
     font-size: var(--font-size-lg);
     color: var(--dark-gray);
     margin-bottom: 2rem;
-  }
+}
 
-  /* Landing page animation styles */
-  .dna-binary-animation {
+/* Landing page animation styles */
+.dna-binary-animation {
     position: relative;
     width: 60%;
     height: 100px; 
     overflow: hidden;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .dna-binary-char {
+.dna-binary-char {
     position: absolute;
     font-size: 16px;
     line-height: 20px;
     transition: color 0.3s ease;
-  }
+}
 
-  @keyframes moveAcross {
+@keyframes moveAcross {
     from { transform: translateX(0px); }
     to { transform: translateX(100vw); }
-  }
-
-  /* Resizing */
-
-  /* Tablet */
-  @media only screen and (max-width: 1024px) {
-    .error-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: calc(90vh - 100px); /* Adjust 100px based on your navbar height */
-      padding-top: 100px; /* Adjust this value to match your navbar height */
-      text-align: center;
-    }
-    
-    .error-page h2 {
-      font-size: var(--font-size-xl);
-      color: var(--black);
-      margin-top: 0;
-    }
-    
-    .error-page p {
-      font-size: var(--font-size-base);
-      color: var(--dark-gray);
-      margin-bottom: 2rem;
-      width: 65%;
-    }
-
-  /* Mobile */
-  @media only screen and (max-width: 590px) {
-    .error-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: calc(90vh - 100px); /* Adjust 100px based on your navbar height */
-      padding-top: 100px; /* Adjust this value to match your navbar height */
-      text-align: center;
-    }
-    
-    .error-page h2 {
-      font-size: var(--font-size-base);
-      color: var(--black);
-      margin-top: 0;
-      margin-bottom: 2rem;
-    }
-    
-    .error-page p {
-      font-size: var(--font-size-base);
-      color: var(--dark-gray);
-      margin-bottom: 2rem;
-      width: 65%;
-    }
+}

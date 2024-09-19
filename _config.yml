@@ -31,6 +31,10 @@ navigation:
     url: /#
   - text: Team
     url: team/
+  - text: Work
+    url: work/
+  - text: About
+    url: about/
 
 exclude:
   - Gemfile

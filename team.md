@@ -1,5 +1,5 @@
 ---
-layout: team
+layout: default
 title: "Team | Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
@@ -54,7 +54,4 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
         <p>We're hiring. For information about open positions contact us at <a href="mailto:recruitment@lml.ac.uk">recruitment@lml.ac.uk</a>.</p>
     </div>
 </header>
-<hr class="footer-divider">
-<footer class="footer">
-    <img src="/img/uoe_logo.png" alt="Footer Logo" class="footer-logo">
-</footer>
+

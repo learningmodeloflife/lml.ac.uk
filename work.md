@@ -1,5 +1,5 @@
 ---
-layout: work
+layout: default
 title: "Our Work | Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
@@ -89,8 +89,5 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
         </a>
     </div>
 </header>
-<hr class="footer-divider">
-<footer class="footer">
-    <img src="/img/uoe_logo.png" alt="Footer Logo" class="footer-logo">
-</footer>
+
 

@@ -1,36 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - Learning Model of Life</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/{{ page.layout }}.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:,">
-</head>
+{% include head.html %}
 <body>
-    <nav class="navbar">
-        <a href="/" class="navbar-brand">
-          <img src="/img/logo_black.png" alt="LML Logo" class="navbar-logo">
-          Learning Model of Life
-        </a>
-        <button class="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="navbar-links">
-          {% for item in site.data.navigation %}
-            <a href="{{ item.link }}" class="nav-link{% if page.url == item.link %} active{% endif %}">{{ item.name }}</a>
-          {% endfor %}
-        </div>
-      </nav>
-
-    <main>
+    {% include navbar.html %}
+    <main role="main">
         {{ content }}
     </main>
-    <script src="{{ '/assets/js/decoding-animation.js' | relative_url }}"></script>
-    <script src="/assets/js/hamburger.js"></script>
+    {% include footer.html %}
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>

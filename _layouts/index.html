@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">
+          <img src="/img/logo_black.png" alt="LML Logo" class="navbar-logo">
+          Learning Model of Life
+        </a>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="navbar-links">
+          {% for item in site.data.navigation %}
+            <a href="{{ item.link }}" class="nav-link{% if page.url == item.link %} active{% endif %}">{{ item.name }}</a>
+          {% endfor %}
+        </div>
+      </nav>
+      <main role="main">
+        {{ content }}
+    </main>
+    {% include footer.html %}
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
