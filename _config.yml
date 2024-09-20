@@ -23,8 +23,20 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-analytics
+  - jekyll-sass-converter
+  - jekyll-minifier
+
 kramdown:
   auto_ids: true
+
+sass:
+  sass_dir: _scss
+  style: compressed
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+  compress_javascript: true
 
 navigation:
   - text: Home
@@ -46,6 +58,7 @@ exclude:
   - vendor/ruby/
   - private
   - private/**
+  - build.sh
 
 defaults:
   - scope:
