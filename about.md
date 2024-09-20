@@ -7,7 +7,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
     <h1 class="about-title">The Learning Model of Life</h1>
     <div class="about-section">
         <div class="logo-container">
-            <img src="/img/logo_black.png" alt="LML Logo" class="lml-logo">
+            <img src="/img/logo_black.png" alt="Learning Model of Life Logo" class="lml-logo">
         </div>
         <div class="about-text">
             <p>

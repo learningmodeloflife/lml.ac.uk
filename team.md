@@ -9,42 +9,42 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
     <div class="team-grid">
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/kennethbaillie.jpg" alt="Kenneth Baillie">
+                <img src="/img/kennethbaillie.jpg" alt="Portrait of Kenneth Baillie, Co-Director">
             </div>
             <h3>Kenneth Baillie</h3>
             <p>Co-Director</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/kennethbaillie.jpg" alt="Mirella Lapata">
+                <img src="/img/kennethbaillie.jpg" alt="Portrait of Mirella Lapata, Co-Director">
             </div>
             <h3>Mirella Lapata</h3>
             <p>Co-Director</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/kennethbaillie.jpg" alt="Jonathan Millar">
+                <img src="/img/kennethbaillie.jpg" alt="Portrait of Jonathan Millar, Chief of Staff">
             </div>
             <h3>Jonathan Millar</h3>
             <p>Chief of Staff</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/kennethbaillie.jpg" alt="Konrad Rawlik">
+                <img src="/img/kennethbaillie.jpg" alt="Portrait of Konrad Rawlik, Chief Technical Officer">
             </div>
             <h3>Konrad Rawlik</h3>
             <p>Chief Technical Officer</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/kennethbaillie.jpg" alt="Wilna Oosthuyzen">
+                <img src="/img/kennethbaillie.jpg" alt="Portrait of Wilna Oosthuyzen, Chief Operations Officer">
             </div>
             <h3>Wilna Oosthuyzen</h3>
             <p>Chief Operations Officer</p>
         </div>
         <div class="team-member">
             <div class="member-image">
-                <img src="/img/kennethbaillie.jpg" alt="Marie Zechner">
+                <img src="/img/kennethbaillie.jpg" alt="Portrait of Marie Zechner, Head of Design">
             </div>
             <h3>Marie Zechner</h3>
             <p>Head of Design</p>

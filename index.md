@@ -10,12 +10,12 @@ custom_js:
 <header class="hero" id="home">
     <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
     <div class="index-image-container">
-        <img src="/img/index_one.png" alt="Index One" class="index-image">
+        <img src="/img/index_one.png" alt="Artistic representation of biological data" class="index-image">
     </div>
     <h1 class="hero-title">A Biological Singularity</h1>
     <section class="content-section" id="singularity">
         <div class="first-content-container">
-            <img src="/img/index_two.png" alt="Index Two" class="left-image">
+            <img src="/img/index_two.png" alt="Visualisation of complex biological processes" class="left-image">
             <div class="singularity">
                 <p>For decades, the high-throughput era of biology has generated data faster than it can be interpreted. Advances in artificial intelligence and engineering biology make it possible not only to collate this data and decode the rules of biology, but to create a model that designs and conducts its own experiments—a biological singularity.</p>
             </div>
@@ -41,7 +41,7 @@ custom_js:
                     <p>Auto-experimentation</p>
                 </div>
             </div>
-            <img src="/img/index_three.png" alt="Index Three" class="right-image">
+            <img src="/img/index_three.png" alt="Edinburgh syline" class="right-image">
             <div class="uoe">
                 <p>Drawing on world-class talent from across The University of Edinburgh, the Learning Model of Life is an inter-disciplinary initiative to develop an autonomously-learning computational model of life.</p>
             </div>
