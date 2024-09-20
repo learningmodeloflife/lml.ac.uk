@@ -1,3 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /*.pdf$
+
+User-agent: Googlebot
+Allow: /*.pdf$
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
 Sitemap: https://learningmodel.life/sitemap.xml
+
+Crawl-delay: 10
