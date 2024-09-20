@@ -38,7 +38,7 @@ custom_js:
                     <p>Deep biological expertise</p>
                 </div>
                 <div class="strength">
-                    <p>Auto-experimentation</p>
+                    <p>AutoExperimentation</p>
                 </div>
             </div>
             <img src="/img/index_three.png" alt="Edinburgh syline" class="right-image">
