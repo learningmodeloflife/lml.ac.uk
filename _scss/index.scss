@@ -30,7 +30,8 @@
 #decoding-animation {
     position: relative;
     width: 66.6vw;
-    margin: 5rem auto;
+    margin-top: 2rem auto;
+    margin-bottom: 4rem ;
 }
 
 .decoding-char {
@@ -60,7 +61,7 @@
 /* Index Image Styles */
 .index-image-container {
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    margin-left: 22%;
     display: flex;
     justify-content: flex-end;
     overflow: hidden;
@@ -99,7 +100,7 @@
     color: var(--dark-gray);
     text-align: left;
     font-family: var(--font-family-sans-serif);
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
 }
 
 .mission {
@@ -112,7 +113,7 @@
     color: var(--dark-gray);
     text-align: left;
     font-family: var(--font-family-sans-serif);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
 }
 
 /* Second Section Styles */
@@ -168,7 +169,7 @@
     color: var(--dark-gray);
     text-align: left;
     font-family: var(--font-family-sans-serif);
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
 }
 
 /* Mobile Navbar */

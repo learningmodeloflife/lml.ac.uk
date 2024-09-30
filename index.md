@@ -8,6 +8,7 @@ custom_js:
 ---
 
 <header class="hero" id="home">
+    <h1 class="hero-title">The Learning Model of Life</h1>
     <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
     <div class="index-image-container">
         <img src="/img/index_one.png" alt="Artistic representation of biological data" class="index-image">
@@ -27,7 +28,6 @@ custom_js:
 </header>
 
 <header class="hero hero--narrow-gap" id="model">
-    <h1 class="hero-title">The Learning Model of Life</h1>
     <section class="content-section">
         <div class="second-content-container">
             <div class="strengths-container">
