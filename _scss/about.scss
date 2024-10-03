@@ -9,31 +9,34 @@
 
 .about-title {
   font-family: var(--font-family-serif);
-  text-align: left;
-  font-size: 4.2rem;
-  font-weight: semibold;
-  margin: 2rem 0 2rem;
+  text-align: center;
+  font-size: var(--font-size-xxl);
+  padding-top: 1vw;
+  padding-bottom: 1vw;
   color: var(--dark-gray);
+  line-height: 1;
 }
 
-/* About section layout */
 .about-section {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 5rem;
+  display: grid;
+  margin-bottom: 2rem;
 }
 
 .logo-container {
-  flex: 1;
-  padding-right: 2rem;
+  display: flex;
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  padding-bottom: 2rem;
 }
 
 /* Logo styles */
 .lml-logo {
-  margin-top: 3rem;
+  margin-top: 0rem;
   width: 100%;
   height: auto;
   max-width: 300px;
+  align-self: center;
   opacity: 0.2; 
   transition: opacity 0.3s ease; 
 }
@@ -43,24 +46,20 @@
 /* About text styles */
 .about-text {
   flex: 2;
-  text-align: justify;
+  align-self: center;
+  justify-self: center;
+  grid-area: 2 / 1;
 }
 
 .about-text p {
   font-family: var(--font-family-sans-serif);
   color: var(--black);
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
-.about-text p:nth-of-type(2) {text-align: left;}
-
-.about-text p:nth-of-type(3) {
-  text-align: left;
-  margin-bottom: 4rem;
-}
 
 /* Link styles */
 .about-text a {
@@ -74,3 +73,21 @@
   border-bottom-color: transparent;
 }
 
+
+/* Responsive design */
+@media ( min-width: 50em ) {
+  .about-section {
+    margin-bottom: 4rem;
+  }
+  .about-text {
+  grid-area: 1 / 2;
+  }
+  .about-title {
+  text-align: left;
+
+}
+  .logo-container {
+  padding-right: 2rem;
+  padding-bottom: 0rem;
+}
+}
