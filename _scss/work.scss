@@ -4,22 +4,24 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem;
-  padding-top: calc(3rem + 80px); 
+  padding-top: calc(2.5rem + 50px); 
 }
 
 .work-title {
+  font-family: var(--font-family-serif);
   text-align: center;
-  font-size: 3.5rem;
-  margin: 2rem 0 5rem;
-  color: var(--black);
+  font-size: var(--font-size-xl);
+  padding-bottom: 2vw;
+  color: var(--dark-gray);
 }
+
 
 /* Article grid layout */
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 3rem;
-  margin-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 
 /* Article item styles */
@@ -86,4 +88,23 @@
 .article-info p:nth-child(3) {
   font-style: italic;
   font-size: 1.1rem;
+}
+
+
+
+/* Responsive design */
+@media ( min-width: 29em ) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media ( min-width: 40em ) {
+  .article-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media ( min-width: 55em ) {
+  .article-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
