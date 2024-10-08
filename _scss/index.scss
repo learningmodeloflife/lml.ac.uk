@@ -12,10 +12,9 @@
 
 .hero-title {
     font-family: var(--font-family-serif);
-    font-size: var(--font-size-huge);
-    font-weight: 200;
+    font-size: var(--font-size-xxl);
     color: var(--dark-gray);
-    margin-top: 4rem;
+    margin: 4rem 0.1rem 2rem 0.1rem;
     line-height: 1;
     padding-bottom: 2rem;
 }
@@ -53,22 +52,22 @@
     to {opacity: 1;}
 }
 
+
+
 /* Index Image Styles */
 .index-image-container {
     width: 100vw;
     margin-left: 22%;
     display: flex;
     overflow: hidden;
-    margin-top: 2.5rem;
+    margin-top: 4em;
 }
-
 
 .index-image {
     height: 60vw;
     margin: 1rem 0 4rem;
     object-fit: cover;
 }
-
 
 .content-section {
     padding: 5vw;
@@ -79,53 +78,42 @@
 /* First Section Styles */
 .first-content-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 5vw 14vw;
-    margin-bottom: 18vw;
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 7em;
 }
 
 .subhero-title {
     grid-area: 1 / 1; 
     font-family: var(--font-family-serif);
-    font-size: 5vw;
+    font-size: var(--font-size-xl);
     color: var(--dark-gray);
-    align-self: flex-start;
-    margin-right: -14vw;
     line-height: 1;
-    text-align: right;
-    margin-block-start: 0em;
-    margin-block-end: 0.83em;
-    white-space: nowrap;
+    margin-block-start: 0.8em;
+    margin-block-end: 0.1em;
 }
 
 .right-image {
-    grid-area: 1 / 2 / span 3 / span 1;
-    width: 48vw;
+    grid-area: 3 / 1;
+    width: 60vw;
     height: auto;
-    margin-left: -5vw;
+    justify-self: center;
 }
 
 .singularity {
     grid-area: 2 / 1; 
     color: var(--dark-gray);
-    text-align: right;
-    margin-right: -12vw;
-    margin-left: 2vw;
     font-family: var(--font-family-sans-serif);
-    font-size: 1.2vw;
+    font-size: var(--font-size-base);
     margin-block-start: 0em;
 }
 
 .mission {
-    grid-area: 3 / 1; 
+    grid-area: 4 / 1; 
     color: var(--dark-gray);
-    text-align: left;
     font-family: var(--font-family-serif);
     font-style: italic;
-    font-size: 1.8vw;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-left: 12vw;
-    margin-right: -1.5vw;
     line-height: 1.2;
 }
 
@@ -133,61 +121,53 @@
 /* Second Section Styles */
 .second-content-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 2.5vw 2.5vw 2.5vw;
-    padding-bottom: 7vw;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1.8rem 1.8rem ;
+    padding-bottom: 3em;
 }
 
 .strength1 {
     grid-area: 1 / 1;
     color: var(--dark-gray);
-    text-align: right;
     font-family: var(--font-family-serif);
     font-style: italic;
-    font-size: 1.8vw;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-right: 8vw;
 }
 
 .strength2 {
     grid-area: 2 / 1;
     color: var(--dark-gray);
-    text-align: right;
     font-family: var(--font-family-serif);
     font-style: italic;
-    font-size: 1.8vw;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-right: 12vw;
 }
 
 .strength3 {
     grid-area: 3 / 1;
     color: var(--dark-gray);
-    text-align: right;
     font-family: var(--font-family-serif);
     font-style: italic;
-    font-size: 1.8vw;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-right: 16vw;
 }
 
-
 .left-image {
-    grid-area: 4 / 1 / span 1 / span 2;
-    width: 68vw;
+    grid-area: 4 / 1 ;
+    width: 75vw;
     justify-self: center;
 }
 
 .uoe {
-    grid-area: 5 / 2;
+    grid-area: 5 / 1;
     color: var(--dark-gray);
-    text-align: left;
     font-family: var(--font-family-sans-serif);
-    font-size: 1.2vw;
-    margin-left: -9.5vw;
-    margin-right: 11.5vw;
-    margin-top: -9.5vw;
+    font-size: var(--font-size-base);
 }
+
+
+
 
 /* Mobile Navbar */
 .hamburger {
@@ -227,4 +207,82 @@
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+
+/* Responsive design */
+@media ( min-width: 30em ) {
+    .hero-title {
+        font-size: var(--font-size-huge);
+        font-weight: 400;
+    }
+}
+@media ( min-width: 60em ) {
+    .first-content-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 5vw 14vw;
+        margin-bottom: 14em;
+    }
+    .subhero-title {
+        font-size: 5vw;
+        align-self: flex-start;
+        margin-right: -14vw;
+        text-align: right;
+        margin-block-start: 0em;
+        margin-block-end: 0.83em;
+        white-space: nowrap;
+    }
+    .right-image {
+        grid-area: 1 / 2 / span 3 / span 1;
+        width: 48vw;
+        margin-left: -5vw;
+    }
+    .singularity {
+        grid-area: 2 / 1; 
+        text-align: right;
+        margin-right: -12vw;
+        margin-left: 2vw;
+        font-size: 1.2vw;
+    }
+    .mission {
+        grid-area: 3 / 1; 
+        text-align: left;
+        font-size: 1.8vw;
+        margin-left: 12vw;
+        margin-right: -1.5vw;
+    }
+    .second-content-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2.5vw 2.5vw 2.5vw;
+        padding-bottom: 7em;
+    }
+    .strength1 {
+        text-align: right;
+        font-size: 1.8vw;
+        margin-right: 8vw;
+    }
+    .strength2 {
+        text-align: right;
+        font-size: 1.8vw;
+        margin-right: 12vw;
+    }
+    .strength3 {
+        text-align: right;
+        font-size: 1.8vw;
+        margin-right: 16vw;
+    }
+    .left-image {
+        grid-area: 4 / 1 / span 1 / span 2;
+        width: 68vw;
+    }
+    .uoe {
+        grid-area: 5 / 2;
+        text-align: left;
+        font-size: 1.2vw;
+        margin-left: -9.5vw;
+        margin-right: 11.5vw;
+        margin-top: -9.5vw;
+    }
 }
