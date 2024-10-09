@@ -4,18 +4,7 @@ title: "Team | Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
 
-
-# Colelctions
-
-
-Some actual text here
-
-
-
-{{ site.collections | where: "label", "people" | first }}
-
-
-people below here
+# This title is not visible
 
 
 {% assign grouped_by_weight = site.people | group_by: "weight" | sort: "name" %}
