@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const binaryDigits = ['0', '1'];
 
   const chars = [];
-  const delayOffset = 0.8;
-  const delayWindow = 1.3;
+  const delayOffset = 1.5;
+  const delayWindow = 1.5;
   const blendDuration = 0.5;
 
   const resetRadius = 100;

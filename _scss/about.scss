@@ -4,7 +4,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem;
-  padding-top: calc(3rem + 80px);
+  padding-top: calc(2.5rem + 50px);
+  padding-bottom: 17rem;
 }
 
 .about-title {
@@ -12,7 +13,7 @@
   text-align: center;
   font-size: var(--font-size-xxl);
   padding-top: 1vw;
-  padding-bottom: 1vw;
+  padding-bottom: 2vw;
   color: var(--dark-gray);
   line-height: 1;
 }
@@ -82,10 +83,10 @@
   .about-text {
   grid-area: 1 / 2;
   }
-  .about-title {
+  /*.about-title {
   text-align: left;
 
-}
+}*/
   .logo-container {
   padding-right: 2.5rem;
   padding-bottom: 0rem;
