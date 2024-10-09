@@ -4,90 +4,38 @@ title: "Our Work | Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
 
-<header class="work-content">
+
+
+<div class="work-content">
     <h1 class="work-title">Our Work</h1>
     <div class="article-grid">
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-            <div class="article-item">
-                <img src="/img/pdf_placeholder.png" alt="Article 1 front page" class="article-image">
-                <div class="article-info">
-                    <p>Baillie et al.</p>
-                    <p>2023</p>
-                    <p>Nature</p>
-                </div>
-            </div>
-        </a>
+
+{% assign sortedoutputs = site.outputs | sort: "weight" %}
+{% for output in sortedoutputs %}
+    <h4 class="output-title">
+        <a href="{{site.baseurl}}{{ output.url }}">{{ output.title }}</a>
+    </h4>
+    {% if output.doi %}
+    {% if output.journal %}
+      <a href="{{output.doi}}">{{output.journal}} 
+      {% if output.month %}
+        {{output.month}} 
+        {% if output.year %}
+          {{output.year}} 
+        {% endif %}
+      {% endif %}
+      </a>
+    {% endif %}
+    {% endif %}
+      <p>{{ output.content | markdownify | strip_html | truncate: 250 }}</p>
+    {% if output.doi %}
+      <div class="altmetric-embed" data-badge-type="donut" data-doi="{{output.doi}}"></div>
+    {% endif %}
+
+{% endfor %}
     </div>
-</header>
+</div>
 
 
+  
+  
