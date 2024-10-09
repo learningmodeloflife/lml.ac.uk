@@ -4,9 +4,11 @@
         <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}">
         {% endif %}
     </div>
-    <a href="{{member.url | relative_url }}">
+    <h3>
+        <a href="{{member.url | relative_url }}">
         {{member.name}}
-    </a>
+        </a>
+    </h3>
     <p>{{member.role}}</p>
 </div>
 

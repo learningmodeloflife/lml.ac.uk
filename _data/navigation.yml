@@ -1,6 +1,6 @@
 - name: People
-  link: people/
+  link: /people/
 - name: Outputs
-  link: outputs/
+  link: /outputs/
 - name: About
-  link: about/
+  link: /about/
