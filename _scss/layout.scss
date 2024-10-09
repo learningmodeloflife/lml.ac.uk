@@ -37,6 +37,10 @@
   vertical-align: middle;
 }
 
+.nav-brandname {
+  display: inline
+}
+
 .navbar-links {
   display: flex;
   gap: 2rem;
@@ -83,4 +87,12 @@
   border-top: 0.75px solid var(--border-color);
   margin: 0;
   padding: 0;
+}
+
+
+
+@media ( max-width: 50em ) {
+  .nav-brandname {
+    display: none;
+  }
 }
