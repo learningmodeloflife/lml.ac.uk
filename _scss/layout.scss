@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  padding: 2rem 5%;
+  padding: 1rem 5%;
   background-color: var(--cream);
   z-index: 1000;
   display: flex;
@@ -26,11 +26,19 @@
   letter-spacing: -0.01em;
 }
 
+.navbar-brand:hover {
+  color: var(--grey);
+}
+
 .navbar-logo {
   height: 1.75em;
   width: auto;
   margin-right: 0.5em;
   vertical-align: middle;
+}
+
+.nav-brandname {
+  display: inline
 }
 
 .navbar-links {
@@ -48,8 +56,12 @@
   transition: color 0.3s ease;
 }
 
+.current {
+  font-weight: 600;
+}
+
 .nav-link:hover {
-  color: var(--dark-gray);
+  color: var(--grey);
 }
 
 .navbar-scrolled {
@@ -59,7 +71,7 @@
 /* Footer styles */
 .footer {
   background-color: var(--cream);
-  padding: 4rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,4 +87,12 @@
   border-top: 0.75px solid var(--border-color);
   margin: 0;
   padding: 0;
+}
+
+
+
+@media ( max-width: 50em ) {
+  .nav-brandname {
+    display: none;
+  }
 }

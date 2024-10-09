@@ -51,7 +51,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
         </div>
     </div>
     <div class="hiring-info">
-        <p>We're hiring. For information about open positions contact us at <a href="mailto:recruitment@lml.ac.uk">recruitment@lml.ac.uk</a>.</p>
+        <p>We're hiring. For information about open positions contact us at <a href="mailto:lml@ed.ac.uk">lml@ed.ac.uk</a>.</p>
     </div>
 </header>
 

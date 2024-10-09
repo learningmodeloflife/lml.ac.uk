@@ -1,21 +1,24 @@
 :root {
     /* Color Variables */
-    --cream: #F5E6D3;
+    --cream: #FFF3DE;
     --off-white: #FAF9F6;
     --black: #000000;
-    --dark-gray: #333333;
+    --dark-gray: #152427;
+    --blue-grey: #658197;
     --border-color: #000000;
+    --grey: #797777;
   
     /* Font Families */
-    --font-family-serif: 'Playfair Display', serif;
-    --font-family-sans-serif: 'Lato', sans-serif;
+    --font-family-serif: 'Playfair', serif;
+    --font-family-sans-serif: 'Montserrat', sans-serif;
     --font-family-mono: 'Consolas', monospace;
   
     /* Font Sizes */
-    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    --font-size-test: clamp(1rem, 1.2vw, 1.2vw)
+    --font-size-base: clamp(1rem, 0.9rem + 0.15vw, 1.5rem);
     --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
-    --font-size-vlg: clamp(0.5rem, 1.1rem + 0.375vw, 1.75rem);
-    --font-size-xl: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
-    --font-size-xxl: clamp(1.5rem, 1.5rem + 0.75vw, 3.5rem);
-    --font-size-huge: clamp(4rem, 3.5rem + 2.5vw, 8rem);
+    --font-size-vlg: clamp(0.5rem, 1.5rem + 0.375vw, 1.7rem);
+    --font-size-xl: clamp(2rem, 3rem + 0.5vw, 3.5rem);
+    --font-size-xxl: clamp(3.5rem, 5vw, 4.2rem);
+    --font-size-huge: clamp(3.9rem, 3.5rem + 2.5vw, 8rem);
   }

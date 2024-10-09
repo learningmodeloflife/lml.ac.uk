@@ -16,9 +16,10 @@
 }
 
 .error-page h2 {
-    font-size: var(--font-size-xxl);
+    font-size: var(--font-size-xl);
     color: var(--black);
-    margin-top: 0;
+    margin-top: 1em;
+    line-height: 1;
 }
 
 .error-page p {
@@ -26,6 +27,8 @@
     font-size: var(--font-size-lg);
     color: var(--dark-gray);
     margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* Landing page animation styles */
