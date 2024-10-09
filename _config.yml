@@ -67,12 +67,12 @@ defaults:
 collections_dir: shared-files
 
 collections:
-  outputs:
+  work:
     output: true
-    permalink: /outputs/:path/
-  people:
+    permalink: /work/:path/
+  team:
     output: true
-    permalink: /people/:path/
+    permalink: /team/:path/
 
 
 

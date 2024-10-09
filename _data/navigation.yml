@@ -1,6 +1,6 @@
-- name: People
-  link: /people/
-- name: Outputs
-  link: /outputs/
+- name: Team
+  link: /team/
+- name: Work
+  link: /work/
 - name: About
   link: /about/

@@ -10,7 +10,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
     <h1 class="work-title">Our Work</h1>
     <div class="article-grid">
 
-{% assign sortedoutputs = site.outputs | sort: "weight" %}
+{% assign sortedoutputs = site.work | sort: "weight" %}
 {% for output in sortedoutputs %}
     <h4 class="output-title">
         <a href="{{site.baseurl}}{{ output.url }}">{{ output.title }}</a>
