@@ -3,8 +3,35 @@ layout: default
 title: "Team | Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
+<!--
 
-<header class="team-content">
+{% assign grouped_by_weight = site.people | group_by: "weight" | sort: "name" %}
+
+
+<header class="team-content"> 
+
+
+
+</header>
+
+
+<div class="row d-flex flex-wrap">
+    {% for weight_group in grouped_by_weight %}
+        {% assign people = weight_group.items | sort: "name" %}
+            {% for member in people   %}
+            {% if member.alumnus %}
+            {% elsif member.independent %}
+            <div class="col-xl-4 col-lg-4 col-md-4">
+                {% include person-card.html %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+
+-->
+
+<div class="team-content">
     <h1 class="team-title">Team</h1>
     <div class="team-grid">
         <div class="team-member">
@@ -53,5 +80,4 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
     <div class="hiring-info">
         <p>We're hiring. For information about open positions contact us at <a href="mailto:lml@ed.ac.uk">lml@ed.ac.uk</a>.</p>
     </div>
-</header>
-
+</div>
