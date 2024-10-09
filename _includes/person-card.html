@@ -1,38 +1,12 @@
-{% if member.alumnus%}
-<div class="row card-person alumnus">
-    <div class="col-3">
-        <div class="card-person-image">
+<div class="team-member">
+    <div class="member-image">
         {% if member.img %}
         <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}">
         {% endif %}
     </div>
-    </div>
-    <div class="col-9">
-        <h5>
-            {{member.name}}
-        </h5>
-        <p>{{member.role}}</p>
-        <p>{{member.content}}</p>
-    </div>
+    <a href="{{member.url | relative_url }}">
+        {{member.name}}
+    </a>
+    <p>{{member.role}}</p>
 </div>
 
-{% else %}
-
-<div class="card-person">
-    <div class="card-person-image">
-        {% if member.img %}
-        <a href="{{member.url | relative_url}}">
-            <img class="img-fluid rounded" src="{{member.img  | relative_url }}" alt="{{member.name}}">
-        </a>
-        {% endif %}
-    </div>
-    <div class="card-person-text">
-        <h5>
-            <a href="{{member.url | relative_url }}">
-                {{member.name}}
-            </a>
-        </h5>
-        <p>{{member.role}}</p>
-    </div>
-</div>
-{% endif %}

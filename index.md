@@ -7,7 +7,8 @@ custom_js:
   - hamburger
 ---
 
-<header class="hero" id="home">
+
+<div class="hero" id="home">
     <h1 class="hero-title">The Learning Model of Life</h1>
     <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
     <div class="index-image-container">
@@ -40,7 +41,7 @@ custom_js:
             </div>
         </div>
     </section>
-</header>
+</div>
 
 
 

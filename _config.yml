@@ -41,10 +41,10 @@ jekyll-minifier:
 navigation:
   - text: Home
     url: /#
-  - text: Team
-    url: team/
-  - text: Work
-    url: work/
+  - text: People
+    url: people/
+  - text: Outputs
+    url: outputs/
   - text: About
     url: about/
 
@@ -73,4 +73,16 @@ defaults:
       path: "internal/*"
     values:
       sitemap: false
+
+collections:
+  outputs:
+    output: true
+    permalink: /outputs/:path/
+  people:
+    output: true
+    permalink: /people/:path/
+
+
+
+
 
