@@ -1,0 +1,18 @@
+
+<!--
+Automatic edit link. Specify site.draft_url and site.edit_stem in _config.yml
+Only works on pages with a page.relative_path attribute
+-->
+
+
+<form id="editlink" style="visibility: hidden;" action='{{ site.edit_stem }}{% if page.relative_path %}{{ page.relative_path }}{% else  %}{{ page.url | strip | remove_first: "/" | replace: ".html", ".md" }}{% endif %}'>
+    <!-- relative path is a feature of collections, otherwise use url -->
+      <button class="btn btn-danger" type="submit">Edit this page</button>
+</form>
+
+<script type="text/javascript">
+const stringList = [ "{{ site.draft_urls | join: '", "' }}"];
+if (stringList.some(str => window.location.href.indexOf(str) !== -1)) {
+    document.getElementById('editlink').style.visibility = "visible";
+    }
+</script>

@@ -15,7 +15,7 @@ seo:
 draft_urls: 
   - https://neon-malasada-e4e047.netlify.app/
   - localhost:4000
-edit_stem: https://gitlab.com/kennethbaillie/baillielab.net2/-/edit/main/
+edit_stem: https://github.com/learningmodeloflife/lml.ac.uk/edit/main/
 
 theme: minima
 destination: _site
