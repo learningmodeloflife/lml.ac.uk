@@ -38,16 +38,6 @@ jekyll-minifier:
     harmony: true
   compress_javascript: true
 
-navigation:
-  - text: Home
-    url: /#
-  - text: People
-    url: people/
-  - text: Outputs
-    url: outputs/
-  - text: About
-    url: about/
-
 exclude:
   - Gemfile
   - Gemfile.lock
