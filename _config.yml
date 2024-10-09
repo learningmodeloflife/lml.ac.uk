@@ -64,6 +64,8 @@ defaults:
     values:
       sitemap: false
 
+collections_dir: my_collections
+
 collections:
   outputs:
     output: true
@@ -71,6 +73,7 @@ collections:
   people:
     output: true
     permalink: /people/:path/
+
 
 
 
