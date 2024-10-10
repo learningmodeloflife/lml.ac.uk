@@ -4,9 +4,7 @@ title: "Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 custom_js:
   - decoding-animation
-  - hamburger
 ---
-
 
 <div class="hero" id="home">
     <h1 class="hero-title">The Learning Model of Life</h1>
