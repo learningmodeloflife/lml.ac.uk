@@ -3,7 +3,8 @@ layout: default
 title: "About | Learning Model of Life | Decoding the Rules of Biology"
 description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
 ---
-<header class="about-content">
+
+<div class="about-content">
     <h1 class="about-title">The Learning Model of Life</h1>
     <div class="about-section">
         <div class="logo-container">
@@ -21,5 +22,5 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
             </p>
         </div>
     </div>
-</header>
+</div>
 
