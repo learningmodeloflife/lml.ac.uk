@@ -26,10 +26,6 @@
   letter-spacing: -0.01em;
 }
 
-.navbar-brand:hover {
-  color: var(--grey);
-}
-
 .navbar-logo {
   height: 1.75em;
   width: auto;
@@ -53,16 +49,33 @@
   font-size: var(--font-size-lg);
   color: var(--black);
   text-decoration: none;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--black);
+  transition: width 0.1s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  font-weight: 900;
 }
 
 .current {
   font-weight: 600;
 }
-
-/*.nav-link:hover {
-  color: var(--grey);
-}*/
 
 .navbar-scrolled {
   background-color: var(--off-white);
