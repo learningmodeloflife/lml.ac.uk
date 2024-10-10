@@ -12,6 +12,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
 
 {% assign sortedoutputs = site.work | sort: "weight" %}
 {% for output in sortedoutputs %}
+
     <h4 class="output-title">
         <a href="{{site.baseurl}}{{ output.url }}">{{ output.title }}</a>
     </h4>

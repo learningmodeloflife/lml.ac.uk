@@ -5,7 +5,9 @@
         {% endif %}
     </div>
     <h3>
+        <a href="{{member.url | relative_url }}">
         {{member.name}}
+        </a>
     </h3>
     <p>{{member.role}}</p>
 </div>
