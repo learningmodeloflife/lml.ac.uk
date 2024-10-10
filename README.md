@@ -9,6 +9,9 @@
 * [ ] Explore Gulp for build
 * [ ] Write GHA to build _site/ on push
 * [ ] Add analytics details/tokens when closer to going live
+
+**whoever**
+
 * [ ] Add images for remaining papers
 * [ ] Add text about geneatlas
 * [ ] Select some papers from Mirella/Ian
