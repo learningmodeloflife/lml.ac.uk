@@ -13,7 +13,7 @@ seo:
 
 # settings for Kenny's edit link script
 draft_urls: 
-  - https://neon-malasada-e4e047.netlify.app/
+  - https://draft--lml-ac-uk.netlify.app/
   - localhost
 edit_stem: https://github.com/learningmodeloflife/lml.ac.uk/edit/main/
 

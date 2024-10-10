@@ -9,3 +9,23 @@
 * [ ] Explore Gulp for build
 * [ ] Write GHA to build _site/ on push
 * [ ] Add analytics details/tokens when closer to going live
+* [ ] Add images for remaining papers
+* [ ] Add text about geneatlas
+* [ ] Select some papers from Mirella/Ian
+
+
+# Editing the site
+
+- use "draft" branch for new edits
+- push and wait for netlify deploy
+
+
+# Viewing the site
+
+draft: 
+https://draft--lml-ac-uk.netlify.app/
+
+live:
+https://lml-ac-uk.netlify.app/
+https://lml.ac.uk
+ 
