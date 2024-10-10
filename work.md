@@ -11,6 +11,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
 {% assign sortedoutputs = site.work | sort: "weight" %}
 {% for output in sortedoutputs %}
 
+  {% if output.img %} <!-- IF NO IMAGE, NOTHING APPEARS -->
     {% if output.doi %}
       <a href="https://doi.org/{{output.doi}}" target="_blank" rel="noopener noreferrer" class="article-link">
     {% else %}
@@ -26,16 +27,27 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
                   <p>{{ output.journal }}</p>
                 {% endif %}
                 {% if output.date %}
-                  <p>{{ output.date }}</p>
+                  <p>{{ output.date | date: "%Y" }}</p>
                 {% endif %}
               </div>
           </div>
       </a>
+  {% endif %} 
 
 {% endfor %}
     </div>
 </div>
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
   
