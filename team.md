@@ -11,7 +11,17 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
     {% for weight_group in grouped_by_weight %}
         {% assign people = weight_group.items | sort: "name" %}
         {% for member in people %}
-            {% include person-card.html %}
+        <div class="team-member">
+            <div class="member-image">
+                {% if member.img %}
+                <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}">
+                {% endif %}
+            </div>
+            <h3>
+                {{member.name}}
+            </h3>
+            <p>{{member.role}}</p>
+        </div>
         {% endfor %}
     {% endfor %}
     </div>
