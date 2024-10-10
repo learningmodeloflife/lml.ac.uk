@@ -1,0 +1,8 @@
+[build]
+  command = "./build.sh"
+
+[context.production.environment]
+  GIT_SUBMODULE_STRATEGY = "recursive" 
+
+[context.production]
+  command = "./build.sh"
