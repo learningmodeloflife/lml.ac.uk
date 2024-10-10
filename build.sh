@@ -5,7 +5,7 @@ set -e
 
 echo "Initializing and updating Git submodules..."
 git submodule init
-git submodule update --recursive
+git submodule update --remote --merge
 
 jekyll build 
 

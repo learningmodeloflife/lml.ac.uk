@@ -1,8 +1,4 @@
 [build]
+  environment = { NODE_VERSION = "14.17.0"}
   command = "./build.sh"
-
-[context.production.environment]
-  GIT_SUBMODULE_STRATEGY = "recursive" 
-
-[context.production]
-  command = "./build.sh"
+  publish = "_site"
