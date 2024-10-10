@@ -14,7 +14,7 @@ seo:
 # settings for Kenny's edit link script
 draft_urls: 
   - https://neon-malasada-e4e047.netlify.app/
-  - localhost:4000
+  - localhost
 edit_stem: https://github.com/learningmodeloflife/lml.ac.uk/edit/main/
 
 theme: minima
