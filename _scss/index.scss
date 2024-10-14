@@ -120,7 +120,7 @@
 
 /* Second Section Styles */
 .second-content-container {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 1.8rem 1.8rem ;
     padding-bottom: 3em;
@@ -264,34 +264,36 @@
     }
     .second-content-container {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 2.5vw 2.5vw 2.5vw;
+        grid-template-rows: clamp(10px, 2.5vw, 35px) clamp(10px, 2.5vw, 35px) clamp(10px, 2.5vw, 35px);
         padding-bottom: 7em;
     }
     .strength1 {
         text-align: right;
-        font-size: 1.8vw;
-        margin-right: 8vw;
+        font-size: clamp(11px, 1.8vw, 25.884px);
+        margin-right: clamp(11px, 8vw, 140px);
     }
     .strength2 {
         text-align: right;
-        font-size: 1.8vw;
-        margin-right: 12vw;
+        font-size: clamp(11px, 1.8vw, 25.884px);
+        margin-right: clamp(11px, 12vw, 210px);
     }
     .strength3 {
         text-align: right;
-        font-size: 1.8vw;
-        margin-right: 16vw;
+        font-size: clamp(11px, 1.8vw, 25.884px);
+        margin-right: clamp(11px, 16vw, 280px);
     }
     .left-image {
         grid-area: 4 / 1 / span 1 / span 2;
         width: 68vw;
+        max-width: 992px;
     }
     .uoe {
         grid-area: 5 / 2;
         text-align: left;
-        font-size: 1.2vw;
-        margin-left: -9.5vw;
-        margin-right: 11.5vw;
-        margin-top: -9.5vw;
+        font-size: clamp(11px, 1.2vw, 17.28px); 
+        margin-left: clamp(-138px, -9.5vw, -100px);
+        margin-right: clamp(110px, 11.5vw, 500px);
+        margin-top: clamp(-137px, -9.5vw, 500px);
+        max-width: 660px;
     }
 }
