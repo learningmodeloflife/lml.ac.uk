@@ -38,15 +38,19 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  height: 350px; 
 }
 
 .article-link:hover .article-item {transform: translateY(-5px);}
 
 .article-image {
   width: 100%;
-  height: auto;
+  height: 350px;
+  object-fit: contain;
+  object-position: center;
   display: block;
   transition: filter 0.3s ease;
+  background-color: var(--white);
 }
 
 .article-link:hover .article-image {filter: brightness(30%);}
