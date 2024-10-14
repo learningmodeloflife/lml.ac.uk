@@ -32,25 +32,22 @@
 }
 
 .article-item {
+  aspect-ratio : 1 / 1.4;
   position: relative;
-  background-color: var(--cream);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  height: 350px; 
+  align-content: center;
+  background-color: var(--white)
+
 }
 
-.article-link:hover .article-item {transform: translateY(-5px);}
+.article-link:hover .article-item {transform: translateY(-5px); background-color: #404C4F}
 
 .article-image {
   width: 100%;
-  height: 350px;
-  object-fit: contain;
-  object-position: center;
-  display: block;
   transition: filter 0.3s ease;
-  background-color: var(--white);
 }
 
 .article-link:hover .article-image {filter: brightness(30%);}
