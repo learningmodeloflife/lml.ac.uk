@@ -28,6 +28,7 @@
     margin-bottom: 4rem ;
 }
 
+
 .decoding-char {
     position: absolute;
     top: 50%;
@@ -295,5 +296,13 @@
         margin-right: clamp(110px, 11.5vw, 500px);
         margin-top: clamp(-137px, -9.5vw, 500px);
         max-width: 660px;
+    }
+}
+
+@media ( max-width: 769px ) {
+    .decoding-animation {
+        font-size: 2rem;
+        line-height: 1;
+        font-style: italic;
     }
 }
