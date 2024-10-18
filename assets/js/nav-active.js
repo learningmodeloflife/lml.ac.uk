@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(function(link) {
       linkpath = getFilePath(link.getAttribute('href'))
-      console.log(linkpath)
+      console.log(linkpath + " | " + currentPath)
       if (linkpath === currentPath) {
         link.classList.add('active');
         console.log("--> active")
