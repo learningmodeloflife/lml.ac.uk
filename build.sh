@@ -5,4 +5,4 @@ git config --file=.gitmodules submodule.shared-files.url "https://$GITHUB_TOKEN@
 git submodule sync
 git submodule update --init --remote --merge
 
-jekyll build
+jekyll JEKYLL_ENV=production build

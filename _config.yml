@@ -49,6 +49,7 @@ exclude:
   - private
   - private/**
   - build.sh
+  - "*.map"
 
 defaults:
   - scope:
