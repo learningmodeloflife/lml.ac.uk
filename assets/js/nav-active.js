@@ -1,12 +1,27 @@
+function getFilePath(url) {
+    try {
+        if (url.startsWith("/")) {
+            return url;
+        }
+        let parsedUrl = new URL(url);
+        return parsedUrl.pathname;
+    } catch (error) {
+        console.error('Invalid URL:', error);
+        return null;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var currentPath = window.location.pathname;
     var navLinks = document.querySelectorAll('.nav-link');
-    console.log("nav js called")
     navLinks.forEach(function(link) {
-      console.log(link)
-      if (link.getAttribute('href') === currentPath) {
+      linkpath = getFilePath(link.getAttribute('href'))
+      console.log(linkpath)
+      if (linkpath === currentPath) {
         link.classList.add('active');
         console.log("--> active")
       }
     });
   });
+
+
