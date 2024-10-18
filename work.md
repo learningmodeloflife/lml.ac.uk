@@ -18,7 +18,7 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
       <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
     {% endif %}
           <div class="article-item">
-              <img src="{{ output.img }}" alt="Image of front page of {{ output.title }}" class="article-image">
+              <img src="{{ output.img }}" alt="Image of front page of {{ output.title }}" class="article-image lazy" data-src="{{ output.img }}" loading="lazy">
               <div class="article-info">
                 {% if output.author_short %}
                   <p>{{ output.author_short }}</p>
