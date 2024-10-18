@@ -54,6 +54,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.nav-link.active {
+  font-weight: 500;
+}
 
 @media (min-width: 50em) {
   .nav-link::after {
