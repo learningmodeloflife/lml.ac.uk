@@ -12,26 +12,35 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
 {% for output in sortedoutputs %}
 
   {% if output.img %} <!-- IF NO IMAGE, NOTHING APPEARS -->
-    {% if output.doi %}
-      <a href="https://doi.org/{{output.doi}}" target="_blank" rel="noopener noreferrer" class="article-link">
-    {% else %}
-      <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
-    {% endif %}
-          <div class="article-item">
-              <img src="{{ output.img }}" alt="Image of front page of {{ output.title }}" class="article-image lazy" data-src="{{ output.img }}" loading="lazy">
-              <div class="article-info">
-                {% if output.author_short %}
-                  <p>{{ output.author_short }}</p>
-                {% endif %}
-                {% if output.journal %}
-                  <p>{{ output.journal }}</p>
-                {% endif %}
-                {% if output.date %}
-                  <p>{{ output.date | date: "%Y" }}</p>
-                {% endif %}
-              </div>
-          </div>
-      </a>
+    <div class="article-item">
+        <img src="{{ output.img }}" alt="Image of front page of {{ output.title }}" class="article-image lazy" data-src="{{ output.img }}" loading="lazy">
+        <div class="article-info">
+          {% if output.author_short %}
+            {% if output.doi %}
+              <a href="https://doi.org/{{output.doi}}" target="_blank" rel="noopener noreferrer" class="article-link">
+                <p class="article-author">{{ output.author_short }}</p>
+              </a>
+            {% else %}
+              <a href="https://baillielab.net" target="_blank" rel="noopener noreferrer" class="article-link">
+                <p class="article-author">{{ output.author_short }}</p>
+              </a>
+            {% endif %}
+          {% endif %}
+          {% if output.journal or output.date %}
+            <p class="article-journal-date">
+              {% if output.journal %}
+                {{ output.journal }}
+              {% endif %}
+              {% if output.journal and output.date %}
+
+              {% endif %}
+              {% if output.date %}
+               ({{ output.date | date: "%Y" }})
+              {% endif %}
+            </p>
+          {% endif %}
+        </div>
+    </div>
   {% endif %} 
 
 {% endfor %}

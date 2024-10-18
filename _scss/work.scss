@@ -1,4 +1,3 @@
-
 /* Work styles */
 .work-content {
   max-width: 1200px;
@@ -19,8 +18,8 @@
 .article-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 11rem;
-  padding-bottom: 12rem;
+  gap: 3rem;
+  padding-bottom: 4rem;
 }
 
 /* Article item styles */
@@ -30,113 +29,64 @@
 }
 
 .article-item {
-  aspect-ratio: 1 / 1.4;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  align-content: center;
-  background-color: var(--white);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: 1 / 1.6; /* Increased to allow more space for text */
+  position: relative;
+  overflow: hidden;
 }
 
 .article-image {
-  order: 2;
   width: 100%;
-  transition: filter 0.3s ease;
+  height: 80%; /* Reduced to give more space for text */
+  object-fit: cover;
 }
 
-
 .article-info {
-  order: 1;
-  position: absolute;
-  display: block;
-  color: var(--black);
-  text-align: center;
-  align-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  margin-top: 124vw;
+  width: 100%;
+  height: auto; /* Changed from fixed height to auto */
+  min-height: 20%; /* Set a minimum height */
+  background-color: var(--cream);
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .article-info p {
-    margin: 0.9rem 10vw;
-    font-family: var(--font-family-sans-serif);
-    font-size: var(--font-size-base);
-    line-height: 1.2;
-  }
-  .article-info p:nth-child(1) {
-    font-family: var(--font-family-serif); 
-    font-weight: bold;
-    font-size: 1.3rem;
-  }
+  margin: 0.1rem 0;
+  font-family: var(--font-family-sans-serif);
+  font-size: clamp(0.7rem, 1.2vw, 1rem);
+  line-height: 1.3;
+}
 
+.article-author {
+  font-weight: bold;
+  font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+  margin-bottom: 0.2rem; /* Added margin to separate author from journal/date */
+}
+
+.article-journal {
+  font-style: italic;
+}
+
+.article-date {
+  font-size: clamp(0.6rem, 1vw, 0.9rem);
+}
 
 /* Responsive design */
-@media ( min-width: 29em ) {
+@media (min-width: 40em) {
   .article-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    padding-bottom: 4rem;
+    gap: 4rem; /* Slightly reduced gap for medium screens */
   }
-
-  .article-item {
-  position: relative;
-  display: block;
-  }
-
-  /* Article info overlay */
-  .article-info {
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0rem;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    color: var(--off-white);
-    padding: 1rem;
-    background-color: var(--dark-gray);
-    transform: translateY(20px);
-  }
-
-  .article-info p {
-    margin: 0.3rem 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    line-height: 1.6;
-  }
-
-  .article-info p:nth-child(1) {
-    font-size: 1.4rem;
-    font-family: var(--font-family-sans-serif);
-  }
-  
-  .article-info p:nth-child(2) {font-size: 1.2rem;}
-
-  .article-info p:nth-child(3) {
-    font-style: italic;
-    font-size: 1.1rem;
-  }
-
-  /* Hover effects */
-  .article-link:hover .article-image {filter: brightness(30%);}
-  .article-link:hover .article-info {opacity: 0.6; transform: translateY(0);}
-  .article-link:hover .article-item {transform: translateY(-5px); background-color: #404C4F}
 }
-@media ( min-width: 40em ) {
+
+@media (min-width: 60em) {
   .article-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media ( min-width: 85.4375em ) {
-  .article-grid {
-    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem; /* Maintain the larger gap for larger screens */
   }
 }
