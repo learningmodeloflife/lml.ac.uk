@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
+{% endif %}
 <body>
     {% include navbar.html %}
     <main role="main">
