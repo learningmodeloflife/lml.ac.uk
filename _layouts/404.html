@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% include head.html %}
-    <meta name="keywords" content="{{ page.keywords }}">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 <body>
     {% include navbar.html %}
       

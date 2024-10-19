@@ -1,9 +1,7 @@
 ---
 layout: default
 title: "About | Learning Model of Life | Decoding the Rules of Biology"
-description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
-keywords:
-  - A brief summary of the Learning Model of Life project and our contact details
+description: "A brief summary of the Learning Model of Life project and our contact details"
 ---
 
 <div class="about-content">
