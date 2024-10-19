@@ -14,7 +14,7 @@ description: "A summary of the Learning Model of Life team members."
         <div class="team-member">
             <div class="member-image">
                 {% if member.img %}
-                <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}">
+                <img class="img-fluid rounded float-start mr-4" src="{{member.img  | replace: '.jpg', '.webp' | relative_url }}" alt="{{member.name}}">
                 {% endif %}
             </div>
             <h2>
