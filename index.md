@@ -7,7 +7,7 @@ custom_js:
 ---
 
 <div class="hero" id="home">
-    <h1 class="hero-title">The Learning Model of Life</h1>
+    <h1 class="hero-title">The Learning Model of Life</h1 >
     <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
     <div class="index-image-container">
         <img src="/img/index_one.webp" alt="Artistic representation of biological data" class="index-image">
