@@ -69,3 +69,4 @@ package-lock.json
 # new ones
 /slides/.quarto/
 /_site/
+*.map

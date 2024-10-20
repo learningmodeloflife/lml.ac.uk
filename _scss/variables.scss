@@ -7,6 +7,7 @@
     --blue-grey: #658197;
     --border-color: #000000;
     --grey: #797777;
+    --white: #ffffff;
   
     /* Font Families */
     --font-family-serif: 'Playfair', serif;
@@ -14,7 +15,6 @@
     --font-family-mono: 'Consolas', monospace;
   
     /* Font Sizes */
-    --font-size-test: clamp(1rem, 1.2vw, 1.2vw)
     --font-size-base: clamp(1rem, 0.9rem + 0.15vw, 1.5rem);
     --font-size-lg: clamp(1rem, 1rem + 0.25vw, 1.5rem);
     --font-size-vlg: clamp(0.5rem, 1.5rem + 0.375vw, 1.7rem);
