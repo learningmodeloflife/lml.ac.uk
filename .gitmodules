@@ -1,0 +1,3 @@
+[submodule "shared-files"]
+	path = shared-files
+	url = https://github.com/learningmodeloflife/shared-files
