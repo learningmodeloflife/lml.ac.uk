@@ -11,10 +11,9 @@ custom_js:
     <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
     <div class="index-image-container">
         <picture>
-            <source media="(max-width: 600px)" srcset="/img/index_one_small.webp">
-            <source media="(max-width: 800px)" srcset="/img/index_one_medium.webp">
-            <source media="(min-width: 801px)" srcset="/img/index_one.webp">
-            <img decoding="async" src="/img/index_one.webp" alt="Artistic representation of biological data" class="index-image">
+            <source media="(max-width: 600px)" srcset="/img/index_one_small.webp" fetchpriority="high">
+            <source media="(min-width: 601px)" srcset="/img/index_one.webp">
+            <img decoding="async" fetchpriority="high" src="/img/index_one.webp" alt="Artistic representation of biological data" class="index-image">
         </picture>
     </div>
     <section class="content-section" id="singularity">
@@ -56,7 +55,8 @@ custom_js:
                         (max-width: 1200px) 60vw,
                         50vw"
                  alt="Edinburgh syline" 
-                 class="left-image">
+                 class="left-image"
+                 fetchpriority="low">
             <div class="uoe">
                 <p>Drawing on world-class talent from across The University of Edinburgh, the Learning Model of Life is an inter-disciplinary initiative to develop an autonomously-learning computational model of life.</p>
             </div>
