@@ -100,10 +100,14 @@
   align-items: center;
 }
 
-.footer-logo {
-  width: 100%;
+.footer-logo-box{
+  display: flex;
   max-width: 250px;
-  height: 4rem;
+  margin: auto 2em;
+}
+
+.footer-logo {
+  max-width: 100%;
 }
 
 .footer-divider {
