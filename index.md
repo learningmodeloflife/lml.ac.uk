@@ -14,9 +14,10 @@ custom_js:
          srcset="/img/index_one_small.webp 480w,
                  /img/index_one_medium.webp 800w,
                  /img/index_one.webp 1200w"
-         sizes="(max-width: 600px) 100vw,
-                (max-width: 1200px) 80vw,
-                60vw"
+         sizes="(max-width: 480px) 100vw,
+                (max-width: 800px) 80vw,
+                (max-width: 1200px) 60vw,
+                50vw"
          alt="Artistic representation of biological data"
          class="index-image">
     </div>
@@ -27,9 +28,10 @@ custom_js:
                  srcset="/img/index_two_small.webp 480w,
                         /img/index_two_medium.webp 800w,
                         /img/index_two.webp 1200w"
-                 sizes="(max-width: 600px) 100vw,
-                       (max-width: 1200px) 80vw,
-                       60vw"
+                 sizes="(max-width: 480px) 100vw,
+                        (max-width: 800px) 80vw,
+                        (max-width: 1200px) 60vw,
+                        50vw"
                  alt="Visualisation of complex biological processes" 
                  class="right-image">
             <div class="singularity">
@@ -51,11 +53,12 @@ custom_js:
             </div>
             <img src="/img/index_three_small.webp"
                  srcset="/img/index_three_small.webp 480w,
-                        /img/index_three_medium.webp 800w,
-                        /img/index_three.webp 1200w"
-                 sizes="(max-width: 600px) 100vw,
-                       (max-width: 1200px) 80vw,
-                       60vw" 
+                         /img/index_three_medium.webp 800w,
+                         /img/index_three.webp 1200w"
+                 sizes="(max-width: 480px) 100vw,
+                        (max-width: 800px) 80vw,
+                        (max-width: 1200px) 60vw,
+                        50vw"
                  alt="Edinburgh syline" 
                  class="left-image">
             <div class="uoe">
