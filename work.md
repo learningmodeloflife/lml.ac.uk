@@ -13,7 +13,7 @@ description: "An overview of academic works from the Learning Model of Life team
 
   {% if output.img %} <!-- IF NO IMAGE, NOTHING APPEARS -->
     <div class="article-item">
-        <img src="{{ output.img }}" alt="Image of front page of {{ output.title }}" class="article-image lazy" data-src="{{ output.img_small }}" loading="lazy">
+        <img src="{{ output.img }}" alt="Image of front page of {{ output.title }}" class="article-image lazy" data-src="{{ output.img_small }}">
         <div class="article-info">
           {% if output.author_short %}
             {% if output.doi %}
