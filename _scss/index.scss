@@ -38,9 +38,11 @@
     transition: left 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.decoding-char.encoded-text {color: var(--dark-gray);}
-
-.decoding-char.decoded-text {color: var(--dark-gray);}
+.decoding-char {
+    &.encoded-text, &.decoded-text {
+      color: var(--dark-gray);
+    }
+  }
 
 /* Animation Keyframes */
 @keyframes blendOut {

@@ -36,7 +36,9 @@ sass:
 jekyll-minifier:
   uglifier_args:
     harmony: true
+  compress_css: true
   compress_javascript: true
+  compress_html: true
 
 exclude:
   - Gemfile
