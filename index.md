@@ -10,16 +10,12 @@ custom_js:
     <h1 class="hero-title">The Learning Model of Life</h1 >
     <div id="decoding-animation" class="decoding-animation">Decoding the rules of biology</div>
     <div class="index-image-container">
-    <img src="/img/index_one-small.webp" 
-         srcset="/img/index_one_small.webp 480w,
-                 /img/index_one_medium.webp 800w,
-                 /img/index_one.webp 1200w"
-         sizes="(max-width: 480px) 100vw,
-                (max-width: 800px) 80vw,
-                (max-width: 1200px) 60vw,
-                50vw"
-         alt="Artistic representation of biological data"
-         class="index-image">
+        <picture>
+            <source media="(max-width: 600px)" srcset="/img/index_one_small.webp">
+            <source media="(max-width: 800px)" srcset="/img/index_one_medium.webp">
+            <source media="(min-width: 801px)" srcset="/img/index_one.webp">
+            <img decoding="async" src="/img/index_one.webp" alt="Artistic representation of biological data" class="index-image">
+        </picture>
     </div>
     <section class="content-section" id="singularity">
         <div class="first-content-container">
