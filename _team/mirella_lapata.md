@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Mirella Lapata
-img: /shared-files/img/people/mirellalapata.webp
+img: /img/people/mirellalapata.webp
 role: Co-director
 email: s1789688@sms.ed.ac.uk 
 weight: 1

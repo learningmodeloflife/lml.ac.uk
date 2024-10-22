@@ -1,1 +1,0 @@
-This folder contains documents that can be synchronised with the *pitches* folder. It is not a submodule. Don't ask. 

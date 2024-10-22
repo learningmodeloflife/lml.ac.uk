@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Marie Zechner
-img: /shared-files/img/people/mariezechner.webp
+img: /img/people/mariezechner.webp
 role: Head of Design
 email: s1789688@sms.ed.ac.uk 
 weight: 3

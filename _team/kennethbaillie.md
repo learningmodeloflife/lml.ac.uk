@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Kenneth Baillie
-img: /shared-files/img/people/kennethbaillie.webp
+img: /img/people/kennethbaillie.webp
 role: Co-director
 email: j.k.baillie@ed.ac.uk
 weight: 1

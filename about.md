@@ -8,7 +8,7 @@ description: "A brief summary of the Learning Model of Life project and our cont
     <h1 class="about-title">The Learning Model of Life</h1>
     <div class="about-section">
         <div class="logo-container">
-            <img src="/shared-files/img/logo/LML_logo.webp" alt="Learning Model of Life Logo" class="lml-logo">
+            <img src="/img/logo/LML_logo.webp" alt="Learning Model of Life Logo" class="lml-logo">
         </div>
         <div class="about-text">
             <p>

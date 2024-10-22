@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Wilna Oosthuyzen
-img: /shared-files/img/people/wilnaoosthuyzen.webp
+img: /img/people/wilnaoosthuyzen.webp
 role: Chief Operating Officer
 email: wilna.oosthuyzen@ed.ac.uk
 weight: 2

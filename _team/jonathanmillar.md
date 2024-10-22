@@ -2,7 +2,7 @@
 layout: person
 name: Jonathan Millar
 weight: 2
-img: /shared-files/img/people/jonathanmillar.webp
+img: /img/people/jonathanmillar.webp
 role: Chief of Staff
 email: jonathan.millar@ed.ac.uk
 ---

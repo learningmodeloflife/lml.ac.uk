@@ -2,7 +2,7 @@
 layout: person
 name: Konrad Rawlik
 weight: 2
-img: /shared-files/img/people/konradrawlik.webp
+img: /img/people/konradrawlik.webp
 role: Chief Technical Officer
 email: konrad.rawlik@roslin.ed.ac.uk
 ---

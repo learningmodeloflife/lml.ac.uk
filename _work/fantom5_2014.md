@@ -3,7 +3,7 @@ title: FANTOM5
 pmid: '24670764'
 doi: 10.1038/nature13182
 id: fantom5_2014
-img: /shared-files/img/outputs/fantom5_2014.webp
+img: /img/outputs/fantom5_2014.webp
 author_short: Baillie et al
 journal: Nature
 date: '2014-03-01'

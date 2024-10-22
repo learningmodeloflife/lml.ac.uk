@@ -3,7 +3,7 @@ title: MAIC evaluation
 pmid: '23841736'
 doi: 10.1093/bioinformatics/btac621
 id: wangsystematiccomparisonranking2022
-img: /shared-files/img/outputs/maic_evaluation_2022.webp
+img: /img/outputs/maic_evaluation_2022.webp
 author_short: Baillie et al
 journal: Bioinformatics
 date: '2022-11-01'

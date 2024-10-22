@@ -3,7 +3,7 @@ title: GenOMICC Covid 2023
 pmid: 37198478
 doi: 10.1038/s41586-023-06034-3
 id: pairo-castineiragwasmetaanalysisidentifies2023
-img: /shared-files/img/outputs/genomicc_covid_2023.webp
+img: /img/outputs/genomicc_covid_2023.webp
 author_short: Rawlik... Zechner... Oosthuyzen... Millar... ...Baillie
 journal: Nature
 date: '2023-03-01'

@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Ian Simpson
-img: /shared-files/img/people/iansimpson.webp
+img: /img/people/iansimpson.webp
 role: Academic Lead
 email: wilna.oosthuyzen@ed.ac.uk
 weight: 2
