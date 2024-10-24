@@ -40,13 +40,10 @@
   width: 100%;
   height: 100%;
   object-fit: contain; /* Ensure the logo fits within the container */
-  opacity: 0.2; 
+  opacity: 1; 
   transition: opacity 0.3s ease; 
 }
 
-.lml-logo:hover {
-  opacity: 1;
-}
 
 /* About text styles */
 .about-text {
@@ -88,5 +85,11 @@
   .logo-container {
     padding-right: 2.5rem;
     padding-bottom: 0rem;
+  }
+  .lml-logo {
+  opacity: 0.2;
+  }
+  .lml-logo:hover {
+  opacity: 1;
   }
 }
