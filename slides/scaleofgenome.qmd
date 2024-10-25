@@ -1,0 +1,11 @@
+---
+title: ""
+format:
+  revealjs:
+    controls: true
+---
+
+{{< include _includes/bckgd_big_scale_of_genome.qmd >}}
+
+
+

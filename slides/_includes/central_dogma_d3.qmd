@@ -1,0 +1,650 @@
+<style>
+.d3holdingpen {
+  display: flex;
+  width: 1050px;
+  height: 700px;
+  justify-content: space-around;
+  visibility: hidden;
+}
+</style>
+
+<!--
+  SLIDE IDS MUST HAVE A COMMON STEM, EG d3-slide-
+-->
+
+## Generative AI models of biology {#d3-slide-1}
+
+<div id="outercontainer" class="d3holdingpen" >
+  <div id="d3-container" style="width: 1050px; height: 700px"></div>
+</div>
+
+## Generative AI models of biology {#d3-slide-2}
+
+## Generative AI models of biology {#d3-slide-3}
+
+## Generative AI models of biology {#d3-slide-4}
+
+## Generative AI models of biology {#d3-slide-5}
+
+## Generative AI models of biology {#d3-slide-6}
+
+## Generative AI models of biology {#d3-slide-7}
+
+## Generative AI models of biology {#d3-slide-8}
+
+## Generative AI models of biology {#d3-slide-9}
+
+
+
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let visualizationRendered = false;
+  const d3outerContainer = document.getElementById('outercontainer');
+
+  const slideActions = {
+      'd3-slide-1': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 50);
+          setHeightFromBottom(2, 50);
+          setHeightFromBottom(3, 50);
+          setHeightFromBottom(4, 50);
+          setHeightFromBottom(5, 50);
+          setHeightFromBottom(6, 700);
+          setNodeYPosition("Variant", 300);
+          setNodeYPosition("Covid-19", 300);
+      },
+      'd3-slide-2': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 50);
+          setHeightFromBottom(2, 50);
+          setHeightFromBottom(3, 50);
+          setHeightFromBottom(4, 50);
+          setHeightFromBottom(5, 50);
+          setHeightFromBottom(6, 700);
+          setNodeYPosition("Variant", 300);
+          setNodeYPosition("Covid-19", 300);
+          drawNewLink("Variant", "Covid-19");
+      },
+      'd3-slide-3': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 50);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 50);
+          setHeightFromBottom(4, 50);
+          setHeightFromBottom(5, 50);
+          setHeightFromBottom(6, 700);
+          setNodeYPosition("Variant", 200);
+          setNodeYPosition("Covid-19", 400);
+      },
+      'd3-slide-4': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 50);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 50);
+          setHeightFromBottom(4, 50);
+          setHeightFromBottom(5, 50);
+          setHeightFromBottom(6, 700);
+          addNode("TYK2", 2, 400);
+          drawNewLink("Variant", "TYK2");
+      },
+      'd3-slide-5': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 50);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 50);
+          setHeightFromBottom(4, 50);
+          setHeightFromBottom(5, 50);
+          setHeightFromBottom(6, 700);
+          drawNewLink("TYK2", "Covid-19");
+      },
+      'd3-slide-6': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 50);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 50);
+          setHeightFromBottom(4, 50);
+          setHeightFromBottom(5, 50);
+          setHeightFromBottom(6, 700);
+          changeNodeSize("Variant", 10);
+          addNode("Variant2", 0, 220);
+          addNode("Variant3", 0, 240);
+          addNode("Variant4", 0, 260);
+          addNode("Variant5", 0, 280);
+          addNode("Variant6", 0, 300);
+          addNode("Variant7", 0, 320);
+          changeNodeTextOpacity("Variant", 0);
+          changeNodeTextOpacity("Variant2", 0);
+          changeNodeTextOpacity("Variant3", 0);
+          changeNodeTextOpacity("Variant4", 0);
+          changeNodeTextOpacity("Variant5", 0);
+          changeNodeTextOpacity("Variant6", 0);
+          changeNodeTextOpacity("Variant7", 0);
+          changeNodeSize("Variant2",10);
+          changeNodeSize("Variant3",10);
+          changeNodeSize("Variant4",10);
+          changeNodeSize("Variant5",10);
+          changeNodeSize("Variant6",10);
+          changeNodeSize("Variant7",10);
+          drawNewLink("Variant2", "TYK2");
+          drawNewLink("Variant3", "TYK2");
+          drawNewLink("Variant4", "TYK2");
+          drawNewLink("Variant5", "TYK2");
+          drawNewLink("Variant6", "TYK2");
+          drawNewLink("Variant7", "TYK2");
+          drawNewLink("Variant2", "Covid-19");
+          drawNewLink("Variant3", "Covid-19");
+          drawNewLink("Variant4", "Covid-19");
+          drawNewLink("Variant5", "Covid-19");
+          drawNewLink("Variant6", "Covid-19");
+          drawNewLink("Variant7", "Covid-19");
+      },
+      'd3-slide-7': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 700);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 700);
+          setHeightFromBottom(4, 700);
+          setHeightFromBottom(5, 700);
+          setHeightFromBottom(6, 700);
+          changeAllNodeTextOpacity(0);
+          changeAllNodeSizes(10);
+          setNodeYPosition("Variant", 60);
+          setNodeYPosition("Variant2", 80);
+          setNodeYPosition("Variant3", 100);
+          setNodeYPosition("Variant4", 120);
+          setNodeYPosition("Variant5", 140);
+          setNodeYPosition("Variant6", 160);
+          setNodeYPosition("Variant7", 180);
+          setNodeYPosition("Covid-19", 180);
+          setNodeYPosition("TYK2", 180);
+      },
+      'd3-slide-8': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 700);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 700);
+          setHeightFromBottom(4, 700);
+          setHeightFromBottom(5, 700);
+          setHeightFromBottom(6, 700);
+          nodeDelay = 700; // milliseconds
+          setTimeout(function() {
+              addNode("var0", 0, 500, 10, 0);
+              addNode("new0", 1, 500, 10, 0);
+              drawNewLink("var0", "new0");
+          }, nodeDelay * 0); // Multiply by 0 to execute immediately
+
+          setTimeout(function() {
+              addNode("var1", 0, 520, 10, 0);
+              addNode("new1", 2, 520, 10, 0);
+              drawNewLink("var1", "new1");
+          }, nodeDelay * 1); // Multiply by 1 to execute after 3 seconds
+
+          setTimeout(function() {
+              addNode("var3", 0, 540, 10, 0);
+              addNode("new3", 3, 540, 10, 0);
+              drawNewLink("var3", "new3");
+          }, nodeDelay * 2); // Multiply by 2 to execute after 6 seconds
+
+          setTimeout(function() {
+              addNode("var4", 0, 560, 10, 0);
+              addNode("new4", 4, 560, 10, 0);
+              drawNewLink("var4", "new4");
+          }, nodeDelay * 3); // Multiply by 3 to execute after 9 seconds
+
+          setTimeout(function() {
+              addNode("var5", 0, 580, 10, 0);
+              addNode("new5", 5, 580, 10, 0);
+              drawNewLink("var5", "new5");
+          }, nodeDelay * 4); // Multiply by 4 to execute after 12 seconds
+
+          setTimeout(function() {
+              addNode("var6", 0, 600, 10, 0);
+              addNode("new6", 6, 600, 10, 0);
+              drawNewLink("var6", "new6");
+          }, nodeDelay * 5); // Multiply by 5 to execute after 15 seconds
+
+      },
+      'd3-slide-9': () => {
+          console.log(" -- actions found for this slide");
+          d3outerContainer.style.visibility = "visible";
+          setHeightFromBottom(0, 700);
+          setHeightFromBottom(1, 700);
+          setHeightFromBottom(2, 700);
+          setHeightFromBottom(3, 700);
+          setHeightFromBottom(4, 700);
+          setHeightFromBottom(5, 700);
+          setHeightFromBottom(6, 700);
+      }
+  };
+
+  window.renderOrUpdateD3Visualization = function() {
+      const currentSlideId = Reveal.getCurrentSlide().id;
+      console.log("slide id obtained: " + currentSlideId)
+      // Check if the visualization has already been rendered
+      if (!visualizationRendered && currentSlideId.startsWith("d3-slide-")) {
+          console.log("rendering D3 because visualizationRendered is false and currentSlideId is d3-slide-1");
+
+          const columns = [
+              { name: "DNA",   color: "#2C7BB6", height: 700, 
+                nodes: [{ id: "Variant", y: 300 }]
+              },
+              { name: "Regulation", color: "#FFA07A", height: 50, 
+                nodes: []
+              },
+              { name: "Genes",      color: "#ADDD8E", height: 50, 
+                nodes: []
+              },
+              { name: "Proteins",   color: "#8856A7", height: 50, 
+                nodes: []
+              },
+              { name: "Cells",      color: "#FED976", height: 50, 
+                nodes: []
+              },
+              { name: "Organisms",  color: "#FC9272", height: 50, 
+                nodes: []
+              },
+              { name: "Disease",    color: "#D0D1E6", height: 700, 
+                nodes: [{ id: "Covid-19", y: 300 }]
+              },
+          ];
+
+          const gap = 20; // Increased gap between columns
+          const labelfontsize = 24;
+          const labelcolor = "white";
+
+          const nodesize = 50;
+          const nodecolor1 = "#e2e1f2";
+          const nodecolor2 = "#b1aaff";
+          const nodefontsize = 16;
+          const nodetextcolor = "black"
+
+          const edgeweight = 2;
+          const edgealpha = 0.9;
+          const edgecolor = "#999";
+
+          const colnames = columns.map(col => col.name || `Column${columns.indexOf(col) + 1}`); // default to column1 if not specified
+          const colors = columns.map(col => col.color || "#FFF"); // default to #FFF if not specified
+          const nodesData = columns.map(col => col.nodes);
+          const width = document.getElementById('d3-container').clientWidth;
+          const height = document.getElementById('d3-container').clientHeight;
+          const numColumns = nodesData.length;
+          const columnWidth = (width - gap * (numColumns + 1)) / numColumns;
+          const miny = nodesize;
+          const maxy = height - nodesize;
+
+          const svg = d3.select("#d3-container").append("svg")
+              .attr("width", "1050px")
+              .attr("height", "700px");
+
+          // Define a drop shadow filter
+          const defs = svg.append("defs");
+          const filter = defs.append("filter")
+              .attr("id", "drop-shadow")
+              .attr("height", "130%");
+          filter.append("feGaussianBlur")
+              .attr("in", "SourceAlpha")
+              .attr("stdDeviation", 4)
+              .attr("result", "blur");
+          filter.append("feOffset")
+              .attr("in", "blur")
+              .attr("dx", 1)
+              .attr("dy", 1)
+              .attr("result", "offsetBlur");
+          const feMerge = filter.append("feMerge");
+          feMerge.append("feMergeNode")
+              .attr("in", "offsetBlur");
+          feMerge.append("feMergeNode")
+              .attr("in", "SourceGraphic");
+
+          svg.selectAll(".column")
+              .data(columns)
+              .enter().append("rect")
+              .attr("x", (_, i) => gap + i * (columnWidth + gap))
+              .attr("y", 0)
+              .attr("width", columnWidth)
+              .attr("height", d => d.height)
+              .attr("fill", d => d.color)
+              .style("filter", "url(#drop-shadow)");
+
+          // Draw labels for columns
+          svg.selectAll(".column-label")
+              .data(colors)
+              .enter().append("text")
+              .attr("class", "column-label")
+              .attr("x", (_, i) => gap + i * (columnWidth + gap) + columnWidth / 2)
+              .attr("y", "0.85em") // Adjust this value based on how far above the columns you want the labels
+              .attr("text-anchor", "middle") // Center the text above the column
+              .attr("fill", labelcolor) // Set the text color to black
+              .style("font-weight", "bold") // Make the text bold
+              .style("font-size", labelfontsize)
+              .text((_, i) => colnames[i]); // Set the label text
+
+          let nodes = [];
+          let links = [];
+
+          nodesData.forEach((columnNodes, columnIndex) => {
+              const columnX = columnIndex * (columnWidth + gap) + gap + columnWidth / 2;
+              columnNodes.forEach(nodeData => {
+                  nodes.push({
+                      ...nodeData,
+                      initialX: columnX, // Store the initial x-position
+                      x: columnX,
+                      initialY: nodeData.y, // Store the original y-position
+                      y: nodeData.y
+                  });
+              });
+              if (columnNodes.length >= 2) {
+                  links.push({ source: columnNodes[0].id, target: columnNodes[1].id });
+                  if (columnNodes.length >= 3) {
+                      links.push({ source: columnNodes[1].id, target: columnNodes[2].id });
+                  }
+              }
+          });
+
+          const gradient = defs.append("radialGradient")
+              .attr("id", "radial-gradient");
+          gradient.append("stop")
+              .attr("offset", "10%")
+              .attr("stop-color", nodecolor1);
+          gradient.append("stop")
+              .attr("offset", "100%")
+              .attr("stop-color", nodecolor2);
+
+          if (svg.select(".links").empty()) {
+              svg.append("g").attr("class", "links");
+          }
+
+          link = svg.select(".links").selectAll("line")
+              .data(links)
+              .enter()
+              .append("line")
+              .attr("stroke", edgecolor)
+              .attr("stroke-opacity", edgealpha)
+              .attr("stroke-width", edgeweight);
+
+          let nodeGroup = svg.append("g")
+              .attr("class", "nodes")
+              .selectAll(".node")
+              .data(nodes)
+              .enter().append("g")
+              .attr("class", "node");
+
+          nodeGroup.append("circle")
+              .attr("r", nodesize)
+              .attr("fill", "url(#radial-gradient)");
+          nodeGroup.append("text")
+              .text(d => d.id) // Set text to node id
+              .style("font-size", nodefontsize)
+              .attr("text-anchor", "middle") // Center text
+              .attr("dy", ".35em") // Vertically center text
+              .attr("fill", nodetextcolor); // Set text color
+          
+          const simulation = d3.forceSimulation(nodes)
+              .force("link", d3.forceLink(links).id(d => d.id).distance(50).strength(0.5))
+              .alphaDecay(0.05) // Adjusts how quickly the simulation cools
+              .force("charge", d3.forceManyBody().strength(-50)) // Adjusts the repulsive force between nodes
+              .force("y", d3.forceY(d => d.initialY).strength(1.0))
+              //.force("y", d3.forceY().y(d => d.y))
+              //.force("x", d3.forceX().x(d => d.x))
+              .on("tick", ticked);
+
+          let yconstraint = 1;
+
+          simulation.on("tick", () => {
+              forceYConstrain(yconstraint);
+              forceXConstrain(1);
+              ticked(); // Update positions in the ticked function
+          });
+
+          function ticked() {
+              link
+                  .attr("x1", d => d.source.x)
+                  .attr("y1", d => d.source.y)
+                  .attr("x2", d => d.target.x)
+                  .attr("y2", d => d.target.y);
+              nodeGroup.attr("transform", d => `translate(${d.x},${d.y})`);
+          };
+
+          function forceYConstrain(alpha) {
+              for (let node of nodes) {
+                  node.vy -= (node.y - node.initialY) * alpha;
+                  let newY = node.y + node.vy;
+                  if (newY > maxy) {
+                      newY = maxy;
+                      node.vy = maxy - node.y;
+                  } else if (newY < miny) {
+                      newY = miny;
+                      node.vy = miny - node.y;
+                  }
+              }
+          };
+
+          function forceXConstrain(alpha) {
+              for (let node of nodes) {
+                  node.x = node.initialX; // completely clamp position
+              }
+          };
+
+          window.addNode = function(nodeId, columnIndex, newY, thisNodeSize = nodesize, thisnodetextopacity=100) {
+              if (columnIndex < 0 || columnIndex >= columns.length) {
+                  console.error("Column index out of range");
+                  return;
+              }
+
+              const existingNode = nodes.find(node => node.id === nodeId);
+              if (existingNode) {
+                  console.error("Node with ID '" + nodeId + "' already exists.");
+                  return; // Node already exists
+              }
+
+              // Calculate the x position based on column index
+              const columnX = columnIndex * (columnWidth + gap) + gap + columnWidth / 2;
+
+              const newNode = {
+                  id: nodeId,
+                  x: columnX,
+                  initialX: columnX,
+                  y: newY,
+                  initialY: newY,
+                  size: thisNodeSize
+              };
+
+              nodes.push(newNode);
+
+              const updatedNodeSelection = svg.select(".nodes").selectAll(".node")
+                  .data(nodes, d => d.id);
+
+              const enterSelection = updatedNodeSelection.enter().append("g")
+                  .attr("class", "node");
+
+              enterSelection.append("circle")
+                  .attr("r", d => d.size) // Use dynamic size
+                  .attr("fill", "url(#radial-gradient)");
+
+              enterSelection.append("text")
+                  .text(d => d.id)
+                  .style("font-size", nodefontsize)
+                  .attr("text-anchor", "middle")
+                  .attr("dy", ".35em")
+                  .attr("fill", nodetextcolor)
+                  .style("opacity", thisnodetextopacity);
+
+              // Merge the enter selection with the existing nodes to update the nodeGroup selection - this is the key part
+              nodeGroup = enterSelection.merge(updatedNodeSelection);
+
+              simulation.nodes(nodes);
+              updateGraph();
+          };
+
+          function updateGraph() {              
+              simulation.alpha(0.3).restart();
+          }
+
+
+          window.drawNewLink = function(sourceId, targetId) {
+              const sourceNode = nodes.find(node => node.id === sourceId);
+              const targetNode = nodes.find(node => node.id === targetId);
+              if (!sourceNode || !targetNode) {
+                  console.error("Source or target node not found");
+                  return;
+              }
+              links.push({ source: sourceNode, target: targetNode });
+              simulation.force("link").links(links);
+              updateGraph();
+              link = svg.select(".links").selectAll("line").data(links, d => d.source.id + "-" + d.target.id);
+              link.enter().append("line")
+                  .attr("stroke", edgecolor)
+                  .attr("stroke-opacity", edgealpha)
+                  .attr("stroke-width", edgeweight);
+              // running this again makes the link actually appear.
+              link = svg.select(".links").selectAll("line").data(links, d => d.source.id + "-" + d.target.id);
+          };
+
+          //  function setHeightFromTop(columnIndex, newHeight) {
+          window.setHeightFromTop = function(columnIndex, newHeight) {
+              svg.select(`rect:nth-child(${columnIndex + 2})`)
+                  .transition()
+                  .duration(1000)
+                  .attr("height", newHeight)
+                  .attr("y", height - newHeight);
+          };
+
+          //  function setHeightFromBottom(columnIndex, newHeight) {
+          window.setHeightFromBottom = function(columnIndex, newHeight) {
+              svg.select(`rect:nth-child(${columnIndex + 2})`)
+                  .transition()
+                  .duration(1000)
+                  .attr("height", newHeight);
+          };
+
+          window.setNodeYPosition = function(nodeId, newY) {
+              console.log()
+              const node = nodes.find(n => n.id === nodeId);
+              if (node) {
+                  node.initialY = newY; // Update target position
+              } else {
+                  console.warn("Node with ID '" + nodeId + "' not found.");
+                  return;
+              }
+              simulation.force('y', d3.forceY(d => d.initialY).strength(0.1));
+              updateGraph();
+          };
+
+          function updateVisuals() {
+              // Directly update node positions
+              svg.selectAll(".node")
+                 .attr("transform", d => `translate(${d.x},${d.y})`);
+              
+              // Update link positions to align with updated nodes
+              svg.selectAll(".links line")
+                 .attr("y1", d => d.source.y)
+                 .attr("y2", d => d.target.y);
+              
+              // Consider re-heating the simulation if nodes need to "settle" after manual updates
+              simulation.alpha(0.3).restart();
+          }
+
+          window.changeNodeTextOpacity = function(nodeId, opacity) {
+              svg.selectAll(".node").filter(function(d) { 
+                  return d.id === nodeId;
+              }).select("text")
+                  .transition()
+                  .duration(500)
+                  .style("opacity", opacity);
+          };
+
+          window.changeAllNodeTextOpacity = function(opacity) {
+              svg.selectAll(".node text")
+                  .transition()
+                  .duration(500)
+                  .style("opacity", opacity);
+          };
+
+          window.changeNodeSize = function(nodeId, newSize) {
+              svg.selectAll(".node").filter(function(d) { 
+                  return d.id === nodeId; 
+              }).select("circle")
+                  .transition()
+                  .duration(500)
+                  .attr("r", newSize);
+          };
+
+          window.changeAllNodeSizes = function(newSize) {
+              svg.selectAll(".node circle") 
+                  .transition()
+                  .duration(500)
+                  .attr("r", newSize);
+          };
+
+          window.logGraphDetails = function() {
+              console.log("Logging Nodes:");
+              nodes.forEach((node, index) => {
+                  console.log(`Node ${index}: ID=${node.id}, initialX=${node.initialX}, x=${node.x}, initialY=${node.initialY}, y=${node.y}, size=${node.size || 'default'}`);
+              });
+
+              console.log("Logging Links:");
+              links.forEach((link, index) => {
+                  console.log(`Link ${index}: Source=${typeof link.source === 'object' ? link.source.id : link.source}, Target=${typeof link.target === 'object' ? link.target.id : link.target}`);
+              });
+          }
+
+          window.deployYAxisForceLayout = function() {
+              yconstraint = 0.1
+              simulation
+                  .force("link", d3.forceLink(links).id(d => d.id)) 
+                  .force("charge", d3.forceManyBody()) 
+                  .force("x", null)
+                  .force("y", d3.forceY().strength(1)) 
+                  .alpha(0.3)
+                  .restart();
+          }
+
+          console.log("visualizationRendered set to true")
+          visualizationRendered = true;
+      } // end of "if" statement for visualisationRendered )
+
+      console.log("Checking for slide actions for: " + currentSlideId)
+      if (slideActions.hasOwnProperty(currentSlideId)) {
+            if (d3outerContainer) {
+                currentSlide = document.getElementById(currentSlideId);
+                console.log("Appending child to: " + currentSlideId);
+                currentSlide.appendChild(d3outerContainer);
+                console.log("Executing a slide action for: " + currentSlideId);
+                slideActions[currentSlideId]();
+            } else {
+                console.log("Event currentSlide is undefined or d3outerContainer is missing. Skipping append operation.");
+            }
+          console.log("executing a slide action for: " + currentSlideId)
+          slideActions[currentSlideId]();
+      } else {
+          console.log("no slide action for this slide. ")
+      }
+  } // end of renderOrUpdateD3Visualization function
+
+  renderOrUpdateD3Visualization();
+
+  Reveal.addEventListener('slidechanged', function() {
+      renderOrUpdateD3Visualization();
+  });
+
+});
+
+</script>

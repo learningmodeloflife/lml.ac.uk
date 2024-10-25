@@ -1,0 +1,36 @@
+## Data {.center}
+
+![](../img/ai/data_curation.svg){width=30%}
+![](../img/ai/embl.svg){width=60% .r-stretch}
+
+- all essential data is freely available
+- *enabling LML*: automated curation & embedding
+
+## Compute {.center}
+
+![](../img/ai/ai_model.svg){width=30%}
+![](../img/exascale/exascale_photos.svg){width=60%}
+
+- compute power is in place already
+- *enabling LML*: optimisation for exascale and quantum
+
+<!--
+## Compute {.center}
+
+![](../img/ai/ai_model.svg){width=30%}
+![](../img/quantum/quantum_jpg.webp){width=60%}
+
+
+- emulation on conventional compute now
+- *enabling LML*: expressivity and generality 
+-->
+
+## Robotics {.center}
+
+![](../img/ai/robotic_lab.svg){width=30%}
+![](../img/ai/genome_foundry1.jpg){width=60%}
+
+- globally unique capability
+- *enabling LML*: complete automation of biological experiments
+
+

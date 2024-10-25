@@ -1,0 +1,26 @@
+{{< include _includes/moving-manhattan-source.html >}}
+
+::: {.fragment id="manhattan1"} 
+:::
+<!--
+::: footer
+- Pairo-Castineira E, Rawlik K *et al* [Nature (2021) 591: 92-98](https://doi.org/10.1038/s41586-022-04576-6)  
+- Kousthanas A, Pairo-Castineira E,*et al* [Nature (2022) 607:97–103](https://doi.org/10.1038/s41586-022-04576-6)  
+- Pairo-Castineira E, Rawlik K *et al* [Nature (2023) 617:764-768](https://doi.org/10.1038/s41586-023-06034-3)  
+:::
+-->
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  Reveal.on('fragmentshown', event => {
+    if(event.fragment.id === 'manhattan1'){
+      loadfile("../moving-manhattan/gcc_r3.csv")
+    }
+  });
+  Reveal.on('fragmenthidden', event => {
+    if(event.fragment.id === 'manhattan1'){
+      loadfile("../moving-manhattan/gcc_r1.csv")
+    }
+  });
+});
+</script>

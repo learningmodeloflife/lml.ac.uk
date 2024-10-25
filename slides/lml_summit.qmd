@@ -1,0 +1,316 @@
+---
+title: "A Learning Model of Life"
+subtitle: ""
+author: "Kenneth Baillie"
+institute: "Baillie Gifford Pandemic Science Hub, University of Edinburgh\n\nIntensive Care Unit, Royal Infirmary Edinburgh\n\nRoslin Institute, University of Edinburgh\n\nMRC Human Genetics Unit, University of Edinburgh"
+date: ""
+logo: "../img/logos/psh/BG_PSH_1COL.png"
+format:
+  revealjs:
+    controls: false
+    multiplex: false
+    fig-responsive: true
+    auto-stretch: true
+    chalkboard: false
+    theme: default
+    revealjs-plugins:
+        - slides/shared_libs/libs/revealjs/plugin/reveal-fullscreen # need to run quarto render from baillilab.net
+---
+    
+
+
+## 
+
+<!--
+
+    revealjs-plugins:
+     - fullscreen
+
+
+
+NB this presentation really stretches the browser memory in most computers.
+Probably the best thing to do is remove the direct import of three for the picture network
+
+
+to do:
+- fit to screen
+- molecular network; make red lines more sparse, more levels, big DNA level
+
+-->
+
+![](../img/ai/lml_core.svg){width=100% .r-stretch}
+
+## 
+
+![](../img/icu/covid.webp){width=100% .r-stretch}
+
+<!--
+## {.center}
+
+If we can understand biology, we can change it.
+-->
+
+## {#wireframe-slide-0 background-color="white" fullscreen=true}
+
+<div id="outercontainer">
+{{< include _includes/view_xyz_wireframes.html >}}
+</div>
+
+## {#wireframe-slide-5 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-6 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-7 background-color="white" fullscreen=true}
+
+
+## {#wireframe-slide-8 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-9a background-color="white" fullscreen=true}
+
+{{< include _includes/bckgd_big_scale_of_genome.qmd >}}
+
+## {#wireframe-slide-9b background-color="white" fullscreen=true}
+
+## {#wireframe-slide-10 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-11 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-12 background-color="white" fullscreen=true}
+
+## 
+
+![](../img/genomicc/results/paper3/mr/TYK2_axes_only-s.svg)
+
+::: footer
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature (2020)](https://doi.org/10.1038/s41586-022-04576-6)
+:::
+
+## 
+
+![](../img/genomicc/results/paper3/mr/TYK2-s.svg)
+
+::: footer
+<!--β<subscript>xy</subscript> = 0.52; p = 1.2E-23<br>-->
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature (2020)](https://doi.org/10.1038/s41586-022-04576-6)
+:::
+
+## 
+
+:::: {.columns}
+::: {.column}
+![](../img/logos/genomicc_logo_white.png){height=50}
+![](../img/genomicc/genomicc_bari2.svg)
+:::
+::: {.column}
+:::
+::::
+
+::: footer
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K <i>et al</i>. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
+:::
+
+## 
+
+![](../img/recovery/recovery-logo.jpg){height=200}
+
+### Dexamethasone
+### Tocilizumab
+### + ?
+
+## 
+
+![](../img/icu/covid.webp){width=100%}
+
+## 
+
+:::: {.columns}
+::: {.column}
+![](../img/logos/genomicc_logo_white.png){height=50}
+![](../img/genomicc/genomicc_bari2.svg)
+:::
+::: {.column}
+:::
+::::
+
+::: footer
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K <i>et al</i>. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
+
+RECOVERY Collaborative Group <i>et al</i>. [medRxiv, March 2022](https://doi.org/10.1101/2022.03.02.22271623)
+:::
+
+## {auto-animate=true}
+
+:::: {.columns}
+::: {.column}
+![](../img/logos/genomicc_logo_white.png){height=50}
+![](../img/genomicc/genomicc_bari2.svg)
+:::
+::: {.column}
+![](../img/recovery/recovery-logo.jpg){#logo height=50}
+![](../img/recovery/bari2.svg){.r-stretch}
+:::
+::::
+
+::: footer
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K <i>et al</i>. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
+
+RECOVERY Collaborative Group <i>et al</i>. [medRxiv, March 2022](https://doi.org/10.1101/2022.03.02.22271623)
+:::
+
+## 
+
+<!--Not the biggest, but maybe the smartest, and definitely the best-->
+![](../img/genomicc/results/paper3/weights-critical.svg)
+
+::: footer
+Pairo-Castineira E, Rawlik K <i>et al</i>. [Nature 2023 May;617(7962):764-768 ](https://doi.org/10.1038/s41586-023-06034-3)
+:::
+
+{{< include _includes/_functional_genomics.qmd >}}
+
+
+## {#wireframe-slide-14 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-16 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-17 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-18 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-19}
+<!-- the wireframe id pauses the graph -->
+
+##
+
+![](../img/ai/lml_core.svg){width=100% .r-stretch}
+
+
+{{< include _includes/_lml_components.qmd >}}
+
+## 
+
+![](../img/ai/lml_core.svg){width=100%}
+
+## 
+
+![](../img/ai/lml_base_core.svg){width=100%}
+
+## 
+
+![](../img/ai/lml.svg){width=100%}
+
+
+
+
+
+
+
+
+<script>
+Graph.pauseAnimation();
+
+/* stantard reusable script for persistent elements etc*/
+const slidestem = "wireframe-slide-";
+const d3outerContainer = document.getElementById('outercontainer');
+const slideActions = {
+    'wireframe-slide-0': () => {
+        Graph.resumeAnimation();
+        Graph.cameraPosition(
+            {x:0,y:-100,z:-1500}, // position
+            {x:0,y:-100,z:0},  //look at
+            0 //duration
+        );
+        repositionNodes("json/human.json",0);
+    },
+    'wireframe-slide-5': () => {
+        Graph.resumeAnimation();
+        Graph.cameraPosition(
+            {x:-224,y:203,z:-5}, // position
+            {x:-224,y:203,z:1500}, // look at this point
+            3000 //duration
+            );
+        setTimeout(() => {
+            repositionNodes("json/cells.json");
+        }, 2400); // delay 
+    },
+    'wireframe-slide-6': () => {
+        // inside view of cells
+        Graph.resumeAnimation();
+        Graph.cameraPosition(
+            {x:0,y:-600,z:4500},
+            {x:0,y:500,z:5000},
+            9000)
+    },
+    'wireframe-slide-7': () => {
+        // 0 = pathways
+        Graph.resumeAnimation();
+        dataSets[0](Graph);
+    },
+    'wireframe-slide-8': () => {
+        //1 = pathways-DNA view
+        Graph.resumeAnimation();
+        dataSets[1](Graph);
+    },
+    'wireframe-slide-9a': () => {
+        Graph.pauseAnimation();
+        // intentionally empty
+    },
+    'wireframe-slide-9b': () => {
+        // blank reset slide to ensure correct camera position for tyk2
+        Graph.resumeAnimation();
+        Graph.graphData({ nodes: [], links: [] });
+        Graph.cameraPosition(
+            {x:0,y:0,z:0},
+            {x:0,y:0,z:5000},
+            0);
+    },
+    'wireframe-slide-10': () => {
+        //2 = tyk2
+        Graph.resumeAnimation();
+        dataSets[2](Graph);
+    },
+    'wireframe-slide-11': () => {
+        //3 = tyk2 pictures
+        Graph.resumeAnimation();
+        dataSets[3](Graph);
+    },
+    'wireframe-slide-12': () => {
+        //4 = tyk2 7 nodes
+        Graph.resumeAnimation();
+        dataSets[4](Graph);
+    },
+    'wireframe-slide-14': () => {
+        //5 = human again
+        resetGraph(Graph);
+        dataSets[5](Graph);
+        // zoom back out 
+        Graph.resumeAnimation();
+        Graph.cameraPosition(
+            {x:0,y:-100,z:-1500}, // position
+            {x:0,y:-100,z:0},  //look at
+            4000 //duration
+        );
+    },
+    'wireframe-slide-16': () => {
+        Graph.resumeAnimation();
+        repositionNodes("json/chicken.json");
+    },
+    'wireframe-slide-17': () => {
+        Graph.resumeAnimation();
+        repositionNodes("json/crop.json");
+    },
+    'wireframe-slide-18': () => {
+        Graph.resumeAnimation();
+        repositionNodes("json/virus.json");
+    },
+    'wireframe-slide-19': () => {
+        resetGraph(Graph);
+        Graph.pauseAnimation();
+    }
+};
+</script>
+
+
+{{< include _includes/js/persistent_d3_element.qmd >}}
+
+

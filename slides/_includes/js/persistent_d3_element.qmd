@@ -1,0 +1,64 @@
+<script>
+/*
+Must define constants in qmd file, e.g. 
+const slidestem = "wireframe-slide-";
+const d3outerContainer = document.getElementById('outercontainer');
+const slideActions = {
+    'wireframe-slide-1': () => {
+        console.log(" -- actions found for this slide");
+    },
+    'wireframe-slide-2': () => {
+        console.log(" -- actions found for this slide");
+        moveCameraTo(300,1000,4000)
+    }, ... ... 
+*/
+
+
+function addCustomCSS() {
+  if (!document.getElementById('customRevealCSS')) {
+    const style = document.createElement('style');
+    style.id = 'customRevealCSS';
+    style.innerHTML = `.reveal .slides {width: 100% !important;}`;
+    //style.innerHTML = `.reveal .slides {width: 100vw !important; height: 100vh !important;}`;
+    document.head.appendChild(style);
+  }
+}
+
+function removeCustomCSS() {
+  const style = document.getElementById('customRevealCSS');
+  if (style) {
+    document.head.removeChild(style);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  let visualizationRendered = false;
+  window.renderOrUpdateD3Visualization = function() {
+      const currentSlideId = Reveal.getCurrentSlide().id;
+      // Check if the visualization has already been rendered
+      if (!visualizationRendered && currentSlideId.startsWith(slidestem)) {
+          visualizationRendered = true;
+      } // end of "if" statement for visualisationRendered
+      if (slideActions.hasOwnProperty(currentSlideId)) {
+            if (d3outerContainer) {
+                addCustomCSS();
+                currentSlide = document.getElementById(currentSlideId);
+                currentSlide.appendChild(d3outerContainer);
+                console.log("Executing a slide action for: " + currentSlideId);
+                d3outerContainer.style.visibility = "visible";
+                slideActions[currentSlideId]();
+            } else {
+                removeCustomCSS();
+                console.log("Event currentSlide is undefined or d3outerContainer is missing. Skipping append operation.");
+            }
+      } else {
+          removeCustomCSS();
+          console.log("no slide action for this slide.");
+      }
+  }; // end of renderOrUpdateD3Visualization function
+  renderOrUpdateD3Visualization();
+  Reveal.addEventListener('slidechanged', function() {
+      renderOrUpdateD3Visualization();
+  });
+});
+</script>
