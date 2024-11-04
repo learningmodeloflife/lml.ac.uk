@@ -1,0 +1,50 @@
+<script>
+/*
+Include this file to enable fullscreen size in quarto presentations.
+
+This is the fullscreen plugin, but I put it here because otherwise it doesn't work on netlify. 
+
+Use: 
+
+## {#wireframe-slide-0 background-color="white" fullscreen=true}
+
+Any slide with fullscreen=true will occupy the whole screen. 
+
+*/
+
+window.RevealFullscreen = window.RevealFullscreen || {
+    id: 'RevealFullscreen',
+    init: function(deck) {
+        initFullscreen(deck);
+    }
+};
+
+const initFullscreen = function(Reveal){
+  var config = null;
+  var ready = false;
+
+  Reveal.addEventListener( 'ready', function( event ) {
+    ready = true;
+    config = { width: Reveal.getConfig().width, height: Reveal.getConfig().height, margin: Reveal.getConfig().margin };
+    if ( Reveal.getCurrentSlide().hasAttribute("data-fullscreen") ) {
+      Reveal.configure( { width: window.innerWidth, height: window.innerHeight, margin: 0 } );
+    }
+  } );
+
+  Reveal.addEventListener( 'slidechanged', function( event ) {
+    if ( Reveal.getCurrentSlide().hasAttribute("data-fullscreen") ) {
+      Reveal.configure( { width: window.innerWidth, height: window.innerHeight, margin: 0 } );
+    }
+    else {
+      Reveal.configure( config );
+    }
+  } );
+
+  window.addEventListener( 'resize', function( event ) {
+    if ( ready && Reveal.getCurrentSlide().hasAttribute("data-fullscreen") ) {
+      Reveal.configure( { width: window.innerWidth, height: window.innerHeight, margin: 0 } );
+    }
+  } );
+
+};
+</script>

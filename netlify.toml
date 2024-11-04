@@ -1,3 +1,8 @@
+[[plugins]]
+package = "@quarto/netlify-plugin-quarto"
+    [plugins.inputs]
+    cmd = "render slides/ --output-dir /opt/build/repo/_site/slides/"
+
 [build]
-  command = "./build.sh"
-  publish = "_site"
+command = "bash build.sh"
+publish = "_site"
