@@ -14,19 +14,19 @@ format:
 ---
 
 
-{{< include _includes/_lml_people.qmd >}}
+{{#include _includes/_lml_people.qmd }}
 
 ## 
 
 ![](../img/ai/lml.svg){width=100% .r-stretch}
 
-{{< include _includes/_lml_components.qmd >}}
+{{#include _includes/_lml_components.qmd }}
 
 ## 
 
 ![](../img/ai/lml.svg){width=100% .r-stretch}
 
 
-<!--{{< include _includes/_ack_lml.qmd >}}-->
+<!--{{#include _includes/_ack_lml.qmd }}-->
 
 

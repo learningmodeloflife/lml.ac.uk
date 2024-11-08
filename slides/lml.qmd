@@ -4,7 +4,7 @@ subtitle: ""
 author: "Kenneth Baillie FRSE FMedSci"
 institute: "Baillie Gifford Pandemic Science Hub, University of Edinburgh\n\nIntensive Care Unit, Royal Infirmary Edinburgh\n\nRoslin Institute, University of Edinburgh\n\nMRC Human Genetics Unit, University of Edinburgh"
 date: ""
-logo: "../img/logos/psh/BG_PSH_1COL.png"
+logo: "../img/logo/LML_logo_navbar.webp"
 format:
   revealjs:
     controls: false
@@ -18,21 +18,30 @@ format:
 ---
     
 
+## People
+
+- Kenny Baillie
+- Mirella Lapata
+- Konrady Rawlik
+- Johnny Millar
+
+World-class track records in Genomics, Computational Biology, Generative AI and Natural Language Processing
+
+## 
+
+![](../img/icu/covid.webp){width=100% .r-stretch}
 
 ## 
 
 ![](../img/ai/lml_core.svg){width=100% .r-stretch}
 
 
-## {.center}
-
-If we can understand biology, we can change it.
-
 ## {#wireframe-slide-0 background-color="white" fullscreen=true}
 
 <div id="outercontainer">
 {{< include _includes/view_xyz_wireframes.html >}}
 </div>
+
 
 ## {#wireframe-slide-1 background-color="white" fullscreen=true}
 
@@ -45,38 +54,36 @@ If we can understand biology, we can change it.
 ## {#wireframe-slide-5 background-color="white" fullscreen=true}
 
 ## {#wireframe-slide-6 background-color="white" fullscreen=true}
-
+<!--
 ## {#wireframe-slide-7 background-color="white" fullscreen=true}
 
 ## {#wireframe-slide-8 background-color="white" fullscreen=true}
-
+-->
 ## {#wireframe-slide-9}
 <!-- the wireframe id pauses the graph -->
 
+
 {{< include _includes/bckgd_big_scale_of_genome.qmd >}}
 
+
+<!--
 ##
 
 ![](../img/ai/lml_core.svg){width=100% .r-stretch}
 
 
-{{< include _includes/_lml_components.qmd >}}
-
-## 
-
-![](../img/ai/lml_core.svg){width=100%}
-
 ## 
 
 ![](../img/ai/lml_base_core.svg){width=100%}
+-->
 
 ## 
 
 ![](../img/ai/lml.svg){width=100%}
 
-
+<!--
 {{< include _includes/_ack_lml.qmd >}}
-
+-->
 
 <script>
 Graph.pauseAnimation();

@@ -342,13 +342,23 @@ Kenneth Baillie FRSE FMedSci
 </div>
 
 </section>
+<section id="people" class="slide level2">
+<h2>People</h2>
+<ul>
+<li>Kenny Baillie</li>
+<li>Mirella Lapata</li>
+<li>Konrady Rawlik</li>
+<li>Johnny Millar</li>
+</ul>
+<p>World-class track records in Genomics, Computational Biology, Generative AI and Natural Language Processing</p>
+</section>
 <section id="section" class="slide level2">
 <h2></h2>
-<img data-src="../img/ai/lml_core.svg" class="r-stretch img-fluid" style="width:100.0%">
+<img data-src="../img/icu/covid.webp" class="r-stretch img-fluid" style="width:100.0%">
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-1" class="slide level2">
 <h2></h2>
-<p>If we can understand biology, we can change it.</p>
+<img data-src="../img/ai/lml_core.svg" class="r-stretch img-fluid" style="width:100.0%">
 </section>
 <section id="wireframe-slide-0" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
@@ -970,18 +980,17 @@ window.addEventListener("keydown", function(e) {
 </section>
 <section id="wireframe-slide-6" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
-</section>
-<section id="wireframe-slide-7" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-8" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
+<!--
+## {#wireframe-slide-7 background-color="white" fullscreen=true}
+
+## {#wireframe-slide-8 background-color="white" fullscreen=true}
+-->
 </section>
 <section id="wireframe-slide-9" class="slide level2">
 <h2></h2>
 <!-- the wireframe id pauses the graph -->
 <style>
-#seqSlide{
+.seq{
   font-family: monospace;
   font-size: 30px;
 }
@@ -1004,17 +1013,14 @@ window.addEventListener("keydown", function(e) {
 </section>
 <section id="genome-sequence-slide0" class="slide level2" data-background-color="white">
 <h2></h2>
-<div id="seqSlide">
+<span id="seqSlide" class="seq">
 <p>
 Number of letters: <span id="letterCount">1</span>
 </p>
 <p>
 Possible combinations: <span id="combinations">4</span>
 </p>
-<div id="text-box" class="seqbox">
-<p><span id="sequenceDisplay"></span></p>
-</div>
-</div>
+<p><span id="text-box" class="seqbox"> <span id="sequenceDisplay"></span> </span> </p>
 <div id="seqslides1" class="fragment">
 
 </div>
@@ -1044,42 +1050,61 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let sequenceInterval = null;
   let isGeneratingSequence = false;
+  let stopSequence = false; // New flag to stop the sequence generation
 
   function startGeneratingSequence() {
     if (isGeneratingSequence) {
       return; // Exit if the sequence is already running
     }
     isGeneratingSequence = true;
-    if (sequenceInterval) {
-      clearInterval(sequenceInterval);
-    }
+    stopSequence = false; // Reset stop flag when starting the sequence
     let index = 0;
+
     function showNext() {
-      if (index < seq.length) {
-        showSequence(index);
-        let delay = index <= 0 ? 0 : index <= 3 ? 900 : index <= 20 ? 600 : index <= 50 ? 50 : 10;
-        index++;
-        setTimeout(showNext, delay);
-      } else {
-        isGeneratingSequence = false; // Reset the flag when done
+      if (stopSequence || index >= seq.length) {
+        isGeneratingSequence = false;
+        return; // Stop generating sequence if flag is set or sequence is complete
       }
+      showSequence(index);
+      let delay = index <= 0 ? 0 : index <= 3 ? 900 : index <= 20 ? 600 : index <= 50 ? 50 : 10;
+      index++;
+      setTimeout(showNext, delay);
     }
+
     showNext();
   }
 
-  function highlight_variant(pos=200){
-      let modifiedContent = seq.substring(0, pos) + 
-                            '<span id="highlight_base">' + seq.charAt(pos) + '</span>' + 
-                            seq.substring(pos + 1);
-      sequenceDisplay.innerHTML = modifiedContent;
-      setTimeout(() => {
-        document.getElementById('highlight_base').classList.add("highlight");
-      }, 100);
+  function highlight_variant(pos=200) {
+    let spanId = 'highlight_base' + pos;
+    let modifiedContent = seq.substring(0, pos) + 
+                          '<span id="' + spanId + '">' + seq.charAt(pos) + '</span>' + 
+                          seq.substring(pos + 1);
+    sequenceDisplay.innerHTML = modifiedContent;
+    setTimeout(() => {
+        document.getElementById(spanId).classList.add("highlight");
+    }, 100);
   }
 
-  function switch_variant(pos=200,from="a",to="t"){
-        document.getElementById('highlight_base').innerHTML = to;
+  function unhighlight_variant(pos=200){
+    let spanId = 'highlight_base' + pos;
+    setTimeout(() => {
+      document.getElementById(spanId).classList.remove("highlight");
+    }, 100);
+  }
+
+  function switch_variant(pos=200,to="t"){
+        let spanId = 'highlight_base' + pos;
+        document.getElementById(spanId).innerHTML = to;
       }
+
+  function stopSequenceGeneration() {
+    if (sequenceInterval) {
+      clearTimeout(sequenceInterval);
+      sequenceInterval = null;
+    }
+    isGeneratingSequence = false;
+    stopSequence = true; // This will stop future timeouts in the sequence generator
+  }
 
 
   Reveal.on('fragmentshown', event => {
@@ -1090,13 +1115,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log("generate seq");
           startGeneratingSequence();
       } else if (event.fragment.id === 'seqslides3') {
+          stopSequenceGeneration();
           console.log("highlight");
           highlight_variant(200);
       } else if (event.fragment.id === 'seqslides4') {
           console.log("switch");
-          switch_variant(200, "a", "t");
+          switch_variant(200, "t");
       }
   });
+
+  Reveal.on('fragmenthidden', event => {
+    console.log("fragmenthidden");
+    if (event.fragment.id === 'seqslides1') {
+        console.log("hide1");
+        stopSequenceGeneration();
+    } if (event.fragment.id === 'seqslides2') {
+        console.log("hide generate seq");
+        stopSequenceGeneration();
+        showSequence(0);
+    } else if (event.fragment.id === 'seqslides3') {
+        console.log("hide highlight");
+        stopSequenceGeneration();
+        unhighlight_variant(200);
+    } else if (event.fragment.id === 'seqslides4') {
+        console.log("hide switch");
+        stopSequenceGeneration();
+        switch_variant(200, "a");
+    }
+  });
+
 
 });
 </script>
@@ -1146,59 +1193,29 @@ Position 200 should change
 
 
 -->
-</section>
+<!--
+##
+
+![](../img/ai/lml_core.svg){width=100% .r-stretch}
+
+
+## 
+
+![](../img/ai/lml_base_core.svg){width=100%}
+-->
+</span></section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<img data-src="../img/ai/lml_core.svg" class="r-stretch img-fluid" style="width:100.0%">
-</section>
-<section id="data" class="slide level2 center">
-<h2>Data</h2>
-<p><img data-src="../img/ai/data_curation.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/ai/embl.svg" class="r-stretch img-fluid" style="width:60.0%"></p>
-<ul>
-<li>all essential data is freely available</li>
-<li><em>enabling LML</em>: automated curation &amp; embedding</li>
-</ul>
-</section>
-<section id="compute" class="slide level2 center">
-<h2>Compute</h2>
-<p><img data-src="../img/ai/ai_model.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/exascale/exascale_photos.svg" class="img-fluid" style="width:60.0%"></p>
-<ul>
-<li>compute power is in place already</li>
-<li><em>enabling LML</em>: optimisation for exascale and quantum</li>
-</ul>
-</section>
-<section id="compute-1" class="slide level2 center">
-<h2>Compute</h2>
-<p><img data-src="../img/ai/ai_model.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/quantum/quantum_jpg.webp" class="img-fluid" style="width:60.0%"></p>
-<ul>
-<li>emulation on conventional compute now</li>
-<li><em>enabling LML</em>: expressivity and generality</li>
-</ul>
-</section>
-<section id="robotics" class="slide level2 center">
-<h2>Robotics</h2>
-<p><img data-src="../img/ai/robotic_lab.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/ai/genome_foundry1.jpg" class="img-fluid" style="width:60.0%"></p>
-<ul>
-<li>globally unique capability</li>
-<li><em>enabling LML</em>: complete automation of biological experiments</li>
-</ul>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
+<p><img data-src="../img/ai/lml.svg" class="img-fluid" style="width:100.0%"></p>
+<!--
+## Acknowledgements
 
-<img data-src="../img/ai/lml_core.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
-<section id="section-4" class="slide level2">
-<h2></h2>
+### Learning Model of Life
 
-<img data-src="../img/ai/lml_base_core.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
-<section id="section-5" class="slide level2">
-<h2></h2>
+Ian Simpson, Mirella Lapata, Elham Kashefi, Filippo Menolascina, Sotirios Tsaftaris, Helen Hastie, David Brown, Jonathan Seckl, Konrad Rawlik, Mark Parsons, Sara Brown, Annis Richardson, Andrew Millar, Jane Hilston, Ava Khamseh, Kev Dhaliwal, Jonathan Millar, Marie Zechner, Charlie Gourlay, Mizeck Chagunda.
 
-<img data-src="../img/ai/lml.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
-<section id="acknowledgements" class="slide level2">
-<h2>Acknowledgements</h2>
-<h3 id="learning-model-of-life">Learning Model of Life</h3>
-<p>Ian Simpson, Mirella Lapata, Elham Kashefi, Filippo Menolascina, Sotirios Tsaftaris, Helen Hastie, David Brown, Jonathan Seckl, Konrad Rawlik, Mark Parsons, Sara Brown, Annis Richardson, Andrew Millar, Jane Hilston, Ava Khamseh, Kev Dhaliwal, Jonathan Millar, Marie Zechner, Charlie Gourlay, Mizeck Chagunda.</p>
+
+-->
 <script>
 Graph.pauseAnimation();
 
@@ -1332,8 +1349,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
-
-<img src="../img/logos/psh/BG_PSH_1COL.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="../img/logo/LML_logo_navbar.webp" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
 </section>
