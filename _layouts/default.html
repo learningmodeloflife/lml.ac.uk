@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+{% if page.description %}
+<meta name="description" content="{{ page.description }}">
+{% endif %}
 <body>
     {% include navbar.html %}
     <main role="main">
@@ -12,5 +15,6 @@
             <script src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
         {% endfor %}
     {% endif %}
+    <script src="{{ '/assets/js/nav-active.js' | relative_url }}" defer></script>
 </body>
 </html>

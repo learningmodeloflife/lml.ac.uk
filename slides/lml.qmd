@@ -1,10 +1,10 @@
 ---
-title: "A Learning Model of Life"
+title: "The Learning Model of Life"
 subtitle: ""
 author: "Kenneth Baillie FRSE FMedSci"
 institute: "Baillie Gifford Pandemic Science Hub, University of Edinburgh\n\nIntensive Care Unit, Royal Infirmary Edinburgh\n\nRoslin Institute, University of Edinburgh\n\nMRC Human Genetics Unit, University of Edinburgh"
 date: ""
-logo: "../img/logos/psh/BG_PSH_1COL.png"
+logo: "../img/logo/LML_logo_navbar.webp"
 format:
   revealjs:
     controls: false
@@ -16,66 +16,102 @@ format:
     revealjs-plugins:
         - slides/shared_libs/libs/revealjs/plugin/reveal-fullscreen # need to run quarto render from baillilab.net
 ---
-    
-
 
 ## 
 
-![](../img/ai/lml_core.svg){width=100% .r-stretch}
+<!--
+    We are building an autonomously-learning AI model of the molecular language underlying all life.
+    I'd like to tell you a story to illustruate the power of the approach
+-->
 
+![](../img/icu/covid.webp){width=100% .r-stretch}
 
-## {.center}
+<!--
+    I'm a computational biologist. But I also work for 20% of my time as an ICU doctor. 
+    Jenny, deteriorating at home, scared. 
+    Immune system destroying lungs
+    Which drug to choose?
+    Our solution to that problem is an example of the power of computational predictions from the genome
+-->
 
-If we can understand biology, we can change it.
+## 
 
-## {#wireframe-slide-0 background-color="white" fullscreen=true}
+![](../img/genomicc/science_translational_genomics.svg){width=100% .center}
 
+<!--
+    This was not a fluke
+-->
+
+::: footer 
+Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.1255074)
+:::
+
+## {#wireframe-slide-initiate-man background-color="white" fullscreen=true}
 <div id="outercontainer">
 {{< include _includes/view_xyz_wireframes.html >}}
 </div>
 
-## {#wireframe-slide-1 background-color="white" fullscreen=true}
+## {#wireframe-slide-3cells background-color="white" fullscreen=true}
 
-## {#wireframe-slide-2 background-color="white" fullscreen=true}
+## {#wireframe-slide-insidecell background-color="white" fullscreen=true}
 
-## {#wireframe-slide-3 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-4 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-5 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-6 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-7 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-8 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-9}
-<!-- the wireframe id pauses the graph -->
+<!--
+    Our key insight is to look in the right place
+-->
 
 {{< include _includes/bckgd_big_scale_of_genome.qmd >}}
 
-##
+## 
 
-![](../img/ai/lml_core.svg){width=100% .r-stretch}
+![](../img/genomicc/genomicc_bari2.svg){data-id="article1" }
 
-
-{{< include _includes/_lml_components.qmd >}}
+::: footer
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
+:::
 
 ## 
 
-![](../img/ai/lml_core.svg){width=100%}
+![](../img/icu/covid.webp){width=100% .r-stretch}
 
-## 
+<!--
+    To understand how we approach this, we need to consider the building blocks of life
+-->
 
-![](../img/ai/lml_base_core.svg){width=100%}
+## {#wireframe-slide-man background-color="white" fullscreen=true}
+
+## {#wireframe-slide-chicken background-color="white" fullscreen=true}
+
+## {#wireframe-slide-plant background-color="white" fullscreen=true}
+
+## {#wireframe-slide-virus background-color="white" fullscreen=true}
+
+## People
+
+- Kenny Baillie
+- Mirella Lapata
+- Konrady Rawlik
+- Johnny Millar
+
+<!--
+    World-class track records in 
+        Genomics
+        Computational Biology
+        Generative AI
+        Natural Language Processing
+-->
+
 
 ## 
 
 ![](../img/ai/lml.svg){width=100%}
 
+<!--
+    This example links a single gene, to a single molecule, in a single disease. 
+    It has already saved tens of thousands of lives. 
+    Imagine if we could do the same across many genes, many diseases, many species. 
+    With your help, I believe we can.
+-->
 
-{{< include _includes/_ack_lml.qmd >}}
 
 
 <script>
@@ -85,28 +121,28 @@ Graph.pauseAnimation();
 const slidestem = "wireframe-slide-";
 const d3outerContainer = document.getElementById('outercontainer');
 const slideActions = {
-    'wireframe-slide-0': () => {
+    'wireframe-slide-initiate-man': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition(
             {x:0,y:-100,z:-1500}, // position
             {x:0,y:-100,z:0},  //look at
             0 //duration
         );
-        //repositionNodes("json/human.json",0);
+        repositionNodes("json/human.json",0);
     },
-    'wireframe-slide-1': () => {
+    'wireframe-slide-chicken': () => {
         Graph.resumeAnimation();
         repositionNodes("json/chicken.json");
     },
-    'wireframe-slide-2': () => {
+    'wireframe-slide-plant': () => {
         Graph.resumeAnimation();
         repositionNodes("json/crop.json");
     },
-    'wireframe-slide-3': () => {
+    'wireframe-slide-virus': () => {
         Graph.resumeAnimation();
         repositionNodes("json/virus.json");
     },
-    'wireframe-slide-4': () => {
+    'wireframe-slide-man': () => {
         Graph.resumeAnimation();
         repositionNodes("json/human.json");
         Graph.cameraPosition(
@@ -115,14 +151,14 @@ const slideActions = {
             0 //duration
         );
     },
-    'wireframe-slide-5': () => {
+    'wireframe-slide-3cells': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition({x:-231,y:212,z:-5},{x:-231,y:212,z:1500},3000);
         setTimeout(() => {
             repositionNodes("json/cells.json");
         }, 2400); // delay 
     },
-    'wireframe-slide-6': () => {
+    'wireframe-slide-insidecell': () => {
         // inside view of cells
         Graph.resumeAnimation();
         Graph.cameraPosition(
@@ -140,7 +176,7 @@ const slideActions = {
         Graph.resumeAnimation();
         dataSets[1](Graph);
     },
-    'wireframe-slide-9': () => {
+    'wireframe-slide-pause': () => {
         Graph.pauseAnimation();
         resetGraph(Graph);
         // intentionally empty

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Team | Learning Model of Life | Decoding the Rules of Biology"
-description: "Learn about the Learning Model of Life initiative, our mission to decode the rules of biology, and our interdisciplinary approach combining deep biological expertise with leading AI research."
+description: "A summary of the Learning Model of Life team members."
 ---
 
 <div class="team-content">
@@ -14,12 +14,12 @@ description: "Learn about the Learning Model of Life initiative, our mission to 
         <div class="team-member">
             <div class="member-image">
                 {% if member.img %}
-                <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}">
+                <img class="img-fluid rounded float-start mr-4" src="{{member.img  | relative_url }}" alt="{{member.name}}" loading="lazy">
                 {% endif %}
             </div>
-            <h3>
+            <h2>
                 {{member.name}}
-            </h3>
+            </h2>
             <p>{{member.role}}</p>
         </div>
         {% endfor %}

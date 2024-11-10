@@ -1,0 +1,8 @@
+/*.map
+  Access-Control-Allow-Origin: *
+
+/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Content-Type: image/webp

@@ -8,10 +8,10 @@
 <link href="shared_libs/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="shared_libs/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="shared_libs/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.55">
 
   <meta name="author" content="Kenneth Baillie FRSE FMedSci">
-  <title>A Learning Model of Life</title>
+  <title>The Learning Model of Life</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -156,7 +156,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -325,7 +326,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">A Learning Model of Life</h1>
+  <h1 class="title">The Learning Model of Life</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -344,13 +345,30 @@ Kenneth Baillie FRSE FMedSci
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<img data-src="../img/ai/lml_core.svg" class="r-stretch img-fluid" style="width:100.0%">
+<!--
+    We are building an autonomously-learning AI model of the molecular language underlying all life.
+    I'd like to tell you a story to illustruate the power of the approach
+-->
+<img data-src="../img/icu/covid.webp" class="r-stretch img-fluid" style="width:100.0%">
+<!--
+    I'm a computational biologist. But I also work for 20% of my time as an ICU doctor. 
+    Jenny, deteriorating at home, scared. 
+    Immune system destroying lungs
+    Which drug to choose?
+    Our solution to that problem is an example of the power of computational predictions from the genome
+-->
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-1" class="slide level2">
 <h2></h2>
-<p>If we can understand biology, we can change it.</p>
+
+<!--
+    This was not a fluke
+-->
+<img data-src="../img/genomicc/science_translational_genomics.svg" class="center img-fluid r-stretch" style="width:100.0%"><div class="footer">
+<p>Baillie JK. <a href="https://doi.org/10.1126/science.1255074">Science 344(6186); 23 May 2014</a></p>
+</div>
 </section>
-<section id="wireframe-slide-0" class="slide level2" data-background-color="white" data-fullscreen="true">
+<section id="wireframe-slide-initiate-man" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
 <div id="outercontainer">
 <div id="3d-graph">
@@ -953,35 +971,16 @@ window.addEventListener("keydown", function(e) {
 </script>
 </div>
 </section>
-<section id="wireframe-slide-1" class="slide level2" data-background-color="white" data-fullscreen="true">
+<section id="wireframe-slide-3cells" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
 </section>
-<section id="wireframe-slide-2" class="slide level2" data-background-color="white" data-fullscreen="true">
+<section id="wireframe-slide-insidecell" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
-</section>
-<section id="wireframe-slide-3" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-4" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-5" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-6" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-7" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-8" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-9" class="slide level2">
-<h2></h2>
-<!-- the wireframe id pauses the graph -->
+<!--
+    Our key insight is to look in the right place
+-->
 <style>
-#seqSlide{
+.seq{
   font-family: monospace;
   font-size: 30px;
 }
@@ -1004,17 +1003,14 @@ window.addEventListener("keydown", function(e) {
 </section>
 <section id="genome-sequence-slide0" class="slide level2" data-background-color="white">
 <h2></h2>
-<div id="seqSlide">
+<span id="seqSlide" class="seq">
 <p>
 Number of letters: <span id="letterCount">1</span>
 </p>
 <p>
 Possible combinations: <span id="combinations">4</span>
 </p>
-<div id="text-box" class="seqbox">
-<p><span id="sequenceDisplay"></span></p>
-</div>
-</div>
+<p><span id="text-box" class="seqbox"> <span id="sequenceDisplay"></span> </span> </p>
 <div id="seqslides1" class="fragment">
 
 </div>
@@ -1044,42 +1040,61 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let sequenceInterval = null;
   let isGeneratingSequence = false;
+  let stopSequence = false; // New flag to stop the sequence generation
 
   function startGeneratingSequence() {
     if (isGeneratingSequence) {
       return; // Exit if the sequence is already running
     }
     isGeneratingSequence = true;
-    if (sequenceInterval) {
-      clearInterval(sequenceInterval);
-    }
+    stopSequence = false; // Reset stop flag when starting the sequence
     let index = 0;
+
     function showNext() {
-      if (index < seq.length) {
-        showSequence(index);
-        let delay = index <= 0 ? 0 : index <= 3 ? 900 : index <= 20 ? 600 : index <= 50 ? 50 : 10;
-        index++;
-        setTimeout(showNext, delay);
-      } else {
-        isGeneratingSequence = false; // Reset the flag when done
+      if (stopSequence || index >= seq.length) {
+        isGeneratingSequence = false;
+        return; // Stop generating sequence if flag is set or sequence is complete
       }
+      showSequence(index);
+      let delay = index <= 0 ? 0 : index <= 3 ? 900 : index <= 20 ? 600 : index <= 50 ? 50 : 10;
+      index++;
+      setTimeout(showNext, delay);
     }
+
     showNext();
   }
 
-  function highlight_variant(pos=200){
-      let modifiedContent = seq.substring(0, pos) + 
-                            '<span id="highlight_base">' + seq.charAt(pos) + '</span>' + 
-                            seq.substring(pos + 1);
-      sequenceDisplay.innerHTML = modifiedContent;
-      setTimeout(() => {
-        document.getElementById('highlight_base').classList.add("highlight");
-      }, 100);
+  function highlight_variant(pos=200) {
+    let spanId = 'highlight_base' + pos;
+    let modifiedContent = seq.substring(0, pos) + 
+                          '<span id="' + spanId + '">' + seq.charAt(pos) + '</span>' + 
+                          seq.substring(pos + 1);
+    sequenceDisplay.innerHTML = modifiedContent;
+    setTimeout(() => {
+        document.getElementById(spanId).classList.add("highlight");
+    }, 100);
   }
 
-  function switch_variant(pos=200,from="a",to="t"){
-        document.getElementById('highlight_base').innerHTML = to;
+  function unhighlight_variant(pos=200){
+    let spanId = 'highlight_base' + pos;
+    setTimeout(() => {
+      document.getElementById(spanId).classList.remove("highlight");
+    }, 100);
+  }
+
+  function switch_variant(pos=200,to="t"){
+        let spanId = 'highlight_base' + pos;
+        document.getElementById(spanId).innerHTML = to;
       }
+
+  function stopSequenceGeneration() {
+    if (sequenceInterval) {
+      clearTimeout(sequenceInterval);
+      sequenceInterval = null;
+    }
+    isGeneratingSequence = false;
+    stopSequence = true; // This will stop future timeouts in the sequence generator
+  }
 
 
   Reveal.on('fragmentshown', event => {
@@ -1090,13 +1105,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log("generate seq");
           startGeneratingSequence();
       } else if (event.fragment.id === 'seqslides3') {
+          stopSequenceGeneration();
           console.log("highlight");
           highlight_variant(200);
       } else if (event.fragment.id === 'seqslides4') {
           console.log("switch");
-          switch_variant(200, "a", "t");
+          switch_variant(200, "t");
       }
   });
+
+  Reveal.on('fragmenthidden', event => {
+    console.log("fragmenthidden");
+    if (event.fragment.id === 'seqslides1') {
+        console.log("hide1");
+        stopSequenceGeneration();
+    } if (event.fragment.id === 'seqslides2') {
+        console.log("hide generate seq");
+        stopSequenceGeneration();
+        showSequence(0);
+    } else if (event.fragment.id === 'seqslides3') {
+        console.log("hide highlight");
+        stopSequenceGeneration();
+        unhighlight_variant(200);
+    } else if (event.fragment.id === 'seqslides4') {
+        console.log("hide switch");
+        stopSequenceGeneration();
+        switch_variant(200, "a");
+    }
+  });
+
 
 });
 </script>
@@ -1146,59 +1183,58 @@ Position 200 should change
 
 
 -->
-</section>
+</span></section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<img data-src="../img/ai/lml_core.svg" class="r-stretch img-fluid" style="width:100.0%">
-</section>
-<section id="data" class="slide level2 center">
-<h2>Data</h2>
-<p><img data-src="../img/ai/data_curation.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/ai/embl.svg" class="r-stretch img-fluid" style="width:60.0%"></p>
-<ul>
-<li>all essential data is freely available</li>
-<li><em>enabling LML</em>: automated curation &amp; embedding</li>
-</ul>
-</section>
-<section id="compute" class="slide level2 center">
-<h2>Compute</h2>
-<p><img data-src="../img/ai/ai_model.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/exascale/exascale_photos.svg" class="img-fluid" style="width:60.0%"></p>
-<ul>
-<li>compute power is in place already</li>
-<li><em>enabling LML</em>: optimisation for exascale and quantum</li>
-</ul>
-</section>
-<section id="compute-1" class="slide level2 center">
-<h2>Compute</h2>
-<p><img data-src="../img/ai/ai_model.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/quantum/quantum_jpg.webp" class="img-fluid" style="width:60.0%"></p>
-<ul>
-<li>emulation on conventional compute now</li>
-<li><em>enabling LML</em>: expressivity and generality</li>
-</ul>
-</section>
-<section id="robotics" class="slide level2 center">
-<h2>Robotics</h2>
-<p><img data-src="../img/ai/robotic_lab.svg" class="img-fluid" style="width:30.0%"> <img data-src="../img/ai/genome_foundry1.jpg" class="img-fluid" style="width:60.0%"></p>
-<ul>
-<li>globally unique capability</li>
-<li><em>enabling LML</em>: complete automation of biological experiments</li>
-</ul>
+
+<img data-src="../img/genomicc/genomicc_bari2.svg" class="img-fluid r-stretch" data-id="article1"><div class="footer">
+<p>Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K <em>et al</em>. <a href="https://doi.org/10.1038/s41586-020-03065-y">Nature 2020</a></p>
+</div>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-
-<img data-src="../img/ai/lml_core.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
+<img data-src="../img/icu/covid.webp" class="r-stretch img-fluid" style="width:100.0%">
+<!--
+    To understand how we approach this, we need to consider the building blocks of life
+-->
+</section>
+<section id="wireframe-slide-man" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="wireframe-slide-chicken" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="wireframe-slide-plant" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="wireframe-slide-virus" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="people" class="slide level2">
+<h2>People</h2>
+<ul>
+<li>Kenny Baillie</li>
+<li>Mirella Lapata</li>
+<li>Konrady Rawlik</li>
+<li>Johnny Millar</li>
+</ul>
+<!--
+    World-class track records in 
+        Genomics
+        Computational Biology
+        Generative AI
+        Natural Language Processing
+-->
+</section>
 <section id="section-4" class="slide level2">
 <h2></h2>
-
-<img data-src="../img/ai/lml_base_core.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
-<section id="section-5" class="slide level2">
-<h2></h2>
-
-<img data-src="../img/ai/lml.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
-<section id="acknowledgements" class="slide level2">
-<h2>Acknowledgements</h2>
-<h3 id="learning-model-of-life">Learning Model of Life</h3>
-<p>Ian Simpson, Mirella Lapata, Elham Kashefi, Filippo Menolascina, Sotirios Tsaftaris, Helen Hastie, David Brown, Jonathan Seckl, Konrad Rawlik, Mark Parsons, Sara Brown, Annis Richardson, Andrew Millar, Jane Hilston, Ava Khamseh, Kev Dhaliwal, Jonathan Millar, Marie Zechner, Charlie Gourlay, Mizeck Chagunda.</p>
+<p><img data-src="../img/ai/lml.svg" class="img-fluid" style="width:100.0%"></p>
+<!--
+    This example links a single gene, to a single molecule, in a single disease. 
+    It has already saved tens of thousands of lives. 
+    Imagine if we could do the same across many genes, many diseases, many species. 
+    With your help, I believe we can.
+-->
 <script>
 Graph.pauseAnimation();
 
@@ -1206,28 +1242,28 @@ Graph.pauseAnimation();
 const slidestem = "wireframe-slide-";
 const d3outerContainer = document.getElementById('outercontainer');
 const slideActions = {
-    'wireframe-slide-0': () => {
+    'wireframe-slide-initiate-man': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition(
             {x:0,y:-100,z:-1500}, // position
             {x:0,y:-100,z:0},  //look at
             0 //duration
         );
-        //repositionNodes("json/human.json",0);
+        repositionNodes("json/human.json",0);
     },
-    'wireframe-slide-1': () => {
+    'wireframe-slide-chicken': () => {
         Graph.resumeAnimation();
         repositionNodes("json/chicken.json");
     },
-    'wireframe-slide-2': () => {
+    'wireframe-slide-plant': () => {
         Graph.resumeAnimation();
         repositionNodes("json/crop.json");
     },
-    'wireframe-slide-3': () => {
+    'wireframe-slide-virus': () => {
         Graph.resumeAnimation();
         repositionNodes("json/virus.json");
     },
-    'wireframe-slide-4': () => {
+    'wireframe-slide-man': () => {
         Graph.resumeAnimation();
         repositionNodes("json/human.json");
         Graph.cameraPosition(
@@ -1236,14 +1272,14 @@ const slideActions = {
             0 //duration
         );
     },
-    'wireframe-slide-5': () => {
+    'wireframe-slide-3cells': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition({x:-231,y:212,z:-5},{x:-231,y:212,z:1500},3000);
         setTimeout(() => {
             repositionNodes("json/cells.json");
         }, 2400); // delay 
     },
-    'wireframe-slide-6': () => {
+    'wireframe-slide-insidecell': () => {
         // inside view of cells
         Graph.resumeAnimation();
         Graph.cameraPosition(
@@ -1261,7 +1297,7 @@ const slideActions = {
         Graph.resumeAnimation();
         dataSets[1](Graph);
     },
-    'wireframe-slide-9': () => {
+    'wireframe-slide-pause': () => {
         Graph.pauseAnimation();
         resetGraph(Graph);
         // intentionally empty
@@ -1332,9 +1368,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+<div class="quarto-auto-generated-content">
+<p><img src="../img/logo/LML_logo_navbar.webp" class="slide-logo"></p>
+<div class="footer footer-default">
 
-<img src="../img/logos/psh/BG_PSH_1COL.png" class="slide-logo r-stretch"><div class="footer footer-default">
-
+</div>
 </div>
 </section>
     </div>
@@ -1364,7 +1402,6 @@ document.addEventListener("DOMContentLoaded", function() {
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease-in-out",
 'autoAnimateDuration': 1,
@@ -1581,18 +1618,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1624,11 +1650,50 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1638,8 +1703,17 @@ document.addEventListener("DOMContentLoaded", function() {
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1653,7 +1727,11 @@ document.addEventListener("DOMContentLoaded", function() {
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
