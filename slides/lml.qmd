@@ -34,6 +34,57 @@ format:
     Our solution to that problem is an example of the power of computational predictions from the genome
 -->
 
+## 
+
+![](../img/genomicc/science_translational_genomics.svg){width=100% .center}
+
+<!--
+    This was not a fluke
+-->
+
+::: footer 
+Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.1255074)
+:::
+
+## {#wireframe-slide-initiate-man background-color="white" fullscreen=true}
+<div id="outercontainer">
+{{< include _includes/view_xyz_wireframes.html >}}
+</div>
+
+## {#wireframe-slide-3cells background-color="white" fullscreen=true}
+
+## {#wireframe-slide-insidecell background-color="white" fullscreen=true}
+
+<!--
+    Our key insight is to look in the right place
+-->
+
+{{< include _includes/bckgd_big_scale_of_genome.qmd >}}
+
+## 
+
+![](../img/genomicc/genomicc_bari2.svg){data-id="article1" }
+
+::: footer
+Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
+:::
+
+## 
+
+![](../img/icu/covid.webp){width=100% .r-stretch}
+
+<!--
+    To understand how we approach this, we need to consider the building blocks of life
+-->
+
+## {#wireframe-slide-man background-color="white" fullscreen=true}
+
+## {#wireframe-slide-chicken background-color="white" fullscreen=true}
+
+## {#wireframe-slide-plant background-color="white" fullscreen=true}
+
+## {#wireframe-slide-virus background-color="white" fullscreen=true}
+
 ## People
 
 - Kenny Baillie
@@ -49,79 +100,10 @@ format:
         Natural Language Processing
 -->
 
-## {#wireframe-slide-0 background-color="white" fullscreen=true}
-
-<!--
-    To understand how we approach this, we need to consider the building blocks of life
--->
-
-<div id="outercontainer">
-{{< include _includes/view_xyz_wireframes.html >}}
-</div>
-
-## {#wireframe-slide-1 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-2 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-3 background-color="white" fullscreen=true}
-
-<!--
-    Our key insight is to look in the right place
--->
-
-## {#wireframe-slide-4 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-5 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-6 background-color="white" fullscreen=true}
-<!--
-## {#wireframe-slide-7 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-8 background-color="white" fullscreen=true}
--->
-## {#wireframe-slide-9}
-<!-- the wireframe id pauses the graph -->
-
-
-{{< include _includes/bckgd_big_scale_of_genome.qmd >}}
-
-
-## 
-
-![](../sourcefiles/genomicc/genomicc_bari.svg){data-id="article1" }
-
-::: footer
-Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
-:::
-
-## 
-
-
-<!--
-    This was not a fluke
--->
-
-:::{footer}
-Science 23 MAY 2014 • VOL 344 ISSUE 6186
-:::
-<!--
-##
-
-![](../img/ai/lml_core.svg){width=100% .r-stretch}
-
-
-## 
-
-![](../img/ai/lml_base_core.svg){width=100%}
--->
 
 ## 
 
 ![](../img/ai/lml.svg){width=100%}
-
-## 
-
-![](../img/icu/covid.webp){width=100% .r-stretch}
 
 <!--
     This example links a single gene, to a single molecule, in a single disease. 
@@ -130,6 +112,8 @@ Science 23 MAY 2014 • VOL 344 ISSUE 6186
     With your help, I believe we can.
 -->
 
+
+
 <script>
 Graph.pauseAnimation();
 
@@ -137,7 +121,7 @@ Graph.pauseAnimation();
 const slidestem = "wireframe-slide-";
 const d3outerContainer = document.getElementById('outercontainer');
 const slideActions = {
-    'wireframe-slide-0': () => {
+    'wireframe-slide-initiate-man': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition(
             {x:0,y:-100,z:-1500}, // position
@@ -146,19 +130,19 @@ const slideActions = {
         );
         repositionNodes("json/human.json",0);
     },
-    'wireframe-slide-1': () => {
+    'wireframe-slide-chicken': () => {
         Graph.resumeAnimation();
         repositionNodes("json/chicken.json");
     },
-    'wireframe-slide-2': () => {
+    'wireframe-slide-plant': () => {
         Graph.resumeAnimation();
         repositionNodes("json/crop.json");
     },
-    'wireframe-slide-3': () => {
+    'wireframe-slide-virus': () => {
         Graph.resumeAnimation();
         repositionNodes("json/virus.json");
     },
-    'wireframe-slide-4': () => {
+    'wireframe-slide-man': () => {
         Graph.resumeAnimation();
         repositionNodes("json/human.json");
         Graph.cameraPosition(
@@ -167,14 +151,14 @@ const slideActions = {
             0 //duration
         );
     },
-    'wireframe-slide-5': () => {
+    'wireframe-slide-3cells': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition({x:-231,y:212,z:-5},{x:-231,y:212,z:1500},3000);
         setTimeout(() => {
             repositionNodes("json/cells.json");
         }, 2400); // delay 
     },
-    'wireframe-slide-6': () => {
+    'wireframe-slide-insidecell': () => {
         // inside view of cells
         Graph.resumeAnimation();
         Graph.cameraPosition(
@@ -192,7 +176,7 @@ const slideActions = {
         Graph.resumeAnimation();
         dataSets[1](Graph);
     },
-    'wireframe-slide-9': () => {
+    'wireframe-slide-pause': () => {
         Graph.pauseAnimation();
         resetGraph(Graph);
         // intentionally empty

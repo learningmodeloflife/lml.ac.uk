@@ -1,8 +1,10 @@
 # Building
 
+**Always build from the website root '/' directory.**
+
 Keep images in the root '/img' directory - they can be used in other parts of the site. 
 Use quarto render <file> to build.
-Always build from the website root '/' directory.
+
 The build calls a script to make quarto share the same libraries for every page. Don't change this.
 If you are running a local web server, eg. with 'bundle exec jekyll build' or 'python3 -m http.server' then make sure you do it from the website root directory '/'.
 

@@ -358,27 +358,18 @@ Kenneth Baillie FRSE FMedSci
     Our solution to that problem is an example of the power of computational predictions from the genome
 -->
 </section>
-<section id="people" class="slide level2">
-<h2>People</h2>
-<ul>
-<li>Kenny Baillie</li>
-<li>Mirella Lapata</li>
-<li>Konrady Rawlik</li>
-<li>Johnny Millar</li>
-</ul>
-<!--
-    World-class track records in 
-        Genomics
-        Computational Biology
-        Generative AI
-        Natural Language Processing
--->
-</section>
-<section id="wireframe-slide-0" class="slide level2" data-background-color="white" data-fullscreen="true">
+<section id="section-1" class="slide level2">
 <h2></h2>
+
 <!--
-    To understand how we approach this, we need to consider the building blocks of life
+    This was not a fluke
 -->
+<img data-src="../img/genomicc/science_translational_genomics.svg" class="center img-fluid r-stretch" style="width:100.0%"><div class="footer">
+<p>Baillie JK. <a href="https://doi.org/10.1126/science.1255074">Science 344(6186); 23 May 2014</a></p>
+</div>
+</section>
+<section id="wireframe-slide-initiate-man" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
 <div id="outercontainer">
 <div id="3d-graph">
 
@@ -980,35 +971,14 @@ window.addEventListener("keydown", function(e) {
 </script>
 </div>
 </section>
-<section id="wireframe-slide-1" class="slide level2" data-background-color="white" data-fullscreen="true">
+<section id="wireframe-slide-3cells" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
 </section>
-<section id="wireframe-slide-2" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-3" class="slide level2" data-background-color="white" data-fullscreen="true">
+<section id="wireframe-slide-insidecell" class="slide level2" data-background-color="white" data-fullscreen="true">
 <h2></h2>
 <!--
     Our key insight is to look in the right place
 -->
-</section>
-<section id="wireframe-slide-4" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-5" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-</section>
-<section id="wireframe-slide-6" class="slide level2" data-background-color="white" data-fullscreen="true">
-<h2></h2>
-<!--
-## {#wireframe-slide-7 background-color="white" fullscreen=true}
-
-## {#wireframe-slide-8 background-color="white" fullscreen=true}
--->
-</section>
-<section id="wireframe-slide-9" class="slide level2">
-<h2></h2>
-<!-- the wireframe id pauses the graph -->
 <style>
 .seq{
   font-family: monospace;
@@ -1213,24 +1183,52 @@ Position 200 should change
 
 
 -->
-<!--
-##
-
-![](../img/ai/lml_core.svg){width=100% .r-stretch}
-
-
-## 
-
-![](../img/ai/lml_base_core.svg){width=100%}
--->
 </span></section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-
-<img data-src="../img/ai/lml.svg" class="img-fluid r-stretch" style="width:100.0%"></section>
 <section id="section-2" class="slide level2">
 <h2></h2>
+
+<img data-src="../img/genomicc/genomicc_bari2.svg" class="img-fluid r-stretch" data-id="article1"><div class="footer">
+<p>Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K <em>et al</em>. <a href="https://doi.org/10.1038/s41586-020-03065-y">Nature 2020</a></p>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
 <img data-src="../img/icu/covid.webp" class="r-stretch img-fluid" style="width:100.0%">
+<!--
+    To understand how we approach this, we need to consider the building blocks of life
+-->
+</section>
+<section id="wireframe-slide-man" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="wireframe-slide-chicken" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="wireframe-slide-plant" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="wireframe-slide-virus" class="slide level2" data-background-color="white" data-fullscreen="true">
+<h2></h2>
+</section>
+<section id="people" class="slide level2">
+<h2>People</h2>
+<ul>
+<li>Kenny Baillie</li>
+<li>Mirella Lapata</li>
+<li>Konrady Rawlik</li>
+<li>Johnny Millar</li>
+</ul>
+<!--
+    World-class track records in 
+        Genomics
+        Computational Biology
+        Generative AI
+        Natural Language Processing
+-->
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><img data-src="../img/ai/lml.svg" class="img-fluid" style="width:100.0%"></p>
 <!--
     This example links a single gene, to a single molecule, in a single disease. 
     It has already saved tens of thousands of lives. 
@@ -1244,7 +1242,7 @@ Graph.pauseAnimation();
 const slidestem = "wireframe-slide-";
 const d3outerContainer = document.getElementById('outercontainer');
 const slideActions = {
-    'wireframe-slide-0': () => {
+    'wireframe-slide-initiate-man': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition(
             {x:0,y:-100,z:-1500}, // position
@@ -1253,19 +1251,19 @@ const slideActions = {
         );
         repositionNodes("json/human.json",0);
     },
-    'wireframe-slide-1': () => {
+    'wireframe-slide-chicken': () => {
         Graph.resumeAnimation();
         repositionNodes("json/chicken.json");
     },
-    'wireframe-slide-2': () => {
+    'wireframe-slide-plant': () => {
         Graph.resumeAnimation();
         repositionNodes("json/crop.json");
     },
-    'wireframe-slide-3': () => {
+    'wireframe-slide-virus': () => {
         Graph.resumeAnimation();
         repositionNodes("json/virus.json");
     },
-    'wireframe-slide-4': () => {
+    'wireframe-slide-man': () => {
         Graph.resumeAnimation();
         repositionNodes("json/human.json");
         Graph.cameraPosition(
@@ -1274,14 +1272,14 @@ const slideActions = {
             0 //duration
         );
     },
-    'wireframe-slide-5': () => {
+    'wireframe-slide-3cells': () => {
         Graph.resumeAnimation();
         Graph.cameraPosition({x:-231,y:212,z:-5},{x:-231,y:212,z:1500},3000);
         setTimeout(() => {
             repositionNodes("json/cells.json");
         }, 2400); // delay 
     },
-    'wireframe-slide-6': () => {
+    'wireframe-slide-insidecell': () => {
         // inside view of cells
         Graph.resumeAnimation();
         Graph.cameraPosition(
@@ -1299,7 +1297,7 @@ const slideActions = {
         Graph.resumeAnimation();
         dataSets[1](Graph);
     },
-    'wireframe-slide-9': () => {
+    'wireframe-slide-pause': () => {
         Graph.pauseAnimation();
         resetGraph(Graph);
         // intentionally empty
