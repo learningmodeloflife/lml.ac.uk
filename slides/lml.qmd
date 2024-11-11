@@ -2,7 +2,7 @@
 title: "The Learning Model of Life"
 subtitle: ""
 author: "Kenneth Baillie FRSE FMedSci"
-institute: "Baillie Gifford Pandemic Science Hub, University of Edinburgh\n\nIntensive Care Unit, Royal Infirmary Edinburgh\n\nRoslin Institute, University of Edinburgh\n\nMRC Human Genetics Unit, University of Edinburgh"
+institute: "Baillie Gifford Pandemic Science Hub, University of Edinburgh\n\nIntensive Care Unit, Royal Infirmary Edinburgh"
 date: ""
 logo: "../img/logo/LML_logo_navbar.webp"
 format:
