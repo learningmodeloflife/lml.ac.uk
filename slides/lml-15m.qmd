@@ -61,13 +61,7 @@ Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.125
 
 {{< include _includes/bckgd_big_scale_of_genome.qmd >}}
 
-## 
-
-![](../img/genomicc/genomicc_bari2.svg){data-id="article1" }
-
-::: footer
-Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
-:::
+{{< include _includes/_baricitinib.qmd >}}
 
 ## 
 
