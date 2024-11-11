@@ -147,6 +147,24 @@ Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Natur
 -->
 
 
+## {#freddie}
+
+::::{.columns}
+
+::: {.column width="30%"}
+![](../img/ai/bohemianrhapsody.png)
+:::
+
+::: {.column width="10%" .center}
+≠
+:::
+
+::: {.column width="50%"}
+![](../img/ai/freddie_liveaid.webp)
+:::
+
+::::
+
 ## 
 
 ![](../img/ai/lml.svg){width=100%}

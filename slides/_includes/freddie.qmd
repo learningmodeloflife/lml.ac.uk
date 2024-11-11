@@ -1,37 +1,17 @@
-## {.image-row}
+## {#freddie}
 
-<style>
-.image-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
+::::{.columns}
 
-.image-row p {
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.image-row img:first-of-type {
-  width: 30%;
-  height: auto;
-}
-
-.image-row img:last-of-type {
-  width: 60%;
-  height: auto;
-}
-
-.image-row p:nth-child(2) {
-  font-size: 2em;
-  font-weight: bold;
-}
-</style>
-
+::: {.column width="30%"}
 ![](../img/ai/bohemianrhapsody.png)
+:::
 
-≠
+::: {.column width="10%" .center}
+# ≠
+:::
 
+::: {.column width="50%"}
 ![](../img/ai/freddie_liveaid.webp)
+:::
+
+::::
