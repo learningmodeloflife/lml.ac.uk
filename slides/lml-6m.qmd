@@ -8,7 +8,7 @@ logo: "../img/logo/LML_logo_navbar.webp"
 format:
   revealjs:
     controls: true
-    multiplex: false
+    multiplex: true
     fig-responsive: true
     auto-stretch: true
     chalkboard: false
@@ -16,12 +16,28 @@ format:
     revealjs-plugins:
         - slides/shared_libs/libs/revealjs/plugin/reveal-fullscreen # need to run quarto render from baillilab.net
 ---
-<!--
 
-# SET UP PROBLEM
-- humility
-- not often you get professors telling how little I know
-==> consequences for me e.g. Jennifer
+## {#wireframe-slide-initiate-man background-color="white" fullscreen=true}
+<div id="outercontainer">
+{{< include _includes/view_xyz_wireframes.html >}}
+</div>
+
+<!--
+    # SET UP PROBLEM
+    We do not understand biology
+    + humility
+    + not often you get professors telling how little I know
+    ==> consequences for me e.g. Jennifer
+-->
+
+
+## {#lml-core1 .center}
+
+![](../img/ai/lml-core.svg)
+
+## 
+
+<!--
 
 # OPPORTUNITY
 - we have an instruction manual - but the problem is we don't know how to read it
@@ -53,19 +69,8 @@ Why can we do this? We're experts in every domain in biology
 
 -->
 
-## 
 
 <!--
-I'm a Professor of Experimental Medicine, I've got these degrees and awards. My job is to use biology to make the world better. But there's a problem.
-I don't understand biology.
-
-
-
-
--->
-
-<!--
-
     We are building an autonomously-learning AI model of the molecular language underlying all life.
     I'd like to tell you a story to illustruate the power of the approach
 -->
@@ -80,9 +85,9 @@ I don't understand biology.
     Our solution to that problem is an example of the power of computational predictions from the genome
 -->
 
-## 
+## {.center}
 
-![](../img/genomicc/science_translational_genomics.svg){width=100% .center}
+![](../img/genomicc/science_translational_genomics.svg)
 
 <!--
     This was not a fluke
@@ -92,10 +97,7 @@ I don't understand biology.
 Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.1255074)
 :::
 
-## {#wireframe-slide-initiate-man background-color="white" fullscreen=true}
-<div id="outercontainer">
-{{< include _includes/view_xyz_wireframes.html >}}
-</div>
+## {#wireframe-slide-man background-color="white" fullscreen=true}
 
 ## {#wireframe-slide-3cells background-color="white" fullscreen=true}
 
@@ -109,7 +111,7 @@ Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.125
 
 ## 
 
-![](../img/genomicc/genomicc_bari2.svg){data-id="article1" }
+![](../img/genomicc/genomicc_bari2.svg)
 
 ::: footer
 Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Nature 2020](https://doi.org/10.1038/s41586-020-03065-y)
@@ -146,28 +148,11 @@ Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Natur
         Natural Language Processing
 -->
 
+{{< include _includes/freddie.qmd >}}
 
-## {#freddie}
+## {#lml-core .center}
 
-::::{.columns}
-
-::: {.column width="30%"}
-![](../img/ai/bohemianrhapsody.png)
-:::
-
-::: {.column width="10%" .center}
-≠
-:::
-
-::: {.column width="50%"}
-![](../img/ai/freddie_liveaid.webp)
-:::
-
-::::
-
-## 
-
-![](../img/ai/lml.svg){width=100%}
+![](../img/ai/lml-core.svg)
 
 <!--
     This example links a single gene, to a single molecule, in a single disease. 
