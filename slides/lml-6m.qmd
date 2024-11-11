@@ -17,6 +17,10 @@ format:
         - slides/shared_libs/libs/revealjs/plugin/reveal-fullscreen # need to run quarto render from baillilab.net
 ---
 
+## {#lml-core1 .center}
+
+![](../img/ai/lml-core.svg)
+
 ## {#wireframe-slide-initiate-man background-color="white" fullscreen=true}
 <div id="outercontainer">
 {{< include _includes/view_xyz_wireframes.html >}}
@@ -30,10 +34,6 @@ format:
     ==> consequences for me e.g. Jennifer
 -->
 
-
-## {#lml-core1 .center}
-
-![](../img/ai/lml-core.svg)
 
 ## 
 
@@ -97,7 +97,7 @@ Why can we do this? We're experts in every domain in biology
 Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.1255074)
 :::
 
-## {#wireframe-slide-man background-color="white" fullscreen=true}
+## {#wireframe-slide-man1 background-color="white" fullscreen=true}
 
 ## {#wireframe-slide-3cells background-color="white" fullscreen=true}
 
@@ -133,12 +133,7 @@ Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Natur
 
 ## {#wireframe-slide-virus background-color="white" fullscreen=true}
 
-## People
-
-- Kenny Baillie
-- Mirella Lapata
-- Konrady Rawlik
-- Johnny Millar
+{{< include _includes/people.qmd >}}
 
 <!--
     World-class track records in 
@@ -182,14 +177,38 @@ const slideActions = {
     'wireframe-slide-chicken': () => {
         Graph.resumeAnimation();
         repositionNodes("json/chicken.json");
+        Graph.cameraPosition(
+            {x:0,y:-100,z:-1500}, // position
+            {x:0,y:-100,z:0},  //look at
+            0 //duration
+        );
     },
     'wireframe-slide-plant': () => {
         Graph.resumeAnimation();
         repositionNodes("json/crop.json");
+        Graph.cameraPosition(
+            {x:0,y:-100,z:-1500}, // position
+            {x:0,y:-100,z:0},  //look at
+            0 //duration
+        );
     },
     'wireframe-slide-virus': () => {
         Graph.resumeAnimation();
         repositionNodes("json/virus.json");
+        Graph.cameraPosition(
+            {x:0,y:-100,z:-1500}, // position
+            {x:0,y:-100,z:0},  //look at
+            0 //duration
+        );
+    },
+    'wireframe-slide-man1': () => {
+        Graph.resumeAnimation();
+        repositionNodes("json/human.json");
+        Graph.cameraPosition(
+            {x:0,y:-100,z:-1500}, // position
+            {x:0,y:-100,z:0},  //look at
+            0 //duration
+        );
     },
     'wireframe-slide-man': () => {
         Graph.resumeAnimation();
