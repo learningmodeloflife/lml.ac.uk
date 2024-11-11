@@ -1,0 +1,37 @@
+## {.image-row}
+
+<style>
+.image-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-row p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.image-row img:first-of-type {
+  width: 30%;
+  height: auto;
+}
+
+.image-row img:last-of-type {
+  width: 60%;
+  height: auto;
+}
+
+.image-row p:nth-child(2) {
+  font-size: 2em;
+  font-weight: bold;
+}
+</style>
+
+![](../img/ai/bohemianrhapsody.png)
+
+≠
+
+![](../img/ai/freddie_liveaid.webp)
