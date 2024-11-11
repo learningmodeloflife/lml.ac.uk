@@ -7,7 +7,7 @@ date: ""
 logo: "../img/logo/LML_logo_navbar.webp"
 format:
   revealjs:
-    controls: false
+    controls: true
     multiplex: false
     fig-responsive: true
     auto-stretch: true
