@@ -30,17 +30,18 @@ format:
     email-obfuscation: javascript
     #logo: ../sourcefiles/logos/genomicc_logo_white.png
     # THEMES
+    theme: default
     #theme: beige
     #theme: blood
     #theme: dark
-    theme: default
     #theme: league
     #theme: moon
-    # theme: night
-    # theme: serif
-    # theme: simple
-    # theme: sky
-    # theme: solarized
+    #theme: night
+    #theme: serif
+    #theme: simple
+    #theme: sky
+    #theme: solarized
+    css: "_includes/css/people_gallery.css"
 
 
 # SHORTCUTS

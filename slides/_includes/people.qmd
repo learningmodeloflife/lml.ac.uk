@@ -1,6 +1,7 @@
+
 ## {.centered}
 
-::: {.gallery data-count="4"}
+::: {.gallery data-count="5"}
 ::: {.gallery-item}
 ![Kenneth Baillie](../img/people/kennethbaillie.webp)
 :::
@@ -14,94 +15,7 @@
 ![Johnny Millar](../img/people/jonathanmillar.webp)
 :::
 ::: {.gallery-item}
-![Johnny Millar](../img/people/jonathanmillar.webp)
+![Susan Rosser](../img/people/susanrosser.jpg)
 :::
 :::
 
-<style>
-/* custom.css */
-.centered h2 {
-  text-align: center;
-}
-
-.gallery {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
-  justify-content: center;
-}
-
-/* Responsive grid layouts */
-.gallery[data-count="1"] { 
-  grid-template-columns: 1fr; 
-  max-width: 270px; 
-  margin: auto; 
-}
-.gallery[data-count="2"] { 
-  grid-template-columns: repeat(2, 1fr); 
-  max-width: 540px; 
-}
-.gallery[data-count="3"] { 
-  grid-template-columns: repeat(3, 1fr); 
-  max-width: 810px; 
-}
-.gallery[data-count="4"] { 
-  grid-template-columns: repeat(2, 1fr); 
-  max-width: 540px; 
-}
-.gallery[data-count="5"], 
-.gallery[data-count="6"] { 
-  grid-template-columns: repeat(3, 1fr); 
-  max-width: 810px; 
-}
-.gallery[data-count="7"], 
-.gallery[data-count="8"] { 
-  grid-template-columns: repeat(4, 1fr); 
-  max-width: 1080px; 
-}
-
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-}
-
-.gallery-item img {
-  display: block;
-  width: 90%;  
-  aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-
-/* Caption styling */
-.gallery-item p {
-  margin: 0;
-  font-size: 1.1em;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Reveal.js specific adjustments */
-.reveal .gallery {
-  margin-top: 2rem;
-}
-
-.reveal .slides section .gallery-item img {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Restored our custom shadow */
-  margin: 0;
-}
-
-.reveal .slides section .gallery-item p {
-  margin: 0;  /* Override reveal.js paragraph margins */
-}
-</style>
