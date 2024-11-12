@@ -17,14 +17,14 @@ format:
         - slides/shared_libs/libs/revealjs/plugin/reveal-fullscreen # need to run quarto render from baillilab.net
 ---
 
-## {#lml-core1 .center}
-
-![](../img/ai/lml-core.svg)
-
 ## {#wireframe-slide-initiate-man background-color="white" fullscreen=true}
 <div id="outercontainer">
 {{< include _includes/view_xyz_wireframes.html >}}
 </div>
+
+## {#lml-core1 .center}
+
+![](../img/ai/lml-core.svg)
 
 <!--
     # SET UP PROBLEM
@@ -85,17 +85,15 @@ Why can we do this? We're experts in every domain in biology
     Our solution to that problem is an example of the power of computational predictions from the genome
 -->
 
+<!--
 ## {.center}
 
 ![](../img/genomicc/science_translational_genomics.svg)
 
-<!--
-    This was not a fluke
--->
-
 ::: footer 
 Baillie JK. [Science 344(6186); 23 May 2014](https://doi.org/10.1126/science.1255074)
 :::
+-->
 
 ## {#wireframe-slide-man1 background-color="white" fullscreen=true}
 
@@ -133,21 +131,14 @@ Pairo-Castineira E, Clohisey S, Klaric L, Bretherick A, Rawlik K *et al*. [Natur
 
 ## {#wireframe-slide-virus background-color="white" fullscreen=true}
 
-{{< include _includes/people.qmd >}}
-
-<!--
-    World-class track records in 
-        Genomics
-        Computational Biology
-        Generative AI
-        Natural Language Processing
--->
-
 {{< include _includes/freddie.qmd >}}
+
+{{< include _includes/people.qmd >}}
 
 ## {#lml-core .center}
 
 ![](../img/ai/lml-core.svg)
+
 
 <!--
     This example links a single gene, to a single molecule, in a single disease. 
