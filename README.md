@@ -1,24 +1,21 @@
-## To-do list
-
-**Johnny**
-
-* [X] Update 404.html
-* [X] Check mobile and tablet styling for js change
-* [X] Add text to about
-* [ ] ?copyright LML/Learning Model of Life and include in footer
-* [ ] Explore Gulp for build
-* [ ] Write GHA to build _site/ on push 
-	==> [JKB] no don't do this it isn't necessary! 
-* [ ] Add analytics details/tokens when closer to going live
+<div style="text-align: center;">
+ <a href="https://github.com/learningmodeloflife/management/wiki/Home">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/learningmodeloflife/shared-files/blob/main/img/logo/svg/LML_logo_cream.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/learningmodeloflife/shared-files/blob/main/img/logo/svg/LML_logo.svg">
+    <img alt="LML Logo" width="100" height="100"src="https://github.com/learningmodeloflife/shared-files/blob/main/img/logo/svg/LML_logo.svg">
+  </picture>
+</a>
+</div>
 
 
-# Editing the site
+## Editing the site
 
 - use "draft" branch for new edits
 - push and wait for netlify deploy
 
 
-# Viewing the site
+## Viewing the site
 
 draft: 
 https://draft--lml-ac-uk.netlify.app/
