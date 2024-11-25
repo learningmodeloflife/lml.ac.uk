@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Team | Learning Model of Life | Decoding the Rules of Biology"
-description: "A summary of the Learning Model of Life team members."
+description: "Led by Kenneth Baillie and Mirella Lapata, the Learning Model of Life team of scientists and programmers is building artificial intelligence to decode biology."
 ---
 
 <div class="team-content">

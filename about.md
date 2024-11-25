@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "About | Learning Model of Life | Decoding the Rules of Biology"
-description: "A brief summary of the Learning Model of Life project and our contact details"
+description: "Find contact details for the Learning Model of Life, wich is based collaboratively within the University of Edinburgh, combining science expertise across colleges."
 ---
 
 <div class="about-content">

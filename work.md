@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Our Work | Learning Model of Life | Decoding the Rules of Biology"
-description: "An overview of academic works from the Learning Model of Life team"
+description: "An overview of academic works from the Learning Model of Life scientists"
 ---
 
 <div class="work-content">
