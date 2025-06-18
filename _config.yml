@@ -1,0 +1,83 @@
+title: Learning Model of Life
+description: >- # this means to ignore newlines. Copies to footer, meta description, and feed.xml
+  The Learning Model of Life. Decoding the rules of biology.
+seo:
+  meta_og_title: "Learning Model of Life"
+  meta_og_type: "website"
+  meta_og_url: "https://learningmodel.life"
+  meta_og_image: "https://learningmodel.life/img/LML_logo_small.png"
+  meta_og_description: "Learning Model of Life"
+  meta_twitter_card: "summary"
+  meta_twitter_site: "@kennethbaillie"
+  meta_twitter_creator: "@kennethbaillie"
+
+# settings for Kenny's edit link script
+draft_urls: 
+  - https://draft--lml-ac-uk.netlify.app/
+  - https://lml-ac-uk.netlify.app/
+  - localhost
+edit_stem: https://github.com/learningmodeloflife/lml.ac.uk/edit/main/
+
+theme: minima
+destination: _site
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-analytics
+  - jekyll-sass-converter
+  - jekyll-minifier
+
+kramdown:
+  auto_ids: true
+
+sass:
+  sass_dir: _scss
+  style: compressed
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+  compress_css: true
+  compress_javascript: true
+  compress_html: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - private
+  - private/**
+  - build.sh
+  - "*.map"
+
+defaults:
+  - scope:
+      path: "assets/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "img/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "internal/*"
+    values:
+      sitemap: false
+
+collections:
+  work:
+    output: true
+    permalink: /work/:path/
+  team:
+    output: true
+    permalink: /team/:path/
+
+
+
+
+
+

@@ -1,0 +1,310 @@
+
+/* Hero Styles */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cream);
+    min-height: 100vh;
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-xxl);
+    color: var(--dark-gray);
+    margin: 4rem 0.1rem 2rem 0.1rem;
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+
+
+/* Decoding Animation Styles */
+#decoding-animation {
+    position: relative;
+    width: 66.6vw;
+    margin-top: 2rem auto;
+    margin-bottom: 4rem ;
+}
+
+
+.decoding-char {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-family-mono);
+    line-height: 1;
+    transition: left 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.decoding-char {
+    &.encoded-text, &.decoded-text {
+      color: var(--dark-gray);
+    }
+  }
+
+/* Animation Keyframes */
+@keyframes blendOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes blendIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+/* Index Image Styles */
+.index-image-container {
+    width: 100vw;
+    margin-left: 22%;
+    display: flex;
+    overflow: hidden;
+    margin-top: 4em;
+}
+
+.index-image {
+    height: 60vw;
+    margin: 1rem 0 4rem;
+    object-fit: cover;
+}
+
+.content-section {
+    padding: 5vw;
+    margin-top: -10vw;
+}
+
+
+/* First Section Styles */
+.first-content-container {
+    display: inline-grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 7em;
+}
+
+.subhero-title {
+    grid-area: 1 / 1; 
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-xl);
+    color: var(--dark-gray);
+    line-height: 1;
+    margin-block-start: 0.8em;
+    margin-block-end: 0.1em;
+}
+
+.right-image {
+    grid-area: 3 / 1;
+    width: 60vw;
+    height: auto;
+    justify-self: center;
+}
+
+.singularity {
+    grid-area: 2 / 1; 
+    color: var(--dark-gray);
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-base);
+    margin-block-start: 0em;
+}
+
+.mission {
+    grid-area: 4 / 1; 
+    color: var(--dark-gray);
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+
+/* Second Section Styles */
+.second-content-container {
+    display: inline-grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1.8rem 1.8rem ;
+    padding-bottom: 3em;
+}
+
+.strength1 {
+    grid-area: 1 / 1;
+    color: var(--dark-gray);
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.strength2 {
+    grid-area: 2 / 1;
+    color: var(--dark-gray);
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.strength3 {
+    grid-area: 3 / 1;
+    color: var(--dark-gray);
+    font-family: var(--font-family-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.left-image {
+    grid-area: 4 / 1 ;
+    width: 75vw;
+    justify-self: center;
+}
+
+.uoe {
+    grid-area: 5 / 1;
+    color: var(--dark-gray);
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-base);
+}
+
+
+
+
+/* Mobile Navbar */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* Positioning for hamburger spans */
+.hamburger span:nth-child(1) {top: 0;}
+.hamburger span:nth-child(2) {top: 9px;}
+.hamburger span:nth-child(3) {top: 18px;}
+
+/* Active state for hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+
+/* Responsive design */
+@media ( min-width: 30em ) {
+    .hero-title {
+        font-size: var(--font-size-huge);
+        font-weight: 400;
+    }
+}
+@media ( min-width: 60em ) {
+    .first-content-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: clamp(50px, 5vw, 80px) clamp(150px, 14vw, 250px);
+        margin-bottom: 14em;
+        max-width: 1312px;
+        max-height: 538.95px;
+    }
+    .subhero-title {
+        font-size: clamp(3.5rem, 5vw, 71.8px);
+        align-self: flex-start;
+        margin-right: clamp(-200px, -14vw, -100px);
+        text-align: right;
+        margin-block-start: 0em;
+        margin-block-end: 0.83em;
+        white-space: nowrap;
+        max-width: 860.41px;
+        max-height: 68px;
+    }
+    .right-image {
+        grid-area: 1 / 2 / span 3 / span 1;
+        width: 48vw;
+        margin-left: -5vw;
+        max-width: 700px;
+    }
+    .singularity {
+        grid-area: 2 / 1; 
+        text-align: right;
+        margin-right: clamp(-180px, -12vw, -120px);
+        margin-left: 2vw;
+        font-size: clamp(11px, 1.2vw, 17.28px); 
+        max-width: 802.08px;
+        max-height: 204.16px;
+    }
+    .mission {
+        grid-area: 3 / 1; 
+        text-align: left;
+        font-size: clamp(11px, 1.8vw, 25.884px); 
+        margin-left: clamp(11px, 12vw, 172.56px);
+        margin-right: -1.5vw;
+        max-width: 503.125px;
+        max-height: 261.87px;
+    }
+    .second-content-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: clamp(10px, 2.5vw, 35px) clamp(10px, 2.5vw, 35px) clamp(10px, 2.5vw, 35px);
+        padding-bottom: 7em;
+    }
+    .strength1 {
+        text-align: right;
+        font-size: clamp(11px, 1.8vw, 25.884px);
+        margin-right: clamp(11px, 8vw, 140px);
+    }
+    .strength2 {
+        text-align: right;
+        font-size: clamp(11px, 1.8vw, 25.884px);
+        margin-right: clamp(11px, 12vw, 210px);
+    }
+    .strength3 {
+        text-align: right;
+        font-size: clamp(11px, 1.8vw, 25.884px);
+        margin-right: clamp(11px, 16vw, 280px);
+    }
+    .left-image {
+        grid-area: 4 / 1 / span 1 / span 2;
+        width: 68vw;
+        max-width: 992px;
+    }
+    .uoe {
+        grid-area: 5 / 2;
+        text-align: left;
+        font-size: clamp(11px, 1.2vw, 17.28px); 
+        margin-left: clamp(-138px, -9.5vw, -100px);
+        margin-right: clamp(110px, 11.5vw, 500px);
+        margin-top: clamp(-137px, -9.5vw, 500px);
+        max-width: 660px;
+    }
+}
+
+@media ( max-width: 769px ) {
+    .decoding-animation {
+        font-size: 2rem;
+        line-height: 1;
+        font-style: italic;
+    }
+}

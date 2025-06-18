@@ -1,0 +1,95 @@
+/* About styles */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  padding-top: calc(2.5rem + 50px);
+  padding-bottom: 20rem;
+  min-height: 80vh; /* Add minimum height to prevent layout shifts */
+}
+
+.about-title {
+  font-family: var(--font-family-serif);
+  text-align: center;
+  font-size: var(--font-size-xxl);
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+  color: var(--dark-gray);
+  line-height: 1;
+}
+
+.about-section {
+  display: grid;
+  margin-bottom: 2rem;
+  min-height: 300px; /* Add minimum height to prevent layout shifts */
+}
+
+.logo-container {
+  display: flex;
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  padding-bottom: 2rem;
+  width: 300px; /* Set a fixed width */
+  height: 300px; /* Set a fixed height */
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
+}
+
+/* Logo styles */
+.lml-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the logo fits within the container */
+  opacity: 1; 
+  transition: opacity 0.3s ease; 
+}
+
+
+/* About text styles */
+.about-text {
+  flex: 2;
+  align-self: center;
+  justify-self: center;
+  grid-area: 2 / 1;
+}
+
+.about-text p {
+  font-family: var(--font-family-sans-serif);
+  color: var(--black);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 0rem;
+}
+
+/* Link styles */
+.about-text a {
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  transition: border-bottom-color 0.3s ease;
+}
+
+.about-text a:hover {
+  border-bottom-color: transparent;
+}
+
+/* Responsive design */
+@media (min-width: 50em) {
+  .about-section {
+    margin-bottom: 4rem;
+  }
+  .about-text {
+    grid-area: 1 / 2;
+  }
+  .logo-container {
+    padding-right: 2.5rem;
+    padding-bottom: 0rem;
+  }
+  .lml-logo {
+  opacity: 0.2;
+  }
+  .lml-logo:hover {
+  opacity: 1;
+  }
+}

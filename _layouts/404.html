@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+<body>
+    {% include navbar.html %}
+      
+    <main role="main">
+        {{ content }}
+    </main>
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script src="{{ '/assets/js/' | append: js_file | append: '.js' | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
